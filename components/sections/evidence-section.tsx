@@ -19,18 +19,40 @@ const items: EvidenceItem[] = [
   },
   {
     title: 'GetLatest AI Blog',
-    description: 'Writing regularly on AI agent architecture, MCP integrations, and enterprise AI strategy.',
+    description: 'Writing on AI agent architecture, enterprise agent reliability, multi-agent coordination, and the governance frameworks that make AI systems production-ready.',
     link: 'https://getlatest.ai/blog',
     tag: 'Writing',
   },
   {
+    title: 'AI Collective - Founder Panel',
+    description: '"Why We Built This: 3 Founders and Their Raw Decisions" - 90-minute virtual panel for The AI Collective, a global non-profit with 200,000+ members across 100+ forums. Discussed problem identification, product scope, and building methodology for early-stage AI products.',
+    link: 'https://lu.ma/0cv4j9ba',
+    tag: 'Speaking',
+  },
+  {
+    title: 'AI for Sales & Marketing',
+    description: '"What\'s real, what\'s hard, and who\'s solving it" - talk covering practical AI applications for sales and marketing teams, cutting through the hype to what enterprises are actually deploying.',
+    tag: 'Speaking',
+  },
+  {
+    title: 'MasterClaw Workshop',
+    description: '"I Just Shipped Myself: Build and Deploy Your Personal Portfolio with AI" - live workshop teaching practitioners to build and deploy real AI-powered products.',
+    link: 'https://getlatest.ai/decks',
+    tag: 'Speaking',
+  },
+  {
+    title: 'AI Collective - Live Build',
+    description: '"Digital Contact Cards: Build and ship a contact card with an AI agent, live" - hands-on session with the AI Collective community.',
+    tag: 'Speaking',
+  },
+  {
     title: 'Microsoft AI Enablement',
-    description: '30+ AI enablement initiatives across the Microsoft partner ecosystem. $5M+ in partner revenue generated.',
+    description: '30+ AI enablement initiatives across the Microsoft partner ecosystem. $5M+ in partner revenue generated. Partners scaled 10x, 14x, 20x within 4 years.',
     tag: 'Track Record',
   },
   {
     title: 'Crayon AI Transformation',
-    description: 'Led organizational pivot from licensing/cloud to full AI/ML/Analytics/M365 managed services. $43M to $51M P&L.',
+    description: 'Led organizational pivot from licensing/cloud to full AI/ML/Analytics/M365 managed services. $43M to $51M P&L. 200-person org.',
     tag: 'Track Record',
   },
 ]

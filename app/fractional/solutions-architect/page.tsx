@@ -187,7 +187,7 @@ export default function SolutionsArchitectPage() {
               <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
                 Book a strategy conversation
               </Button>
-              <Button href="https://www.linkedin.com/in/justinshenriksen" variant="secondary" external>
+              <Button href="https://www.linkedin.com/in/henriksen-justin" variant="secondary" external>
                 View LinkedIn
               </Button>
             </motion.div>
