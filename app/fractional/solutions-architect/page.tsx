@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ScanSearch, Bot, Cloud, Plug, FileSearch, Users } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
@@ -9,32 +10,32 @@ import { useTheme } from '@/components/theme/theme-provider'
 
 const engagementTypes = [
   {
-    icon: '🔎',
+    icon: ScanSearch,
     title: 'Architecture review and advisory',
     desc: 'An outside set of eyes on your current state. What is working, what is fragile, what will bite you at scale.',
   },
   {
-    icon: '🤖',
+    icon: Bot,
     title: 'AI system design',
     desc: 'Agent architectures, RAG systems, MCP integrations, multi-agent coordination. Hands-on design, not whiteboard theory.',
   },
   {
-    icon: '☁️',
+    icon: Cloud,
     title: 'M365 and Azure solution design',
     desc: '9.5 years at Microsoft. MCSE certified. When your stack is Microsoft, you want someone who built the ecosystem.',
   },
   {
-    icon: '🔌',
+    icon: Plug,
     title: 'API and integration architecture',
     desc: 'System-to-system integration, event-driven architectures, API design that does not become technical debt.',
   },
   {
-    icon: '📋',
+    icon: FileSearch,
     title: 'Technical due diligence',
     desc: 'For investors, acquirers, or boards who need to know what they are actually buying or building.',
   },
   {
-    icon: '👥',
+    icon: Users,
     title: 'Engineering team mentorship',
     desc: 'Elevating team capabilities. Code reviews, architecture coaching, and the institutional knowledge transfer that actually sticks.',
   },
@@ -233,7 +234,9 @@ export default function SolutionsArchitectPage() {
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded border border-[var(--primary)] mb-4 bg-[var(--bg)]">
+                  <item.icon className="w-5 h-5 text-[var(--primary)]" />
+                </div>
                 <h3 className="font-bold text-[var(--text)] mb-2">{item.title}</h3>
                 <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
               </motion.div>

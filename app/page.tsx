@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { Brain, Cpu } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
@@ -186,7 +187,9 @@ export default function Home() {
                 href="/fractional/ai-officer"
                 className="block border border-[var(--border)] bg-[var(--card)] rounded p-8 hover:border-[var(--primary)] transition-all duration-300 group h-full"
               >
-                <div className="text-4xl mb-4">🤖</div>
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded border border-[var(--primary)] mb-5 bg-[var(--bg)] group-hover:bg-[var(--primary)]/10 transition-colors">
+                  <Brain className="w-6 h-6 text-[var(--primary)]" />
+                </div>
                 <h3 className="text-xl font-bold text-[var(--text)] mb-3 group-hover:text-[var(--primary)] transition-colors">
                   Fractional AI Officer
                 </h3>
@@ -208,7 +211,9 @@ export default function Home() {
                 href="/fractional/solutions-architect"
                 className="block border border-[var(--border)] bg-[var(--card)] rounded p-8 hover:border-[var(--primary)] transition-all duration-300 group h-full"
               >
-                <div className="text-4xl mb-4">⚙️</div>
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded border border-[var(--primary)] mb-5 bg-[var(--bg)] group-hover:bg-[var(--primary)]/10 transition-colors">
+                  <Cpu className="w-6 h-6 text-[var(--primary)]" />
+                </div>
                 <h3 className="text-xl font-bold text-[var(--text)] mb-3 group-hover:text-[var(--primary)] transition-colors">
                   Fractional Solutions Architect
                 </h3>

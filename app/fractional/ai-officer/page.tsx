@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { Map, Shield, ScanSearch, GraduationCap, GitMerge, BarChart3 } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
@@ -9,32 +10,32 @@ import { useTheme } from '@/components/theme/theme-provider'
 
 const deliverables = [
   {
-    icon: '🗺️',
+    icon: Map,
     title: 'AI strategy and roadmap',
     desc: 'Where to start, what to build, what to buy. A sequenced plan that maps to your actual business - not a generic AI framework.',
   },
   {
-    icon: '🛡️',
+    icon: Shield,
     title: 'Governance and risk framework',
     desc: 'Guardrails, policy, compliance, and human review processes before something goes wrong. Not after.',
   },
   {
-    icon: '🔍',
+    icon: ScanSearch,
     title: 'Vendor evaluation and selection',
     desc: 'Unbiased assessment. No vendor kickbacks. You get a recommendation that serves your needs, not a sales commission.',
   },
   {
-    icon: '🎓',
+    icon: GraduationCap,
     title: 'Team upskilling and change management',
     desc: 'AI only works if your team can use it. Training, playbooks, and the change management to make adoption stick.',
   },
   {
-    icon: '🔗',
+    icon: GitMerge,
     title: 'Implementation oversight',
     desc: 'Bridging strategy and delivery. I can review code, challenge architectural decisions, and make sure what ships matches what was planned.',
   },
   {
-    icon: '📊',
+    icon: BarChart3,
     title: 'Board and executive communication',
     desc: 'Translating AI for non-technical leaders. I can run board sessions, write executive briefs, and help leadership make informed decisions.',
   },
@@ -252,7 +253,9 @@ export default function AIOfficerrPage() {
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300"
               >
-                <div className="text-3xl mb-3">{item.icon}</div>
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded border border-[var(--primary)] mb-4 bg-[var(--bg)]">
+                  <item.icon className="w-5 h-5 text-[var(--primary)]" />
+                </div>
                 <h3 className="font-bold text-[var(--text)] mb-2">{item.title}</h3>
                 <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
               </motion.div>
