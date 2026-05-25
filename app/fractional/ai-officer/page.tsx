@@ -295,8 +295,8 @@ export default function AIOfficerrPage() {
                 body: 'As GM, pivoted a traditional licensing and cloud reseller into a full AI/ML/Analytics/M365 managed services provider.',
               },
               {
-                headline: 'Shipping production AI today',
-                body: 'SnappyClaw is a live AI agent platform with real enterprise customers. Blogs actively on AI agent architecture and MCP integrations at getlatest.ai/blog.',
+                headline: 'Shipping production AI today - not theorizing about it',
+                body: 'SnappyClaw is a live, multi-tenant AI agent platform built on a three-layer architecture: a Next.js application layer, Python worker services for agent execution, and a platform layer handling OAuth, Docker-based tenant isolation, and fleet operations. Human-in-the-loop approval boundaries are built into the architecture by design. This is what current AI Officer thinking actually looks like in practice.',
               },
             ].map((item, i) => (
               <motion.div

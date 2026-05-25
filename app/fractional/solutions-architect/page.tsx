@@ -282,6 +282,95 @@ export default function SolutionsArchitectPage() {
         </Container>
       </section>
 
+      {/* What I'm building right now */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">The architecture I&apos;m running today</h2>
+            <p className="text-[var(--muted)] max-w-3xl">
+              Most architects advise from past experience. This is what I&apos;m actively designing, building, and shipping right now - and the decisions behind it.
+            </p>
+          </motion.div>
+
+          {/* Three-layer overview */}
+          <div className="grid sm:grid-cols-3 gap-5 mb-8">
+            {[
+              {
+                layer: 'Application layer',
+                stack: 'Next.js 16, React 19, TypeScript, Tailwind 4, Supabase',
+                why: 'Handles onboarding, configuration, approvals, analytics, and admin workflows. Chosen for fast product iteration, TypeScript-first development, and a pragmatic multi-tenant SaaS foundation without overbuilding infrastructure too early.',
+              },
+              {
+                layer: 'Worker layer',
+                stack: 'Python, Pydantic, HTTPX, JWT, pytest, MCP, Microsoft Agent Framework',
+                why: 'Agent execution runs in separate worker services - not inside the web app request cycle. Agent systems need scheduled execution, retries, workflow state, long-running tasks, and fault isolation that a standard web process should not carry.',
+              },
+              {
+                layer: 'Platform layer',
+                stack: 'Docker, centralized OAuth gateway, WebSocket transport, fleet tooling',
+                why: 'Handles integrations, runtime provisioning, transport, and operational controls. Managed runtime model with tenant isolation, predictable deployment, health checks, spend controls, and policy enforcement at the infrastructure level.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-6"
+              >
+                <div className="text-xs font-mono text-[var(--primary)] uppercase tracking-wide mb-2">{item.layer}</div>
+                <div className="text-xs text-[var(--muted)] font-mono mb-4 leading-relaxed">{item.stack}</div>
+                <p className="text-sm text-[var(--muted)] leading-relaxed">{item.why}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Key decisions */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border border-[var(--primary)] bg-[var(--card)] rounded p-7"
+          >
+            <h3 className="font-bold text-[var(--text)] mb-6 text-lg">Decisions made and why they matter</h3>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {[
+                {
+                  decision: 'Human-in-the-loop by design',
+                  reasoning: 'The system can research, classify, draft, score, and prepare actions automatically. But anything customer-facing or externally visible routes through an approval boundary. The real problem is not generating output - it is generating output that is trustworthy, reviewable, and operationally safe.',
+                },
+                {
+                  decision: 'Centralized OAuth gateway',
+                  reasoning: 'Instead of letting each product own its token lifecycle, all OAuth and third-party connections run through a shared gateway. Calendars, email, meetings, analytics, professional networks - one place. No duplicated auth logic, no connector drift, consistent entitlements and callback handling across the platform.',
+                },
+                {
+                  decision: 'Microsoft Agent Framework for new orchestration',
+                  reasoning: 'Standardizing new orchestration work on MAF rather than accumulating framework sprawl. Better built-in orchestration primitives, more forkable, less dependent on a single closed runtime pattern. Optimizing for long-term maintainability of multi-agent systems, not speed to first demo.',
+                },
+                {
+                  decision: 'Not building a thin chat wrapper',
+                  reasoning: 'Agent-native software means the architecture separates execution from UX at the infrastructure level. The agents have different runtime characteristics than the application - different process model, different failure modes, different scaling requirements. That separation is a first-class architectural concern, not an afterthought.',
+                },
+              ].map((item, i) => (
+                <div key={i} className="flex gap-4">
+                  <div className="text-[var(--primary)] font-bold text-lg shrink-0 mt-0.5">›</div>
+                  <div>
+                    <h4 className="font-bold text-[var(--text)] mb-1 text-sm">{item.decision}</h4>
+                    <p className="text-sm text-[var(--muted)] leading-relaxed">{item.reasoning}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
       {/* Career Evidence */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
