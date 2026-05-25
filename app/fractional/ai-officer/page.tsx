@@ -170,7 +170,7 @@ export default function AIOfficerrPage() {
               <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
                 Book a strategy conversation
               </Button>
-              <Button href="https://www.linkedin.com/in/henriksen-justin" variant="secondary" external>
+              <Button href="https://www.linkedin.com/in/henriksenjustin" variant="secondary" external>
                 View LinkedIn
               </Button>
             </motion.div>
