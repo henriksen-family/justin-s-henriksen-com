@@ -1,0 +1,361 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { Container } from '@/components/ui/container'
+import { Button } from '@/components/ui/button'
+import { StatCard } from '@/components/sections/stat-card'
+import { Timeline, type TimelineItem } from '@/components/sections/timeline'
+import { useTheme } from '@/components/theme/theme-provider'
+
+const engagementTypes = [
+  {
+    icon: '🔎',
+    title: 'Architecture review and advisory',
+    desc: 'An outside set of eyes on your current state. What is working, what is fragile, what will bite you at scale.',
+  },
+  {
+    icon: '🤖',
+    title: 'AI system design',
+    desc: 'Agent architectures, RAG systems, MCP integrations, multi-agent coordination. Hands-on design, not whiteboard theory.',
+  },
+  {
+    icon: '☁️',
+    title: 'M365 and Azure solution design',
+    desc: '9.5 years at Microsoft. MCSE certified. When your stack is Microsoft, you want someone who built the ecosystem.',
+  },
+  {
+    icon: '🔌',
+    title: 'API and integration architecture',
+    desc: 'System-to-system integration, event-driven architectures, API design that does not become technical debt.',
+  },
+  {
+    icon: '📋',
+    title: 'Technical due diligence',
+    desc: 'For investors, acquirers, or boards who need to know what they are actually buying or building.',
+  },
+  {
+    icon: '👥',
+    title: 'Engineering team mentorship',
+    desc: 'Elevating team capabilities. Code reviews, architecture coaching, and the institutional knowledge transfer that actually sticks.',
+  },
+]
+
+const domains = [
+  {
+    title: 'AI/Agent Systems',
+    items: ['SnappyClaw multi-agent platform (live, paying customers)', 'MCP (Model Context Protocol) integrations', 'RAG system design and implementation', 'Multi-agent coordination architectures', 'LLM API integration and optimization'],
+  },
+  {
+    title: 'Microsoft / Azure',
+    items: ['9.5 years at Microsoft (SWE to Sr. Director)', 'Azure MCSE certified', 'M365 Copilot agent design', 'Azure AI/ML services', 'Active Directory and identity architecture'],
+  },
+  {
+    title: 'Cloud Architecture',
+    items: ['AWS and Azure (hands-on from 2008)', 'Distributed systems at global scale', 'Data center infrastructure', 'Multi-region, high-availability design', 'IaC and DevOps pipelines'],
+  },
+  {
+    title: 'Data and Analytics',
+    items: ['Microsoft Data Science degree', 'AI/ML pipeline architecture', 'Advanced analytics at enterprise scale', 'SQL and NoSQL design patterns', 'Real-time data architectures'],
+  },
+  {
+    title: 'Enterprise Integration',
+    items: ['API design and governance', 'Event-driven and microservices patterns', 'C#, .NET, JavaScript, Python', 'DevOps and CI/CD architecture', 'Legacy modernization'],
+  },
+]
+
+const proofPoints = [
+  { value: '15yr', label: 'Systems architecture', detail: 'From code to cloud infrastructure' },
+  { value: '9.5yr', label: 'At Microsoft', detail: 'SWE to Sr. Director' },
+  { value: 'MCSE', label: 'Azure certified', detail: 'Microsoft Certified Solutions Expert' },
+  { value: 'Live', label: 'Shipping code today', detail: 'SnappyClaw platform, daily commits' },
+]
+
+const careerTimeline: TimelineItem[] = [
+  {
+    title: 'Founder & CEO',
+    company: 'GetLatest AI / Fenix Venture',
+    period: 'Jun 2024 - Present',
+    current: true,
+    bullets: [
+      'Architecting and shipping SnappyClaw: production AI agent platform with multi-agent coordination, MCP integrations, and enterprise customer deployments.',
+      'Daily coding in TypeScript/Next.js. Hands-on system design for every feature.',
+      'GetLatest AI consulting: technical architecture reviews and AI system design for enterprise clients.',
+    ],
+  },
+  {
+    title: 'Sr. Director, Partner Ecosystem',
+    company: 'Microsoft',
+    period: 'Jul 2017 - Oct 2021',
+    bullets: [
+      'Built the technical partner ecosystem for AI/ML and advanced analytics.',
+      'Technical architecture advisory for the largest Microsoft AI/ML partners.',
+      '$100M+ in customer growth driven through architectural alignment.',
+    ],
+  },
+  {
+    title: 'Principal Software Engineer',
+    company: 'Microsoft',
+    period: 'Sept 2013 - Jun 2017',
+    bullets: [
+      'Azure adoption architecture. Technical consultation for enterprise Azure migrations.',
+      'Led architecture review boards for strategic customers.',
+      'Deep work in distributed systems and cloud-native patterns.',
+    ],
+  },
+  {
+    title: 'Software Engineering Manager',
+    company: 'Microsoft',
+    period: 'Mar 2012 - Sept 2013',
+    bullets: [
+      'Led engineering team building massively distributed software systems for global data center infrastructure.',
+      'Managed architecture decisions at hardware and software boundary.',
+    ],
+  },
+  {
+    title: 'Solutions Architect',
+    company: 'LDS Church',
+    period: 'Jul 2008 - Mar 2012',
+    bullets: [
+      'Architecture roadmaps spanning .Net, Java, AWS, and Azure.',
+      'Multi-million dollar project delivery across enterprise systems.',
+      'Introduced cloud architecture patterns to the organization early in the AWS era.',
+    ],
+  },
+  {
+    title: 'Development Manager',
+    company: 'TaxWorks',
+    period: 'Jun 2004 - Jul 2008',
+    bullets: [
+      'Led development team for tax software products.',
+      'Built the technical foundation that supported the platform for years after.',
+    ],
+  },
+]
+
+export default function SolutionsArchitectPage() {
+  const { theme } = useTheme()
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative min-h-[70vh] flex items-center pt-20 pb-16">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl"
+          >
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-8"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
+              Fractional Solutions Architect
+            </motion.div>
+
+            <h1 className={`text-[var(--text)] leading-tight mb-6 ${
+              theme === 'arcade'
+                ? 'font-pixel text-base sm:text-lg leading-loose'
+                : theme === 'terminal' || theme === 'futuristic'
+                ? 'font-mono text-2xl sm:text-3xl lg:text-4xl'
+                : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
+            }`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
+              15 years of systems architecture. None of the full-time overhead.
+              {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed"
+            >
+              Fractional Solutions Architect for AI integrations, cloud systems, M365 agent deployments,
+              and the technical decisions that compound over time.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="flex flex-wrap gap-4"
+            >
+              <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
+                Book a strategy conversation
+              </Button>
+              <Button href="https://www.linkedin.com/in/justinshenriksen" variant="secondary" external>
+                View LinkedIn
+              </Button>
+            </motion.div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* Proof Points */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+            {proofPoints.map((p, i) => (
+              <StatCard key={i} {...p} index={i} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Engagement Types */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">
+              What a fractional SA engagement looks like
+            </h2>
+            <p className="text-[var(--muted)]">
+              Scoped to what you actually need. None of what you don&apos;t.
+            </p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {engagementTypes.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300"
+              >
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-bold text-[var(--text)] mb-2">{item.title}</h3>
+                <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Domains */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Domain expertise</h2>
+            <p className="text-[var(--muted)]">Not a generalist. Deep in the areas that matter for modern AI systems.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {domains.map((domain, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-5"
+              >
+                <h3 className="font-bold text-[var(--primary)] mb-3 text-sm uppercase tracking-wide font-mono">
+                  {domain.title}
+                </h3>
+                <ul className="space-y-1.5">
+                  {domain.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-[var(--muted)]">
+                      <span className="text-[var(--primary)] shrink-0 mt-0.5">›</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Career Evidence */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Career evidence</h2>
+            <p className="text-[var(--muted)]">
+              From writing code to running P&amp;Ls - and back to writing code. The full arc.
+            </p>
+          </motion.div>
+          <Timeline items={careerTimeline} />
+        </Container>
+      </section>
+
+      {/* Technical snapshot */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border border-[var(--border)] bg-[var(--card)] rounded p-8"
+          >
+            <h2 className="text-xl font-bold text-[var(--text)] mb-6">Technical stack snapshot</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { label: 'Languages', items: ['TypeScript / JavaScript', 'C# / .NET', 'Python', 'SQL'] },
+                { label: 'Cloud', items: ['Azure (MCSE certified)', 'AWS', 'Vercel / edge', 'Docker / containers'] },
+                { label: 'AI/ML', items: ['OpenAI / Anthropic APIs', 'RAG architectures', 'MCP protocol', 'Agent frameworks'] },
+                { label: 'Data', items: ['PostgreSQL / Supabase', 'NoSQL patterns', 'Analytics pipelines', 'Real-time systems'] },
+              ].map((col, i) => (
+                <div key={i}>
+                  <h3 className="text-xs font-mono text-[var(--primary)] uppercase tracking-wide mb-3">{col.label}</h3>
+                  <ul className="space-y-1">
+                    {col.items.map((item, j) => (
+                      <li key={j} className="text-sm text-[var(--muted)] flex items-center gap-2">
+                        <span className="text-[var(--primary)] text-xs">›</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 border-t border-[var(--border)]">
+        <Container narrow>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <h2 className="text-3xl font-bold text-[var(--text)] mb-4">
+              Solve the architecture problem
+            </h2>
+            <p className="text-[var(--muted)] mb-8 max-w-xl mx-auto">
+              30 minutes to understand your technical challenge.
+              No pitch. No scope creep. Just honest architecture thinking.
+            </p>
+            <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
+              Book a strategy conversation
+            </Button>
+          </motion.div>
+        </Container>
+      </section>
+    </>
+  )
+}
