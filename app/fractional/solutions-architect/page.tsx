@@ -6,6 +6,7 @@ import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
 import { Timeline, type TimelineItem } from '@/components/sections/timeline'
+import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
 
 const engagementTypes = [
@@ -49,6 +50,16 @@ const domains = [
   {
     title: 'Cloud and Infrastructure',
     items: ['Azure (MCSE certified) - AKS, AI Foundry, M365 Copilot, AD', 'AWS - EC2, Lambda, SageMaker, Bedrock, IAM', 'GCP - Vertex AI, Cloud Run, BigQuery, Gemini API', 'Multi-region, high-availability design at global scale', 'IaC, DevOps pipelines, containerization'],
+  },
+  {
+    title: 'Enterprise Cloud Migration',
+    items: [
+      'Architecture review boards for Azure migrations at Microsoft enterprise scale',
+      'SQL Server to Azure SQL sizing and migration patterns',
+      'Multi-region, multi-tenant SaaS migration from on-prem',
+      'Build/buy/partner decision frameworks for enterprise cloud adoption',
+      'Cloud Center of Excellence frameworks adopted across the Microsoft partner ecosystem',
+    ],
   },
   {
     title: 'Software Engineering',
@@ -102,9 +113,11 @@ const careerTimeline: TimelineItem[] = [
     company: 'Microsoft',
     period: 'Sept 2013 - Jun 2017',
     bullets: [
-      'Azure adoption architecture. Technical consultation for enterprise Azure migrations.',
-      'Led architecture review boards for strategic customers.',
-      'Deep work in distributed systems and cloud-native patterns.',
+      'Azure adoption architecture and technical consultation for enterprise Azure migrations.',
+      'Led architecture review boards for strategic Data & AI customer engagements.',
+      'Built the Azure SQL DTU Calculator - sizing tool used by Microsoft field and partners in the early Azure SQL migration era.',
+      'Architected Cloud Center of Excellence reference patterns adopted across the partner ecosystem.',
+      'Hands-on technical depth across Azure SQL, Azure ML, Azure Data Factory, Synapse, Databricks, Cognitive Services.',
     ],
   },
   {
@@ -377,6 +390,73 @@ export default function SolutionsArchitectPage() {
           </motion.div>
         </Container>
       </section>
+
+      {/* Selected Architectures */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Selected architectures</h2>
+            <p className="text-[var(--muted)]">Shipped and used in production. Predates the current portfolio.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-5">
+            {[
+              {
+                title: 'Azure SQL DTU Calculator',
+                period: '2014-2015',
+                stack: 'C#, ASP.NET, Azure SQL, JavaScript',
+                description: 'Sizing tool for Azure SQL Database workloads. Translated on-prem SQL Server performance benchmarks into Azure DTU recommendations. Used by Microsoft field sellers and partners during the early Azure SQL migration era.',
+              },
+              {
+                title: 'Bot Framework Training Architecture',
+                period: '2016-2017',
+                stack: 'C#, Node.js, Bot Framework, LUIS',
+                description: 'Hands-on curriculum for the Microsoft Bot Framework, built as part of the Microsoft Data Science Degree program. Working code samples covering conversational AI before "agent" was a category.',
+              },
+              {
+                title: 'Azure Data & AI Workshop Platform',
+                period: '2018-2021',
+                stack: 'Azure ML, Azure Data Factory, Apache Spark, Python',
+                description: 'End-to-end hands-on workshops covering Azure Machine Learning, ADF, and Python ML pipelines. Delivered to Microsoft partners as part of the AI Accelerate and Data Science Partner Program enablement track.',
+              },
+              {
+                title: 'Cloud Center of Excellence Reference Patterns',
+                period: '2018-2021',
+                stack: 'Azure platform-wide',
+                description: 'Cloud architecture frameworks and best practices for enterprise adoption. Reference patterns the Microsoft partner ecosystem built against - covering governance, landing zones, and adoption methodology.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-6 flex flex-col"
+              >
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h3 className="font-bold text-[var(--text)]">{item.title}</h3>
+                  <span className="text-xs font-mono text-[var(--primary)] border border-[var(--primary)] px-2 py-0.5 rounded-full shrink-0">{item.period}</span>
+                </div>
+                <div className="text-xs font-mono text-[var(--muted)] mb-3">{item.stack}</div>
+                <p className="text-sm text-[var(--muted)] leading-relaxed flex-1">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection
+        ids={['lauren-tran', 'karen-trubisky', 'tony-spencer']}
+        title="What people say about the engineering work"
+        subtitle="From direct reports and colleagues who worked alongside the technical architecture and engineering leadership."
+      />
 
       {/* Career Evidence */}
       <section className="py-16 border-t border-[var(--border)]">

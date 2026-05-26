@@ -6,7 +6,19 @@ import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
 import { Timeline, type TimelineItem } from '@/components/sections/timeline'
+import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
+
+const industries = [
+  { vertical: 'Financial Services', segments: 'Banking, Insurance, Capital Markets' },
+  { vertical: 'Healthcare', segments: 'Payor, Provider, Pharma & Life Sciences' },
+  { vertical: 'Manufacturing', segments: 'Discrete and Process Manufacturing' },
+  { vertical: 'Retail / CPG', segments: 'Retailers and Consumer Goods' },
+  { vertical: 'Government', segments: 'Civilian, Public Safety & Justice, Defense' },
+  { vertical: 'Media & Comms', segments: 'Media & Entertainment, Telco' },
+  { vertical: 'Automotive', segments: 'OEMs and Tier-1 Suppliers' },
+  { vertical: 'Energy', segments: 'Oil & Gas, Utilities' },
+]
 
 const deliverables = [
   {
@@ -99,8 +111,9 @@ const careerTimeline: TimelineItem[] = [
     period: 'Oct 2021 - Jan 2023',
     bullets: [
       'Transformed Crayon US from licensing/cloud reseller to AI/ML/Analytics/M365 managed services provider.',
-      '$43M to $51M P&L. 200% increase in new customer acquisition.',
-      '200-person org. Awards: 2024 Utah Fast 50, 2023 Utah 100.',
+      '$43M to $51M P&L. 200% increase in new customer acquisition. 200-person org. Awards: 2024 Utah Fast 50, 2023 Utah 100.',
+      'Stood up the AI/ML, Data, and M365 managed services practices end-to-end: hiring, partner certifications, service catalog, pricing, delivery playbooks, go-to-market motion.',
+      'Led cross-Group collaboration with Crayon regions worldwide on product offerings, strategy, pricing, execution, and delivery. Drove multiple AI initiatives including the Crayon AI Center of Excellence.',
     ],
   },
   {
@@ -243,7 +256,7 @@ export default function AIOfficerrPage() {
             <p className="text-[var(--muted)]">Concrete deliverables, not advisory theater.</p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
             {deliverables.map((item, i) => (
               <motion.div
                 key={i}
@@ -261,6 +274,24 @@ export default function AIOfficerrPage() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border border-[var(--border)] bg-[var(--card)] rounded p-6"
+          >
+            <h3 className="font-bold text-[var(--text)] mb-1">Industry experience</h3>
+            <p className="text-sm text-[var(--muted)] mb-5">Vertical coverage from the Microsoft partner ecosystem.</p>
+            <div className="grid sm:grid-cols-2 gap-2">
+              {industries.map((row, i) => (
+                <div key={i} className="flex gap-3">
+                  <span className="font-semibold text-[var(--text)] text-sm shrink-0 w-32">{row.vertical}</span>
+                  <span className="text-sm text-[var(--muted)]">{row.segments}</span>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </Container>
       </section>
 
@@ -287,7 +318,7 @@ export default function AIOfficerrPage() {
             {[
               {
                 headline: 'Built the Microsoft AI/ML ecosystem from scratch',
-                body: 'Sr. Director of Partner Ecosystem for AI/ML and analytics. Led the team that designed and scaled the Microsoft AI partner motion - 30+ initiatives, partners growing 10x to 20x in 4 years.',
+                body: 'Sr. Director of Partner Ecosystem for AI/ML and analytics. Led the team that designed and scaled the Microsoft AI partner motion. Named programs: AI Accelerate (partner enablement scaled across multiple countries and hundreds of partners), Data Science Partner Program (curriculum and maturity pathway across the US partner ecosystem), AI Country Plans (country-level AI adoption playbooks across multiple geographies), Cloud Center of Excellence (architecture reference patterns). Partners scaled 10x, 14x, and 20x within four years.',
               },
               {
                 headline: 'Led 30+ AI enablement initiatives',
@@ -360,6 +391,13 @@ export default function AIOfficerrPage() {
           <Timeline items={careerTimeline} />
         </Container>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection
+        ids={['lauren-tran', 'tara-darconte']}
+        title="What people say about the AI work"
+        subtitle="From direct reports and colleagues who worked alongside the AI strategy and execution."
+      />
 
       {/* How it works */}
       <section className="py-16 border-t border-[var(--border)]">

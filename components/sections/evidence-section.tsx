@@ -37,6 +37,35 @@ const products: EvidenceItem[] = [
   },
 ]
 
+const selectedWork: EvidenceItem[] = [
+  {
+    title: 'Azure SQL DTU Calculator',
+    description: 'ASP.NET web application for sizing Azure SQL Database workloads. Translated on-prem SQL Server performance benchmarks into Azure DTU recommendations. Used by Microsoft field sellers and partners during the early Azure SQL migration era. Stack: C#, ASP.NET, Azure SQL, JavaScript.',
+    tag: 'Engineering',
+  },
+  {
+    title: 'Bot Framework Training Labs',
+    description: 'Hands-on curriculum for the Microsoft Bot Framework, built as part of the Microsoft Data Science Degree (DAT211x) program. Working code samples in C# and Node.js covering conversational AI before "agent" was a category.',
+    tag: 'Engineering',
+  },
+  {
+    title: 'Azure Data & AI Workshops',
+    description: 'End-to-end hands-on workshops covering Azure Machine Learning, Azure Data Factory, Apache Spark, and Python ML pipelines. Delivered to Microsoft partners as part of the AI Accelerate and Data Science Partner Program enablement track.',
+    tag: 'Engineering',
+  },
+]
+
+const industries = [
+  { vertical: 'Financial Services', segments: 'Banking, Insurance, Capital Markets' },
+  { vertical: 'Healthcare', segments: 'Payor, Provider, Pharma & Life Sciences' },
+  { vertical: 'Manufacturing', segments: 'Discrete and Process Manufacturing' },
+  { vertical: 'Retail / CPG', segments: 'Retailers and Consumer Goods' },
+  { vertical: 'Government', segments: 'Civilian, Public Safety & Justice, Defense' },
+  { vertical: 'Media & Comms', segments: 'Media & Entertainment, Telco' },
+  { vertical: 'Automotive', segments: 'OEMs and Tier-1 Suppliers' },
+  { vertical: 'Energy', segments: 'Oil & Gas, Utilities' },
+]
+
 const writing: EvidenceItem[] = [
   {
     title: 'The Platform the Taxonomy Demands',
@@ -141,6 +170,46 @@ export function EvidenceSection() {
             <EvidenceCard key={i} item={item} index={i} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Selected engineering work</h2>
+          <p className="text-[var(--muted)]">Shipped, used in production, predates the current portfolio.</p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-16">
+          {selectedWork.map((item, i) => (
+            <EvidenceCard key={i} item={item} index={i} />
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Industries</h2>
+          <p className="text-[var(--muted)]">Vertical experience from the Microsoft partner ecosystem.</p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid sm:grid-cols-2 gap-3 mb-16"
+        >
+          {industries.map((row, i) => (
+            <div key={i} className="flex gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3">
+              <span className="font-bold text-[var(--text)] text-sm shrink-0 w-36">{row.vertical}</span>
+              <span className="text-sm text-[var(--muted)]">{row.segments}</span>
+            </div>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

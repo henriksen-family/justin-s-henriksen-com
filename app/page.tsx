@@ -14,11 +14,30 @@ import { useTheme } from '@/components/theme/theme-provider'
 
 const stats = [
   { value: '172%', label: 'MRR increase', detail: '$440K to $1.2M in 8 months' },
-  { value: '$100M+', label: 'Customer growth at Microsoft', detail: 'AI/ML partner ecosystem' },
-  { value: '30+', label: 'AI enablement initiatives', detail: '$1.5M funding into $5M+ revenue' },
+  { value: '$100M+', label: 'Customer growth', detail: 'Microsoft partner ecosystem' },
+  { value: '$1.5M - $5M+', label: 'AI initiative funding converted', detail: 'Sustainable partner revenue' },
+  { value: '$51M', label: 'P&L led as GM', detail: 'Crayon US' },
   { value: '200%', label: 'New customer acquisition', detail: 'At Crayon as GM' },
-  { value: '$51M', label: 'P&L managed', detail: 'From $43M at Crayon US' },
   { value: '95/100', label: 'Manager rating', detail: '5-year average' },
+]
+
+const programs = [
+  {
+    title: 'AI Accelerate',
+    desc: "Microsoft's partner enablement program for AI: strategy briefings, envisioning sessions, solution acceleration. Scaled across multiple countries and hundreds of partners.",
+  },
+  {
+    title: 'Data Science Partner Program',
+    desc: 'Curriculum, maturity assessments, and graduation criteria for Microsoft partners building data science practices. Deployed across the US partner ecosystem.',
+  },
+  {
+    title: 'AI Country Plans',
+    desc: 'Country-level AI adoption playbooks. Strategic plans for AI readiness implemented across multiple geographies.',
+  },
+  {
+    title: 'Cloud Center of Excellence',
+    desc: 'Cloud architecture frameworks and best practices for enterprise adoption. Reference patterns the partner ecosystem built against.',
+  },
 ]
 
 const careerTimeline: TimelineItem[] = [
@@ -56,8 +75,7 @@ const careerTimeline: TimelineItem[] = [
     company: 'Microsoft',
     period: 'Jul 2017 - Oct 2021',
     bullets: [
-      'Led AI/ML and analytics partner strategy. $100M+ in customer growth driven.',
-      '30+ AI enablement initiatives. Partners scaled 10x, 14x, 20x within 4 years.',
+      'Sr. Director - Partner Ecosystem (AI/ML, Data, Advanced Analytics). Led AI Accelerate, AI Country Plans, and the Data Science Partner Program. Partners scaled 10x, 14x, and 20x within four years. $100M+ in customer growth driven.',
       '2020 Leadership Spotlight, 2019 Manager of the Year.',
     ],
   },
@@ -66,8 +84,7 @@ const careerTimeline: TimelineItem[] = [
     company: 'Microsoft',
     period: 'Sept 2013 - Jun 2017',
     bullets: [
-      'Azure adoption architecture and technical consultation.',
-      'Led technical architecture for large enterprise customers.',
+      'Azure adoption architecture for enterprise customers and partners. Architected Cloud Center of Excellence reference patterns. Built the Azure SQL DTU Calculator early in the Azure SQL migration era.',
     ],
   },
   {
@@ -263,9 +280,35 @@ export default function Home() {
             <p className="text-[var(--muted)]">Results from two decades of building and leading technology organizations.</p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
             {stats.map((stat, i) => (
               <StatCard key={i} {...stat} index={i} />
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-6"
+          >
+            <h3 className="text-lg font-bold text-[var(--text)] mb-1">Programs built at scale</h3>
+            <p className="text-sm text-[var(--muted)]">Named programs from the Microsoft AI partner motion.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            {programs.map((p, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-5"
+              >
+                <h4 className="font-bold text-[var(--text)] mb-2">{p.title}</h4>
+                <p className="text-sm text-[var(--muted)] leading-relaxed">{p.desc}</p>
+              </motion.div>
             ))}
           </div>
         </Container>
@@ -295,6 +338,38 @@ export default function Home() {
 
       {/* Testimonials */}
       <TestimonialsSection />
+
+      {/* Credentials */}
+      <section className="py-12 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-lg font-bold text-[var(--text)] mb-5">Education and credentials</h2>
+            <div className="flex flex-wrap gap-3">
+              {[
+                'MBA - University of Utah',
+                'BA Computer Science - Weber State University',
+                'Microsoft Professional Program - Data Science',
+                'Microsoft Professional Program - Big Data',
+                'Azure MCSE',
+                'AI-900, AZ-900, DP-100, DP-900',
+                'Deep Learning Specialization (Andrew Ng / Coursera)',
+                'Six Sigma Green Belt',
+              ].map((cred, i) => (
+                <span
+                  key={i}
+                  className="text-sm text-[var(--muted)] border border-[var(--border)] bg-[var(--card)] rounded px-3 py-1.5 font-mono"
+                >
+                  {cred}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </Container>
+      </section>
 
       {/* CTA */}
       <section className="py-20 border-t border-[var(--border)]">
