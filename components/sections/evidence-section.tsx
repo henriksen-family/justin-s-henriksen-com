@@ -53,6 +53,11 @@ const selectedWork: EvidenceItem[] = [
     description: 'End-to-end hands-on workshops covering Azure Machine Learning, Azure Data Factory, Apache Spark, and Python ML pipelines. Delivered to Microsoft partners as part of the AI Accelerate and Data Science Partner Program enablement track.',
     tag: 'Engineering',
   },
+  {
+    title: 'Distributed Data Center Infrastructure',
+    description: 'Massively distributed software systems for global Microsoft data center infrastructure. Engineering at the hardware/software boundary - distributed state management, fault tolerance, and scale patterns across tens of thousands of nodes. Stack: C#, distributed systems, Windows Server.',
+    tag: 'Engineering',
+  },
 ]
 
 const industries = [

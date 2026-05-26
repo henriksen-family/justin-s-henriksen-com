@@ -295,6 +295,13 @@ export default function AIOfficerrPage() {
         </Container>
       </section>
 
+      {/* Testimonials */}
+      <TestimonialsSection
+        ids={['lauren-tran', 'tara-darconte', 'karen-trubisky']}
+        title="What people say about the AI work"
+        subtitle="From direct reports and colleagues who worked alongside the AI strategy and execution."
+      />
+
       {/* Why Justin */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
@@ -391,13 +398,6 @@ export default function AIOfficerrPage() {
           <Timeline items={careerTimeline} />
         </Container>
       </section>
-
-      {/* Testimonials */}
-      <TestimonialsSection
-        ids={['lauren-tran', 'tara-darconte']}
-        title="What people say about the AI work"
-        subtitle="From direct reports and colleagues who worked alongside the AI strategy and execution."
-      />
 
       {/* How it works */}
       <section className="py-16 border-t border-[var(--border)]">

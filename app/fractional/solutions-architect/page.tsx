@@ -52,16 +52,6 @@ const domains = [
     items: ['Azure (MCSE certified) - AKS, AI Foundry, M365 Copilot, AD', 'AWS - EC2, Lambda, SageMaker, Bedrock, IAM', 'GCP - Vertex AI, Cloud Run, BigQuery, Gemini API', 'Multi-region, high-availability design at global scale', 'IaC, DevOps pipelines, containerization'],
   },
   {
-    title: 'Enterprise Cloud Migration',
-    items: [
-      'Architecture review boards for Azure migrations at Microsoft enterprise scale',
-      'SQL Server to Azure SQL sizing and migration patterns',
-      'Multi-region, multi-tenant SaaS migration from on-prem',
-      'Build/buy/partner decision frameworks for enterprise cloud adoption',
-      'Cloud Center of Excellence frameworks adopted across the Microsoft partner ecosystem',
-    ],
-  },
-  {
     title: 'Software Engineering',
     items: ['25 years hands-on: C#/.NET, Python, TypeScript/JavaScript, Java', 'Distributed systems at global data center scale', 'Enterprise application architecture from ground up', 'Full product lifecycle - from first commit to production', 'Engineering management and technical mentorship'],
   },
@@ -262,46 +252,6 @@ export default function SolutionsArchitectPage() {
         </Container>
       </section>
 
-      {/* Domains */}
-      <section className="py-16 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Domain expertise</h2>
-            <p className="text-[var(--muted)]">Not a generalist. Deep in the areas that matter for modern AI systems.</p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {domains.map((domain, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="border border-[var(--border)] bg-[var(--card)] rounded p-5"
-              >
-                <h3 className="font-bold text-[var(--primary)] mb-3 text-sm uppercase tracking-wide font-mono">
-                  {domain.title}
-                </h3>
-                <ul className="space-y-1.5">
-                  {domain.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-[var(--muted)]">
-                      <span className="text-[var(--primary)] shrink-0 mt-0.5">›</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* What I'm building right now */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
@@ -457,6 +407,46 @@ export default function SolutionsArchitectPage() {
         title="What people say about the engineering work"
         subtitle="From direct reports and colleagues who worked alongside the technical architecture and engineering leadership."
       />
+
+      {/* Domains */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Domain expertise</h2>
+            <p className="text-[var(--muted)]">Not a generalist. Deep in the areas that matter for modern AI systems.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {domains.map((domain, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-5"
+              >
+                <h3 className="font-bold text-[var(--primary)] mb-3 text-sm uppercase tracking-wide font-mono">
+                  {domain.title}
+                </h3>
+                <ul className="space-y-1.5">
+                  {domain.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-2 text-sm text-[var(--muted)]">
+                      <span className="text-[var(--primary)] shrink-0 mt-0.5">›</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
 
       {/* Career Evidence */}
       <section className="py-16 border-t border-[var(--border)]">

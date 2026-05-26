@@ -333,11 +333,11 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Evidence */}
-      <EvidenceSection />
-
       {/* Testimonials */}
       <TestimonialsSection />
+
+      {/* Evidence */}
+      <EvidenceSection />
 
       {/* Credentials */}
       <section className="py-12 border-t border-[var(--border)]">
