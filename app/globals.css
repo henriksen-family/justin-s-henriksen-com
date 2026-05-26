@@ -7,16 +7,17 @@
    ============================================= */
 
 [data-theme="professional"] {
-  --bg: #07070f;
-  --primary: #a78bfa;
-  --secondary: #22d3ee;
-  --accent: #f472b6;
-  --text: #f1f0ff;
-  --muted: #8b8ba8;
-  --card: #0f0f1c;
-  --border: #2a2a45;
-  --gradient-start: #a78bfa;
-  --gradient-end: #22d3ee;
+  --bg: #f0f4f8;
+  --primary: #0078d4;
+  --secondary: #106ebe;
+  --accent: #0078d4;
+  --text: #1b2232;
+  --muted: #5a6472;
+  --card: #ffffff;
+  --border: #d1d9e0;
+  --gradient-start: #003780;
+  --gradient-end: #0078d4;
+  color-scheme: light;
 }
 
 [data-theme="arcade"] {
@@ -91,19 +92,25 @@ body {
 }
 
 /* =============================================
-   PROFESSIONAL THEME - POLISHED DARK
+   PROFESSIONAL THEME - LIGHT BLUE / MICROSOFT
    ============================================= */
 
 [data-theme="professional"] body {
-  background-image: radial-gradient(ellipse at 20% 50%, rgba(167, 139, 250, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.04) 0%, transparent 50%);
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(0, 120, 212, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 80%, rgba(0, 55, 128, 0.05) 0%, transparent 50%);
 }
 
 [data-theme="professional"] h1 {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, #003780 0%, #0078d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Cards get a clean white with a subtle shadow */
+[data-theme="professional"] [class*="bg-[var(--card)]"] {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 /* =============================================
