@@ -91,17 +91,19 @@ const speaking: EvidenceItem[] = [
   {
     title: 'AI for Sales & Marketing',
     description: '"What\'s real, what\'s hard, and who\'s solving it" - practical AI applications for sales and marketing teams, cutting through the hype to what enterprises are actually deploying.',
+    link: 'https://getlatest.ai/sales-and-marketing-deck',
     tag: 'Speaking',
   },
   {
     title: 'MasterClaw Workshop',
     description: '"I Just Shipped Myself: Build and Deploy Your Personal Portfolio with AI" - live workshop teaching practitioners to build and deploy real AI-powered products.',
-    link: 'https://getlatest.ai/decks',
+    link: 'https://getlatest.ai/masterclaw-deck',
     tag: 'Speaking',
   },
   {
     title: 'AI Collective - Live Build',
     description: '"Digital Contact Cards: Build and ship a contact card with an AI agent, live" - hands-on session with the AI Collective community.',
+    link: 'https://getlatest.ai/ai-agents-deck',
     tag: 'Speaking',
   },
 ]
