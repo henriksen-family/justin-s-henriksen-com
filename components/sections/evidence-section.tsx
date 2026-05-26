@@ -14,32 +14,25 @@ const products: EvidenceItem[] = [
   {
     title: 'SnappyClaw',
     description: 'Multi-tenant AI agent platform. Three-layer architecture: Next.js application layer, Python worker services, Docker-based tenant isolation with fleet ops. Human-in-the-loop approval boundaries by design. Live customers.',
-    link: 'https://getlatest.ai/solutions/snappyclaw',
+    link: 'https://snappyclaw.ai',
     tag: 'Live Product',
   },
   {
-    title: 'Helix — GTM Agent',
+    title: 'Helix - GTM Agent',
     description: 'Go-to-market agent. Monitors hiring signals, funding rounds, job posts, and intent data continuously. Signal detection, prospect research, lead scoring, and personalized outreach - running without human intervention.',
     link: 'https://helix.getlatest.ai',
     tag: 'Live Product',
   },
   {
-    title: 'Heimdall — Market Intelligence',
+    title: 'Heimdall - Market Intelligence',
     description: 'Competitive intelligence agent. 95 structured intel files per target: pricing, positioning, messaging, tech stack, hiring. Monthly refresh cycle. Knows what competitors are doing before they announce it.',
     link: 'https://heimdall.getlatest.ai',
     tag: 'Live Product',
   },
   {
-    title: 'Ronin — Career Agent',
+    title: 'Ronin - Career Agent',
     description: 'Job search agent that discovers opportunities, qualifies them against the user\'s criteria, and handles applications autonomously. Continuous scanning of job boards, company sites, and hidden listings.',
-    link: 'https://getlatest.ai/solutions/career-agent',
-    // ronin.getlatest.ai not yet live
-    tag: 'Live Product',
-  },
-  {
-    title: 'Lead Agent — B2B Lead Generation',
-    description: 'Qualified B2B leads custom-built to ICP, delivered weekly. AI that discovers, qualifies, and delivers leads matching the ideal customer profile. 30-day money-back guarantee.',
-    link: 'https://getlatest.ai/solutions/lead-agent',
+    link: 'https://myronin.ai',
     tag: 'Live Product',
   },
   {
@@ -128,7 +121,7 @@ export function EvidenceSection() {
           className="mb-10"
         >
           <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Products built and shipped</h2>
-          <p className="text-[var(--muted)]">Eight products in production. Not demos - live systems with real users.</p>
+          <p className="text-[var(--muted)]">Seven products in production. Not demos - live systems with real users.</p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-4 mb-16">
