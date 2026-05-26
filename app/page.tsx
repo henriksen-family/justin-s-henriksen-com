@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
 import { Timeline, type TimelineItem } from '@/components/sections/timeline'
 import { EvidenceSection } from '@/components/sections/evidence-section'
+import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
 
 const stats = [
@@ -288,6 +289,9 @@ export default function Home() {
           <Timeline items={careerTimeline} condensed />
         </Container>
       </section>
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* Evidence */}
       <EvidenceSection />
