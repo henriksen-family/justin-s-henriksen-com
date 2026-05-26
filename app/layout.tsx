@@ -65,7 +65,7 @@ export default function RootLayout({
               </p>
               <div className="flex gap-6">
                 <a
-                  href="mailto:justin.henriksen@gmail.com"
+                  href="https://cal.com/justinh-cal"
                   className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
                 >
                   justin.henriksen@gmail.com

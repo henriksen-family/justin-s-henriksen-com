@@ -185,7 +185,7 @@ export default function SolutionsArchitectPage() {
               transition={{ duration: 0.5, delay: 0.35 }}
               className="flex flex-wrap gap-4"
             >
-              <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
+              <Button href="https://cal.com/justinh-cal" variant="primary">
                 Book a strategy conversation
               </Button>
               <Button href="https://www.linkedin.com/in/henriksenjustin" variant="secondary" external>
@@ -442,7 +442,7 @@ export default function SolutionsArchitectPage() {
               30 minutes to understand your technical challenge.
               No pitch. No scope creep. Just honest architecture thinking.
             </p>
-            <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
+            <Button href="https://cal.com/justinh-cal" variant="primary">
               Book a strategy conversation
             </Button>
           </motion.div>

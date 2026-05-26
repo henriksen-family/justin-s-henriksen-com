@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Brain, Cpu } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
@@ -105,62 +106,82 @@ export default function Home() {
       {/* Hero */}
       <section className="relative min-h-[85vh] flex items-center pt-20 pb-16">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
+          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-2xl flex-1"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
-              Available for fractional engagements
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-8"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
+                Accepting new clients - limited availability
+              </motion.div>
+
+              <h1 className={`text-[var(--text)] ${headlineSize} leading-tight mb-4`}>
+                {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
+                Justin S. Henriksen
+                {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
+              </h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-[var(--primary)] text-xl sm:text-2xl font-semibold mb-4"
+              >
+                25 years building technology. Available fractionally.
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="text-[var(--muted)] text-lg max-w-2xl mb-10 leading-relaxed"
+              >
+                Former Microsoft Sr. Director. CEO twice over. Now applying that experience as a
+                fractional AI Officer and Solutions Architect to companies that need senior leadership
+                without the full-time overhead.
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex flex-wrap gap-4"
+              >
+                <Button href="/fractional/ai-officer" variant="primary">
+                  Fractional AI Officer
+                </Button>
+                <Button href="/fractional/solutions-architect" variant="secondary">
+                  Fractional Solutions Architect
+                </Button>
+              </motion.div>
             </motion.div>
 
-            <h1 className={`text-[var(--text)] ${headlineSize} leading-tight mb-4`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              Justin S. Henriksen
-              {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
-            </h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[var(--primary)] text-xl sm:text-2xl font-semibold mb-4"
-            >
-              25 years building technology. Available fractionally.
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-[var(--muted)] text-lg max-w-2xl mb-10 leading-relaxed"
-            >
-              Former Microsoft Sr. Director. CEO twice over. Now applying that experience as a
-              fractional AI Officer and Solutions Architect to companies that need senior leadership
-              without the full-time overhead.
-            </motion.p>
-
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block shrink-0"
             >
-              <Button href="/fractional/ai-officer" variant="primary">
-                Fractional AI Officer
-              </Button>
-              <Button href="/fractional/solutions-architect" variant="secondary">
-                Fractional Solutions Architect
-              </Button>
+              <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[var(--primary)] shadow-lg"
+                style={{ boxShadow: '0 0 40px var(--primary)20' }}>
+                <Image
+                  src="/justin.jpg"
+                  alt="Justin S. Henriksen"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </motion.div>
-          </motion.div>
+          </div>
         </Container>
       </section>
 
@@ -287,7 +308,7 @@ export default function Home() {
               Whether you need AI strategy, technical architecture, or both -
               let&apos;s figure out if there&apos;s a fit.
             </p>
-            <Button href="mailto:justin.henriksen@gmail.com" variant="primary">
+            <Button href="https://cal.com/justinh-cal" variant="primary">
               Book a strategy conversation
             </Button>
           </motion.div>
