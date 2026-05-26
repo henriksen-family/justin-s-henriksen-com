@@ -62,6 +62,10 @@ const domains = [
     title: 'Enterprise Architecture',
     items: ['API design and governance', 'Event-driven and microservices patterns', 'Legacy modernization and platform migration', 'Technical due diligence for investors and acquirers', 'Architecture roadmaps across .NET, Java, AWS, and Azure'],
   },
+  {
+    title: 'Product Strategy',
+    items: ['Product vision and roadmap for AI-native products', 'Build vs. buy vs. partner framework decisions', 'Go-to-market strategy for technical products', 'Commercializing technology: pricing, packaging, positioning', 'Product-market fit iteration with real customers'],
+  },
 ]
 
 const proofPoints = [
