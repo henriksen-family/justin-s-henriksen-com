@@ -42,9 +42,9 @@ const deliverables = [
 ]
 
 const proofPoints = [
-  { value: '9.5yr', label: 'At Microsoft', detail: 'Including Sr. Director of AI/ML partner ecosystem' },
+  { value: '25yr', label: 'Building technology', detail: 'IC to CEO and back to shipping code' },
   { value: '30+', label: 'AI initiatives', detail: '$1.5M funding into $5M+ revenue' },
-  { value: '$51M', label: 'P&L at Crayon', detail: 'After AI/ML transformation' },
+  { value: '$51M', label: 'P&L led', detail: 'After AI/ML transformation at Crayon' },
   { value: 'Live', label: 'Production AI platform', detail: 'SnappyClaw - real customers today' },
 ]
 
@@ -286,8 +286,8 @@ export default function AIOfficerrPage() {
           <div className="grid sm:grid-cols-2 gap-6">
             {[
               {
-                headline: '9.5 years at Microsoft',
-                body: 'Including Sr. Director of Partner Ecosystem for AI/ML and analytics. Led the team that built out the Microsoft AI partner ecosystem from scratch.',
+                headline: 'Built the Microsoft AI/ML ecosystem from scratch',
+                body: 'Sr. Director of Partner Ecosystem for AI/ML and analytics. Led the team that designed and scaled the Microsoft AI partner motion - 30+ initiatives, partners growing 10x to 20x in 4 years.',
               },
               {
                 headline: 'Led 30+ AI enablement initiatives',

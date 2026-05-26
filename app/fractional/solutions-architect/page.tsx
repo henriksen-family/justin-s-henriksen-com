@@ -22,7 +22,7 @@ const engagementTypes = [
   {
     icon: Cloud,
     title: 'Cloud architecture - Azure, AWS, GCP',
-    desc: '9.5 years at Microsoft, MCSE certified on Azure. Hands-on with AWS since 2008. GCP/Vertex AI for AI-native workloads. Platform-agnostic recommendation, not vendor loyalty.',
+    desc: 'Hands-on with all three clouds across 25 years - MCSE certified on Azure, AWS since 2008, GCP/Vertex AI for AI-native workloads. Platform-agnostic recommendation, not vendor loyalty.',
   },
   {
     icon: Plug,
@@ -43,31 +43,31 @@ const engagementTypes = [
 
 const domains = [
   {
-    title: 'AI/Agent Systems',
-    items: ['SnappyClaw multi-agent platform (live, paying customers)', 'MCP (Model Context Protocol) integrations', 'RAG system design and implementation', 'Multi-agent coordination architectures', 'LLM API integration and optimization'],
+    title: 'AI and Agent Systems',
+    items: ['SnappyClaw multi-agent platform (live, paying customers)', 'MCP (Model Context Protocol) integrations', 'RAG system design and implementation', 'Multi-agent coordination and orchestration', 'LLM API integration and optimization'],
   },
   {
-    title: 'Microsoft / Azure',
-    items: ['9.5 years at Microsoft (SWE to Sr. Director)', 'Azure MCSE certified', 'M365 Copilot agent design', 'Azure AI/ML services', 'Active Directory and identity architecture'],
+    title: 'Cloud and Infrastructure',
+    items: ['Azure (MCSE certified) - AKS, AI Foundry, M365 Copilot, AD', 'AWS - EC2, Lambda, SageMaker, Bedrock, IAM', 'GCP - Vertex AI, Cloud Run, BigQuery, Gemini API', 'Multi-region, high-availability design at global scale', 'IaC, DevOps pipelines, containerization'],
   },
   {
-    title: 'Cloud Architecture',
-    items: ['Azure (MCSE certified) - App Service, AKS, AI Foundry, AD', 'AWS - EC2, Lambda, SageMaker, Bedrock, IAM', 'GCP - Vertex AI, Cloud Run, BigQuery, Gemini API', 'Multi-region, high-availability design', 'IaC and DevOps pipelines'],
+    title: 'Software Engineering',
+    items: ['25 years hands-on: C#/.NET, Python, TypeScript/JavaScript, Java', 'Distributed systems at global data center scale', 'Enterprise application architecture from ground up', 'Full product lifecycle - from first commit to production', 'Engineering management and technical mentorship'],
   },
   {
     title: 'Data and Analytics',
-    items: ['Microsoft Data Science degree', 'AI/ML pipeline architecture', 'Advanced analytics at enterprise scale', 'SQL and NoSQL design patterns', 'Real-time data architectures'],
+    items: ['AI/ML pipeline architecture', 'Advanced analytics at enterprise scale', 'SQL and NoSQL design patterns', 'Real-time data architectures', 'Data Science degree'],
   },
   {
-    title: 'Enterprise Integration',
-    items: ['API design and governance', 'Event-driven and microservices patterns', 'C#, .NET, JavaScript, Python', 'DevOps and CI/CD architecture', 'Legacy modernization'],
+    title: 'Enterprise Architecture',
+    items: ['API design and governance', 'Event-driven and microservices patterns', 'Legacy modernization and platform migration', 'Technical due diligence for investors and acquirers', 'Architecture roadmaps across .NET, Java, AWS, and Azure'],
   },
 ]
 
 const proofPoints = [
-  { value: '20yr', label: 'Systems architecture', detail: 'From code to cloud infrastructure' },
-  { value: '9.5yr', label: 'At Microsoft', detail: 'SWE to Sr. Director' },
-  { value: 'MCSE', label: 'Azure certified', detail: 'Microsoft Certified Solutions Expert' },
+  { value: '25yr', label: 'Technical experience', detail: 'IC to CEO and back to building' },
+  { value: '3', label: 'Cloud platforms', detail: 'Azure MCSE / AWS since 2008 / GCP Vertex AI' },
+  { value: '$51M', label: 'P&L led as GM', detail: 'While staying close to the architecture' },
   { value: 'Live', label: 'Shipping code today', detail: 'SnappyClaw platform, daily commits' },
 ]
 
@@ -165,7 +165,7 @@ export default function SolutionsArchitectPage() {
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
             }`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              20 years of systems architecture. None of the full-time overhead.
+              25 years of hands-on technical work. None of the full-time overhead.
               {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
             </h1>
 
