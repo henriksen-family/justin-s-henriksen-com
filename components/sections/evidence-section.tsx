@@ -54,6 +54,33 @@ const products: EvidenceItem[] = [
   },
 ]
 
+const writing: EvidenceItem[] = [
+  {
+    title: 'The Platform the Taxonomy Demands',
+    description: 'Why most "agent" products aren\'t actually agentic - and how SnappyClaw\'s three-layer architecture (persistent per-person memory, shared business knowledge, agent-to-agent coordination) solves the problem that model capability improvements alone cannot.',
+    link: 'https://getlatest.ai/blog/snappyclaw-platform-truly-agentic-architecture',
+    tag: 'Writing',
+  },
+  {
+    title: 'Why Most AI Systems Aren\'t Actually Agents',
+    description: 'A research-backed taxonomy of what qualifies as an agent vs. a session assistant. The math is brutal: a ten-step pipeline at 90% per-step accuracy has a 35% end-to-end success rate. Reliability is an architectural property, not a model quality issue.',
+    link: 'https://getlatest.ai/blog/why-most-ai-systems-arent-actually-agents',
+    tag: 'Writing',
+  },
+  {
+    title: 'Why AI Agents Still Disappoint',
+    description: 'The gap between automation and intelligence: why organizations actually need deterministic systems that reason at decision points - not pure autonomous agents. Compares n8n, MAF, Claude Cowork, and developer frameworks on real criteria.',
+    link: 'https://getlatest.ai/blog/why-ai-agents-still-disappoint',
+    tag: 'Writing',
+  },
+  {
+    title: 'Why Your AI Forgets You Every Time',
+    description: 'Maps five memory architectures (semantic/vector, graph, episodic, observational, validated knowledge base) and explains why persistent agent memory is infrastructure, not a feature. The difference between an assistant and an agent that actually knows you.',
+    link: 'https://getlatest.ai/blog/why-ai-forgets-you-persistent-memory-explained',
+    tag: 'Writing',
+  },
+]
+
 const speaking: EvidenceItem[] = [
   {
     title: 'AI Collective - Founder Panel',
@@ -136,7 +163,23 @@ export function EvidenceSection() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Writing and speaking</h2>
+          <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Writing</h2>
+          <p className="text-[var(--muted)]">Technical takes on agent architecture, AI systems design, and what actually works in production.</p>
+        </motion.div>
+
+        <div className="grid sm:grid-cols-2 gap-4 mb-16">
+          {writing.map((item, i) => (
+            <EvidenceCard key={i} item={item} index={i} />
+          ))}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Speaking</h2>
           <p className="text-[var(--muted)]">Active in the community, not just building in private.</p>
         </motion.div>
 
