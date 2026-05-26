@@ -41,6 +41,12 @@ const testimonials: Testimonial[] = [
     title: "Advisor | Former AWS, Microsoft, VMware",
     relationship: "Justin was senior",
   },
+  {
+    quote: "Justin is one of the most brilliant business minds I have ever met. He has a knack for knowing how to maximize business opportunities that come his way. In addition to his business acumen, he also has incredible knowledge of technology, software, artificial intelligence and machine learning. Having spent time as a talented software engineer, Justin knows and understands the details of how to apply technology in ways others just don't comprehend.",
+    name: "Tony Spencer",
+    title: "C# Cowboy | Software Engineer",
+    relationship: "Worked on the same team",
+  },
 ]
 
 export function TestimonialsSection() {
