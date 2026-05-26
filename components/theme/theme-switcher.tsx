@@ -3,13 +3,14 @@
 import { useTheme, type Theme } from './theme-provider'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { Briefcase, Gamepad2, Rocket, TerminalSquare, ChevronDown } from 'lucide-react'
+import { Briefcase, Gamepad2, Rocket, TerminalSquare, ChevronDown, Keyboard } from 'lucide-react'
 
 const themes: { id: Theme; Icon: React.ElementType; label: string }[] = [
   { id: 'professional', Icon: Briefcase, label: 'Professional' },
   { id: 'arcade', Icon: Gamepad2, label: 'Arcade' },
   { id: 'futuristic', Icon: Rocket, label: 'Futuristic' },
   { id: 'terminal', Icon: TerminalSquare, label: 'Terminal' },
+  { id: 'typewriter', Icon: Keyboard, label: 'Typewriter' },
 ]
 
 export function ThemeSwitcher() {

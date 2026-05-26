@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react'
 
-export type Theme = 'professional' | 'arcade' | 'futuristic' | 'terminal'
+export type Theme = 'professional' | 'arcade' | 'futuristic' | 'terminal' | 'typewriter'
 
 interface ThemeContextValue {
   theme: Theme
@@ -20,7 +20,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('jsh-theme') as Theme | null
-    if (saved && ['professional', 'arcade', 'futuristic', 'terminal'].includes(saved)) {
+    if (saved && ['professional', 'arcade', 'futuristic', 'terminal', 'typewriter'].includes(saved)) {
       setThemeState(saved)
       document.documentElement.setAttribute('data-theme', saved)
     } else {

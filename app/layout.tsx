@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono, Press_Start_2P } from 'next/font/google'
+import { Inter, JetBrains_Mono, Press_Start_2P, Special_Elite } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { ThemeSwitcher } from '@/components/theme/theme-switcher'
@@ -21,6 +21,13 @@ const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
   weight: '400',
   variable: '--font-pixel',
+  display: 'swap',
+})
+
+const specialElite = Special_Elite({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-typewriter',
   display: 'swap',
 })
 
@@ -51,7 +58,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="professional"
-      className={`${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable}`}
+      className={`${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable} ${specialElite.variable}`}
     >
       <body>
         <ThemeProvider>

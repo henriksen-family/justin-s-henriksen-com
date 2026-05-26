@@ -41,6 +41,19 @@
   --border: #004a7a;
 }
 
+[data-theme="typewriter"] {
+  --bg: #fdf6e3;
+  --primary: #b91c1c;
+  --secondary: #1e3a5f;
+  --accent: #b91c1c;
+  --text: #1c0f07;
+  --muted: #6b5040;
+  --card: #f5edd6;
+  --border: #c4b49a;
+  --gradient-start: #b91c1c;
+  --gradient-end: #1e3a5f;
+}
+
 [data-theme="terminal"] {
   --bg: #000000;
   --primary: #33ff66;
@@ -336,6 +349,112 @@ body {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* =============================================
+   TYPEWRITER THEME - VINTAGE PAPER
+   ============================================= */
+
+[data-theme="typewriter"] * {
+  font-family: var(--font-typewriter, 'Special Elite', 'Courier New', serif) !important;
+}
+
+[data-theme="typewriter"] body {
+  background-color: #fdf6e3;
+  background-image:
+    radial-gradient(ellipse at 20% 30%, rgba(185, 28, 28, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(30, 58, 95, 0.04) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  color: #1c0f07;
+}
+
+/* Ruled lines like writing paper */
+[data-theme="typewriter"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 27px,
+    rgba(139, 90, 43, 0.08) 27px,
+    rgba(139, 90, 43, 0.08) 28px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="typewriter"] main,
+[data-theme="typewriter"] nav,
+[data-theme="typewriter"] footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headings - dark ink, slightly heavy */
+[data-theme="typewriter"] h1,
+[data-theme="typewriter"] h2,
+[data-theme="typewriter"] h3 {
+  color: #1c0f07;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+}
+
+/* H1 gradient override - dark ink only */
+[data-theme="typewriter"] h1 {
+  background: none !important;
+  -webkit-text-fill-color: #1c0f07 !important;
+  color: #1c0f07 !important;
+}
+
+/* Red ribbon accent on primary elements */
+[data-theme="typewriter"] [class*="text-[var(--primary)]"] {
+  color: #b91c1c !important;
+}
+
+/* Borders - aged paper edge */
+[data-theme="typewriter"] [class*="border-[var(--border)]"],
+[data-theme="typewriter"] [class*="border-[var(--primary)]"] {
+  border-color: #c4b49a !important;
+}
+
+/* Cards - slightly warmer paper */
+[data-theme="typewriter"] [class*="bg-[var(--card)]"] {
+  background-color: #f5edd6 !important;
+  box-shadow: 2px 2px 0 rgba(139, 90, 43, 0.15), 4px 4px 0 rgba(139, 90, 43, 0.08);
+}
+
+/* Tag pills - red ribbon */
+[data-theme="typewriter"] .rounded-full {
+  background: rgba(185, 28, 28, 0.08) !important;
+  border-color: #b91c1c !important;
+  color: #b91c1c !important;
+}
+
+/* Stat values - dark ink */
+[data-theme="typewriter"] [class*="text-5xl"],
+[data-theme="typewriter"] [class*="text-4xl"] {
+  color: #b91c1c !important;
+}
+
+/* Hover - blue ribbon flash */
+[data-theme="typewriter"] [class*="hover:border"]:hover {
+  border-color: #1e3a5f !important;
+  box-shadow: 2px 2px 0 rgba(30, 58, 95, 0.2) !important;
+}
+
+/* Selection */
+[data-theme="typewriter"] ::selection {
+  background: #b91c1c;
+  color: #fdf6e3;
+}
+
+/* Scrollbar */
+[data-theme="typewriter"] ::-webkit-scrollbar-track {
+  background: #f5edd6;
+}
+
+[data-theme="typewriter"] ::-webkit-scrollbar-thumb {
+  background: #c4b49a;
 }
 
 /* =============================================
