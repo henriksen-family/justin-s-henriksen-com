@@ -14,25 +14,26 @@ const products: EvidenceItem[] = [
   {
     title: 'SnappyClaw',
     description: 'Multi-tenant AI agent platform. Three-layer architecture: Next.js application layer, Python worker services, Docker-based tenant isolation with fleet ops. Human-in-the-loop approval boundaries by design. Live customers.',
-    link: 'https://snappyclaw.com',
+    link: 'https://getlatest.ai/solutions/snappyclaw',
     tag: 'Live Product',
   },
   {
     title: 'Helix — GTM Agent',
     description: 'Go-to-market agent. Monitors hiring signals, funding rounds, job posts, and intent data continuously. Signal detection, prospect research, lead scoring, and personalized outreach - running without human intervention.',
-    link: 'https://getlatest.ai/solutions/gtm-engine',
+    link: 'https://helix.getlatest.ai',
     tag: 'Live Product',
   },
   {
     title: 'Heimdall — Market Intelligence',
     description: 'Competitive intelligence agent. 95 structured intel files per target: pricing, positioning, messaging, tech stack, hiring. Monthly refresh cycle. Knows what competitors are doing before they announce it.',
-    link: 'https://getlatest.ai/solutions/market-intelligence',
+    link: 'https://heimdall.getlatest.ai',
     tag: 'Live Product',
   },
   {
     title: 'Ronin — Career Agent',
     description: 'Job search agent that discovers opportunities, qualifies them against the user\'s criteria, and handles applications autonomously. Continuous scanning of job boards, company sites, and hidden listings.',
     link: 'https://getlatest.ai/solutions/career-agent',
+    // ronin.getlatest.ai not yet live
     tag: 'Live Product',
   },
   {

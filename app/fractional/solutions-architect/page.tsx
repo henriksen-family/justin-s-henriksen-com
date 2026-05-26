@@ -65,7 +65,7 @@ const domains = [
 ]
 
 const proofPoints = [
-  { value: '15yr', label: 'Systems architecture', detail: 'From code to cloud infrastructure' },
+  { value: '20yr', label: 'Systems architecture', detail: 'From code to cloud infrastructure' },
   { value: '9.5yr', label: 'At Microsoft', detail: 'SWE to Sr. Director' },
   { value: 'MCSE', label: 'Azure certified', detail: 'Microsoft Certified Solutions Expert' },
   { value: 'Live', label: 'Shipping code today', detail: 'SnappyClaw platform, daily commits' },
@@ -165,7 +165,7 @@ export default function SolutionsArchitectPage() {
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
             }`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              15 years of systems architecture. None of the full-time overhead.
+              20 years of systems architecture. None of the full-time overhead.
               {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
             </h1>
 

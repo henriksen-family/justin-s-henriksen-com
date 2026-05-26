@@ -26,11 +26,11 @@ const pressStart2P = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
-  description: '20 years building technology. Available fractionally. Fractional AI Officer and Solutions Architect with deep Microsoft, Azure, and enterprise AI experience.',
+  description: '25 years building technology. Available fractionally. Fractional AI Officer and Solutions Architect with deep Microsoft, Azure, and enterprise AI experience.',
   metadataBase: new URL('https://justinshenriksen.com'),
   openGraph: {
     title: 'Justin S. Henriksen',
-    description: '20 years building technology. Available fractionally.',
+    description: '25 years building technology. Available fractionally.',
     url: 'https://justinshenriksen.com',
     siteName: 'Justin S. Henriksen',
     type: 'website',
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Justin S. Henriksen',
-    description: '20 years building technology. Available fractionally.',
+    description: '25 years building technology. Available fractionally.',
   },
 }
 

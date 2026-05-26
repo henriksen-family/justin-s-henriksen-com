@@ -133,7 +133,7 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--primary)] text-xl sm:text-2xl font-semibold mb-4"
             >
-              20 years building technology. Available fractionally.
+              25 years building technology. Available fractionally.
             </motion.p>
 
             <motion.p
@@ -260,7 +260,7 @@ export default function Home() {
           >
             <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Career snapshot</h2>
             <p className="text-[var(--muted)]">
-              20 years from developer to CEO - and now fractional.
+              25 years from developer to CEO - and now fractional.
             </p>
           </motion.div>
 
