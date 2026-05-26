@@ -35,18 +35,65 @@ export const metadata: Metadata = {
   title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
   description: '25 years building technology. Available fractionally. Fractional AI Officer and Solutions Architect with deep Microsoft, Azure, and enterprise AI experience.',
   metadataBase: new URL('https://justinshenriksen.com'),
+  alternates: {
+    canonical: 'https://justinshenriksen.com',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+  },
   openGraph: {
-    title: 'Justin S. Henriksen',
-    description: '25 years building technology. Available fractionally.',
+    title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
+    description: '25 years building technology. Available fractionally. Former Microsoft Sr. Director. CEO twice over. Fractional AI Officer and Solutions Architect.',
     url: 'https://justinshenriksen.com',
     siteName: 'Justin S. Henriksen',
-    type: 'website',
+    type: 'profile',
+    locale: 'en_US',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Justin S. Henriksen',
-    description: '25 years building technology. Available fractionally.',
+    title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
+    description: '25 years building technology. Available fractionally. Former Microsoft Sr. Director. CEO twice over.',
+    images: ['/og-image.jpg'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  authors: [{ name: 'Justin S. Henriksen', url: 'https://justinshenriksen.com' }],
+  creator: 'Justin S. Henriksen',
+  keywords: [
+    'Fractional AI Officer',
+    'Fractional Solutions Architect',
+    'AI strategy',
+    'enterprise AI',
+    'Microsoft AI partner',
+    'AI governance',
+    'Azure architect',
+    'Justin Henriksen',
+  ],
+  manifest: '/site.webmanifest',
 }
 
 export default function RootLayout({
