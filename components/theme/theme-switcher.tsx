@@ -3,17 +3,19 @@
 import { useTheme, type Theme } from './theme-provider'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { Briefcase, Gamepad2, Rocket, TerminalSquare, ChevronDown } from 'lucide-react'
 
-const themes: { id: Theme; icon: string; label: string }[] = [
-  { id: 'professional', icon: '💼', label: 'Professional' },
-  { id: 'arcade', icon: '🕹️', label: 'Arcade' },
-  { id: 'futuristic', icon: '🚀', label: 'Futuristic' },
-  { id: 'terminal', icon: '>_', label: 'Terminal' },
+const themes: { id: Theme; Icon: React.ElementType; label: string }[] = [
+  { id: 'professional', Icon: Briefcase, label: 'Professional' },
+  { id: 'arcade', Icon: Gamepad2, label: 'Arcade' },
+  { id: 'futuristic', Icon: Rocket, label: 'Futuristic' },
+  { id: 'terminal', Icon: TerminalSquare, label: 'Terminal' },
 ]
 
 export function ThemeSwitcher() {
   const { theme, setTheme } = useTheme()
   const [open, setOpen] = useState(false)
+  const active = themes.find((t) => t.id === theme) ?? themes[0]
 
   return (
     <div className="fixed top-4 right-4 z-50 flex flex-col items-end gap-2">
@@ -29,10 +31,7 @@ export function ThemeSwitcher() {
             {themes.map((t) => (
               <button
                 key={t.id}
-                onClick={() => {
-                  setTheme(t.id)
-                  setOpen(false)
-                }}
+                onClick={() => { setTheme(t.id); setOpen(false) }}
                 className={`flex items-center gap-2 px-3 py-2 rounded text-sm font-mono transition-all duration-200 border
                   ${theme === t.id
                     ? 'border-[var(--primary)] text-[var(--primary)] bg-[var(--card)]'
@@ -40,11 +39,9 @@ export function ThemeSwitcher() {
                   }`}
                 title={t.label}
               >
-                <span className="text-base leading-none">{t.icon}</span>
+                <t.Icon className="w-4 h-4" />
                 <span>{t.label}</span>
-                {theme === t.id && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] ml-1" />
-                )}
+                {theme === t.id && <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] ml-1" />}
               </button>
             ))}
           </motion.div>
@@ -56,16 +53,10 @@ export function ThemeSwitcher() {
         className="flex items-center gap-2 px-3 py-2 rounded border border-[var(--primary)] bg-[var(--card)] text-[var(--primary)] text-sm font-mono shadow-lg hover:opacity-80 transition-opacity"
         aria-label="Switch theme"
       >
-        <span className="text-base leading-none">
-          {themes.find((t) => t.id === theme)?.icon}
-        </span>
+        <active.Icon className="w-4 h-4" />
         <span className="hidden sm:inline">Theme</span>
-        <motion.span
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.2 }}
-          className="text-xs"
-        >
-          ▾
+        <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
+          <ChevronDown className="w-3 h-3" />
         </motion.span>
       </button>
     </div>

@@ -18,13 +18,13 @@
 }
 
 [data-theme="arcade"] {
-  --bg: #000000;
+  --bg: #04000a;
   --primary: #00ff41;
-  --secondary: #ff006e;
-  --accent: #00d4ff;
-  --text: #00ff41;
-  --muted: #00aa2a;
-  --card: #0a0a0a;
+  --secondary: #ff2079;
+  --accent: #00e5ff;
+  --text: #eeffee;
+  --muted: #00cc33;
+  --card: #0a0014;
   --border: #00ff41;
 }
 
@@ -76,42 +76,106 @@ body {
 }
 
 /* =============================================
-   ARCADE THEME - SCANLINES OVERLAY
+   ARCADE THEME
    ============================================= */
 
-[data-theme="arcade"] body::after,
-[data-theme="arcade"] .scanlines-overlay::after {
+/* Pixel grid background */
+[data-theme="arcade"] body {
+  background-image:
+    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Scanlines */
+[data-theme="arcade"] body::after {
   content: '';
   position: fixed;
   inset: 0;
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.15) 2px,
-    rgba(0, 0, 0, 0.15) 4px
+    transparent 3px,
+    rgba(0, 0, 0, 0.25) 3px,
+    rgba(0, 0, 0, 0.25) 4px
   );
   pointer-events: none;
-  z-index: 9999;
-  opacity: 0.5;
+  z-index: 9998;
+}
+
+/* Screen vignette */
+[data-theme="arcade"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+  z-index: 9997;
 }
 
 [data-theme="arcade"] h1,
 [data-theme="arcade"] h2,
 [data-theme="arcade"] h3 {
-  font-family: var(--font-pixel, '"Press Start 2P"', monospace);
-  text-shadow: 0 0 10px var(--primary), 2px 2px 0 rgba(255, 0, 110, 0.5);
-  image-rendering: pixelated;
+  font-family: var(--font-pixel, '"Press Start 2P"', monospace) !important;
+  text-shadow:
+    0 0 7px #00ff41,
+    0 0 20px rgba(0, 255, 65, 0.6),
+    3px 3px 0 #ff2079;
+  letter-spacing: 0.05em;
 }
 
-[data-theme="arcade"] .border,
-[data-theme="arcade"] [class*="border-"] {
-  box-shadow: 0 0 8px var(--primary);
+[data-theme="arcade"] p,
+[data-theme="arcade"] li,
+[data-theme="arcade"] span {
+  font-family: 'Courier New', monospace;
 }
 
+/* Neon border glow on all bordered elements */
+[data-theme="arcade"] [class*="border-[var(--border)]"],
+[data-theme="arcade"] [class*="border-[var(--primary)]"] {
+  box-shadow: 0 0 6px rgba(0, 255, 65, 0.4), inset 0 0 6px rgba(0, 255, 65, 0.05);
+}
+
+/* Buttons and interactive elements */
 [data-theme="arcade"] button,
 [data-theme="arcade"] a[class*="border"] {
-  box-shadow: 0 0 6px var(--primary);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Hover pulse on cards */
+[data-theme="arcade"] [class*="hover:border"] {
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+[data-theme="arcade"] [class*="hover:border"]:hover {
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.7), 0 0 32px rgba(0, 255, 65, 0.2);
+}
+
+/* Flicker animation on body occasionally */
+@keyframes crt-flicker {
+  0%, 97%, 100% { opacity: 1; }
+  98% { opacity: 0.92; }
+  99% { opacity: 0.97; }
+}
+
+[data-theme="arcade"] body {
+  animation: crt-flicker 8s infinite;
+}
+
+/* Insert coin blink */
+@keyframes insert-coin {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+[data-theme="arcade"] .insert-coin {
+  animation: insert-coin 1s step-end infinite;
+  font-family: var(--font-pixel, '"Press Start 2P"', monospace);
+  font-size: 0.6rem;
+  color: var(--secondary);
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 8px var(--secondary);
 }
 
 /* =============================================

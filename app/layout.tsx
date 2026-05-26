@@ -71,7 +71,7 @@ export default function RootLayout({
                   justin.henriksen@gmail.com
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/justinshenriksen"
+                  href="https://www.linkedin.com/in/justinhenriksen"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
