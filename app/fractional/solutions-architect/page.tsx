@@ -21,8 +21,8 @@ const engagementTypes = [
   },
   {
     icon: Cloud,
-    title: 'M365 and Azure solution design',
-    desc: '9.5 years at Microsoft. MCSE certified. When your stack is Microsoft, you want someone who built the ecosystem.',
+    title: 'Cloud architecture - Azure, AWS, GCP',
+    desc: '9.5 years at Microsoft, MCSE certified on Azure. Hands-on with AWS since 2008. GCP/Vertex AI for AI-native workloads. Platform-agnostic recommendation, not vendor loyalty.',
   },
   {
     icon: Plug,
@@ -52,7 +52,7 @@ const domains = [
   },
   {
     title: 'Cloud Architecture',
-    items: ['AWS and Azure (hands-on from 2008)', 'Distributed systems at global scale', 'Data center infrastructure', 'Multi-region, high-availability design', 'IaC and DevOps pipelines'],
+    items: ['Azure (MCSE certified) - App Service, AKS, AI Foundry, AD', 'AWS - EC2, Lambda, SageMaker, Bedrock, IAM', 'GCP - Vertex AI, Cloud Run, BigQuery, Gemini API', 'Multi-region, high-availability design', 'IaC and DevOps pipelines'],
   },
   {
     title: 'Data and Analytics',
@@ -175,7 +175,7 @@ export default function SolutionsArchitectPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed"
             >
-              Fractional Solutions Architect for AI integrations, cloud systems, M365 agent deployments,
+              Fractional Solutions Architect for AI integrations, Azure/AWS/GCP cloud systems, M365 agent deployments,
               and the technical decisions that compound over time.
             </motion.p>
 
@@ -405,7 +405,7 @@ export default function SolutionsArchitectPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 { label: 'Languages', items: ['TypeScript / JavaScript', 'C# / .NET', 'Python', 'SQL'] },
-                { label: 'Cloud', items: ['Azure (MCSE certified)', 'AWS', 'Vercel / edge', 'Docker / containers'] },
+                { label: 'Cloud', items: ['Azure (MCSE certified)', 'AWS (hands-on since 2008)', 'GCP / Vertex AI', 'Vercel / edge / Docker'] },
                 { label: 'AI/ML', items: ['OpenAI / Anthropic APIs', 'RAG architectures', 'MCP protocol', 'Agent frameworks'] },
                 { label: 'Data', items: ['PostgreSQL / Supabase', 'NoSQL patterns', 'Analytics pipelines', 'Real-time systems'] },
               ].map((col, i) => (
