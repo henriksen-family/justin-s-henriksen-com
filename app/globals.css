@@ -7,13 +7,13 @@
    ============================================= */
 
 [data-theme="professional"] {
-  --bg: #f0f4f8;
+  --bg: #ffffff;
   --primary: #0078d4;
   --secondary: #106ebe;
   --accent: #0078d4;
   --text: #1b2232;
   --muted: #5a6472;
-  --card: #ffffff;
+  --card: #f0f4f8;
   --border: #d1d9e0;
   --gradient-start: #003780;
   --gradient-end: #0078d4;
