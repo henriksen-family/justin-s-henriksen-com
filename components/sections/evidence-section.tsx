@@ -35,23 +35,6 @@ const products: EvidenceItem[] = [
     link: 'https://myronin.ai',
     tag: 'Live Product',
   },
-  {
-    title: 'M365 Copilot Agents',
-    description: 'AI agents built natively inside Microsoft 365. Graph and connector scoping, tenant-aware guardrails, approval paths. Deployed inside Copilot, Teams, Outlook, and SharePoint for enterprise customers.',
-    link: 'https://getlatest.ai/solutions/copilot-agent',
-    tag: 'Delivered',
-  },
-  {
-    title: 'Google Agent Garden',
-    description: 'Agent deployments configured for Google Workspace teams. Purpose-built agents integrated into the tools teams already use in the Google ecosystem.',
-    link: 'https://getlatest.ai/solutions/google-agent-garden',
-    tag: 'Delivered',
-  },
-  {
-    title: 'Shared OAuth Gateway',
-    description: 'Centralized OAuth and third-party connection handling across all products. Calendars, email, meetings, analytics, professional networks - one gateway. Eliminates auth logic duplication and connector drift across the platform.',
-    tag: 'Platform',
-  },
 ]
 
 const writing: EvidenceItem[] = [
@@ -150,7 +133,7 @@ export function EvidenceSection() {
           className="mb-10"
         >
           <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Products built and shipped</h2>
-          <p className="text-[var(--muted)]">Seven products in production. Not demos - live systems with real users.</p>
+          <p className="text-[var(--muted)]">Four products in production. Not demos - live systems with real users.</p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-4 mb-16">

@@ -290,11 +290,11 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Testimonials */}
-      <TestimonialsSection />
-
       {/* Evidence */}
       <EvidenceSection />
+
+      {/* Testimonials */}
+      <TestimonialsSection />
 
       {/* CTA */}
       <section className="py-20 border-t border-[var(--border)]">
