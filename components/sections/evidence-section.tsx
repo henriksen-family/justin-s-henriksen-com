@@ -92,25 +92,25 @@ function EvidenceCard({ item, index }: { item: EvidenceItem; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
-      className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300"
+      className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 flex flex-col"
     >
-      <div className="flex items-center justify-between mb-3">
+      <div className="mb-3">
         <span className="text-xs font-mono text-[var(--primary)] border border-[var(--primary)] px-2 py-0.5 rounded-full">
           {item.tag}
         </span>
-        {item.link && (
-          <a
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
-          >
-            {item.link.replace('https://', '')} ↗
-          </a>
-        )}
       </div>
       <h3 className="font-bold text-[var(--text)] mb-2">{item.title}</h3>
-      <p className="text-sm text-[var(--muted)] leading-relaxed">{item.description}</p>
+      <p className="text-sm text-[var(--muted)] leading-relaxed flex-1">{item.description}</p>
+      {item.link && (
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 pt-3 border-t border-[var(--border)] text-xs text-[var(--primary)] hover:opacity-80 transition-opacity font-mono flex items-center gap-1"
+        >
+          {item.link.replace('https://', '')} ↗
+        </a>
+      )}
     </motion.div>
   )
 }

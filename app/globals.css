@@ -7,47 +7,49 @@
    ============================================= */
 
 [data-theme="professional"] {
-  --bg: #0a0a0f;
-  --primary: #8b5cf6;
-  --secondary: #06b6d4;
-  --accent: #06b6d4;
-  --text: #ffffff;
-  --muted: #9ca3af;
-  --card: #111118;
-  --border: #1f1f2e;
+  --bg: #07070f;
+  --primary: #a78bfa;
+  --secondary: #22d3ee;
+  --accent: #f472b6;
+  --text: #f1f0ff;
+  --muted: #8b8ba8;
+  --card: #0f0f1c;
+  --border: #2a2a45;
+  --gradient-start: #a78bfa;
+  --gradient-end: #22d3ee;
 }
 
 [data-theme="arcade"] {
-  --bg: #04000a;
-  --primary: #00ff41;
-  --secondary: #ff2079;
+  --bg: #08001a;
+  --primary: #ffe600;
+  --secondary: #ff2d9b;
   --accent: #00e5ff;
-  --text: #eeffee;
-  --muted: #00cc33;
-  --card: #0a0014;
-  --border: #00ff41;
+  --text: #ffffff;
+  --muted: #aaaaaa;
+  --card: #100028;
+  --border: #ffe600;
 }
 
 [data-theme="futuristic"] {
-  --bg: #050510;
-  --primary: #0080ff;
-  --secondary: #00ffff;
-  --accent: #00ffff;
-  --text: #e0f0ff;
-  --muted: #6090b0;
-  --card: #080820;
-  --border: #0040a0;
+  --bg: #020b18;
+  --primary: #00c8ff;
+  --secondary: #bf00ff;
+  --accent: #00ffd5;
+  --text: #d0efff;
+  --muted: #5080a0;
+  --card: #050f20;
+  --border: #004a7a;
 }
 
 [data-theme="terminal"] {
   --bg: #000000;
-  --primary: #00ff41;
-  --secondary: #00ff41;
-  --accent: #00ff41;
-  --text: #00ff41;
-  --muted: #007a1e;
-  --card: #001a00;
-  --border: #00ff41;
+  --primary: #33ff66;
+  --secondary: #ffaa00;
+  --accent: #33ff66;
+  --text: #33ff66;
+  --muted: #1a8033;
+  --card: #001400;
+  --border: #33ff66;
 }
 
 /* =============================================
@@ -76,18 +78,36 @@ body {
 }
 
 /* =============================================
-   ARCADE THEME
+   PROFESSIONAL THEME - POLISHED DARK
    ============================================= */
 
-/* Pixel grid background */
-[data-theme="arcade"] body {
-  background-image:
-    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
+[data-theme="professional"] body {
+  background-image: radial-gradient(ellipse at 20% 50%, rgba(167, 139, 250, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 238, 0.04) 0%, transparent 50%);
 }
 
-/* Scanlines */
+[data-theme="professional"] h1 {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* =============================================
+   ARCADE THEME - FULL RETRO CABINET
+   ============================================= */
+
+/* Starfield / pixel grid background */
+[data-theme="arcade"] body {
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255,230,0,0.08) 0%, transparent 60%),
+    linear-gradient(rgba(255, 230, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 45, 155, 0.04) 1px, transparent 1px);
+  background-size: 100% 100%, 24px 24px, 24px 24px;
+  animation: crt-flicker 10s infinite;
+}
+
+/* Heavy scanlines */
 [data-theme="arcade"] body::after {
   content: '';
   position: fixed;
@@ -95,75 +115,92 @@ body {
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 3px,
-    rgba(0, 0, 0, 0.25) 3px,
-    rgba(0, 0, 0, 0.25) 4px
+    transparent 2px,
+    rgba(0, 0, 0, 0.35) 2px,
+    rgba(0, 0, 0, 0.35) 4px
   );
   pointer-events: none;
   z-index: 9998;
 }
 
-/* Screen vignette */
+/* Vignette */
 [data-theme="arcade"] body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.6) 100%);
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.75) 100%);
   pointer-events: none;
   z-index: 9997;
 }
 
+/* Pixel headings - gold glow with pink shadow */
 [data-theme="arcade"] h1,
 [data-theme="arcade"] h2,
 [data-theme="arcade"] h3 {
   font-family: var(--font-pixel, '"Press Start 2P"', monospace) !important;
+  color: #ffe600;
   text-shadow:
-    0 0 7px #00ff41,
-    0 0 20px rgba(0, 255, 65, 0.6),
-    3px 3px 0 #ff2079;
-  letter-spacing: 0.05em;
+    0 0 8px #ffe600,
+    0 0 24px rgba(255, 230, 0, 0.7),
+    4px 4px 0 #ff2d9b,
+    4px 4px 12px rgba(255, 45, 155, 0.5);
+  letter-spacing: 0.04em;
 }
 
+/* Body text in arcade Courier */
 [data-theme="arcade"] p,
 [data-theme="arcade"] li,
-[data-theme="arcade"] span {
-  font-family: 'Courier New', monospace;
+[data-theme="arcade"] span,
+[data-theme="arcade"] td,
+[data-theme="arcade"] th {
+  font-family: 'Courier New', monospace !important;
 }
 
-/* Neon border glow on all bordered elements */
-[data-theme="arcade"] [class*="border-[var(--border)]"],
-[data-theme="arcade"] [class*="border-[var(--primary)]"] {
-  box-shadow: 0 0 6px rgba(0, 255, 65, 0.4), inset 0 0 6px rgba(0, 255, 65, 0.05);
-}
-
-/* Buttons and interactive elements */
-[data-theme="arcade"] button,
-[data-theme="arcade"] a[class*="border"] {
-  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5), 0 0 20px rgba(0, 255, 65, 0.2);
+/* Nav text override */
+[data-theme="arcade"] nav a,
+[data-theme="arcade"] nav button {
+  font-family: var(--font-pixel, '"Press Start 2P"', monospace) !important;
+  font-size: 0.55rem !important;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: #ffe600;
 }
 
-/* Hover pulse on cards */
-[data-theme="arcade"] [class*="hover:border"] {
-  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+/* Yellow neon borders */
+[data-theme="arcade"] [class*="border-[var(--border)]"],
+[data-theme="arcade"] [class*="border-[var(--primary)]"] {
+  border-color: #ffe600 !important;
+  box-shadow: 0 0 6px rgba(255,230,0,0.5), inset 0 0 4px rgba(255,230,0,0.05);
 }
+
+/* Pink glow on buttons */
+[data-theme="arcade"] button,
+[data-theme="arcade"] a[class*="border"] {
+  box-shadow: 0 0 10px rgba(255,45,155,0.6), 0 0 20px rgba(255,45,155,0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Hover: cyan flash */
 [data-theme="arcade"] [class*="hover:border"]:hover {
-  box-shadow: 0 0 16px rgba(0, 255, 65, 0.7), 0 0 32px rgba(0, 255, 65, 0.2);
+  border-color: #00e5ff !important;
+  box-shadow: 0 0 16px rgba(0,229,255,0.7), 0 0 32px rgba(0,229,255,0.3) !important;
 }
 
-/* Flicker animation on body occasionally */
+/* Stat values in pink */
+[data-theme="arcade"] [class*="text-5xl"],
+[data-theme="arcade"] [class*="text-4xl"] {
+  color: #ff2d9b;
+  text-shadow: 0 0 12px rgba(255,45,155,0.7);
+}
+
 @keyframes crt-flicker {
-  0%, 97%, 100% { opacity: 1; }
-  98% { opacity: 0.92; }
-  99% { opacity: 0.97; }
+  0%, 94%, 100% { opacity: 1; }
+  95% { opacity: 0.88; }
+  97% { opacity: 0.96; }
+  98% { opacity: 0.90; }
 }
 
-[data-theme="arcade"] body {
-  animation: crt-flicker 8s infinite;
-}
-
-/* Insert coin blink */
 @keyframes insert-coin {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
@@ -171,32 +208,57 @@ body {
 
 [data-theme="arcade"] .insert-coin {
   animation: insert-coin 1s step-end infinite;
-  font-family: var(--font-pixel, '"Press Start 2P"', monospace);
-  font-size: 0.6rem;
-  color: var(--secondary);
-  letter-spacing: 0.05em;
-  text-shadow: 0 0 8px var(--secondary);
+  font-family: var(--font-pixel, '"Press Start 2P"', monospace) !important;
+  font-size: 0.55rem;
+  color: #ff2d9b;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 10px #ff2d9b;
 }
 
 /* =============================================
-   TERMINAL THEME - PHOSPHOR GLOW
+   FUTURISTIC THEME - HOLOGRAPHIC HUD
+   ============================================= */
+
+[data-theme="futuristic"] body {
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(0,200,255,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 80%, rgba(191,0,255,0.07) 0%, transparent 50%);
+}
+
+[data-theme="futuristic"] h1 {
+  animation: glitch 5s ease-in-out infinite;
+  background: linear-gradient(90deg, #00c8ff 0%, #bf00ff 50%, #00ffd5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="futuristic"] h2,
+[data-theme="futuristic"] h3 {
+  color: var(--primary);
+  text-shadow: 0 0 16px rgba(0,200,255,0.5);
+}
+
+[data-theme="futuristic"] code,
+[data-theme="futuristic"] .font-mono {
+  color: var(--accent);
+  text-shadow: 0 0 6px rgba(0,255,213,0.6);
+}
+
+[data-theme="futuristic"] [class*="border-[var(--border)]"] {
+  box-shadow: inset 0 0 20px rgba(0,200,255,0.04), 0 0 6px rgba(0,200,255,0.2);
+}
+
+[data-theme="futuristic"] [class*="border-[var(--primary)]"] {
+  box-shadow: 0 0 8px rgba(0,200,255,0.5), inset 0 0 8px rgba(0,200,255,0.05);
+}
+
+/* =============================================
+   TERMINAL THEME - AUTHENTIC CRT
    ============================================= */
 
 [data-theme="terminal"] * {
   font-family: 'Courier New', Courier, monospace !important;
-}
-
-[data-theme="terminal"] h1,
-[data-theme="terminal"] h2,
-[data-theme="terminal"] h3,
-[data-theme="terminal"] .glow-text {
-  text-shadow: 0 0 8px #00ff41, 0 0 16px rgba(0, 255, 65, 0.4);
-}
-
-[data-theme="terminal"] p,
-[data-theme="terminal"] span,
-[data-theme="terminal"] li {
-  text-shadow: 0 0 4px rgba(0, 255, 65, 0.3);
 }
 
 [data-theme="terminal"] body::before {
@@ -207,62 +269,44 @@ body {
     0deg,
     transparent,
     transparent 3px,
-    rgba(0, 20, 0, 0.1) 3px,
-    rgba(0, 20, 0, 0.1) 4px
+    rgba(0, 30, 0, 0.15) 3px,
+    rgba(0, 30, 0, 0.15) 4px
   );
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.4;
 }
 
-/* =============================================
-   FUTURISTIC THEME - GLITCH & HUD
-   ============================================= */
-
-[data-theme="futuristic"] h1 {
-  animation: glitch 4s ease-in-out infinite;
-  text-shadow: 0 0 20px var(--primary), 0 0 40px rgba(0, 128, 255, 0.3);
+[data-theme="terminal"] body {
+  background-image: radial-gradient(ellipse at center, rgba(51,255,102,0.03) 0%, transparent 70%);
 }
 
-[data-theme="futuristic"] code,
-[data-theme="futuristic"] .font-mono {
-  color: var(--secondary);
-  text-shadow: 0 0 6px var(--secondary);
+[data-theme="terminal"] h1,
+[data-theme="terminal"] h2,
+[data-theme="terminal"] h3 {
+  text-shadow: 0 0 10px #33ff66, 0 0 24px rgba(51,255,102,0.5);
+  color: #33ff66;
 }
 
-[data-theme="futuristic"] .border,
-[data-theme="futuristic"] [class*="border-[var(--border)]"] {
-  box-shadow: inset 0 0 20px rgba(0, 128, 255, 0.05), 0 0 4px rgba(0, 128, 255, 0.3);
+[data-theme="terminal"] p,
+[data-theme="terminal"] span,
+[data-theme="terminal"] li {
+  text-shadow: 0 0 4px rgba(51,255,102,0.3);
+}
+
+/* Amber highlight for key stats */
+[data-theme="terminal"] [class*="text-5xl"],
+[data-theme="terminal"] [class*="text-4xl"] {
+  color: #ffaa00 !important;
+  text-shadow: 0 0 12px rgba(255,170,0,0.7);
 }
 
 @keyframes glitch {
-  0%, 90%, 100% {
-    transform: translate(0);
-    clip-path: none;
-    opacity: 1;
-  }
-  91% {
-    transform: translate(-2px, 1px);
-    text-shadow: 2px 0 #00ffff, -2px 0 #ff00ff;
-    opacity: 0.9;
-  }
-  92% {
-    transform: translate(2px, -1px);
-    text-shadow: -2px 0 #00ffff, 2px 0 #ff00ff;
-  }
-  93% {
-    transform: translate(0);
-    text-shadow: 0 0 20px var(--primary);
-  }
-  94% {
-    transform: translate(-1px, 2px);
-    text-shadow: 1px 0 #00ffff;
-    opacity: 0.8;
-  }
-  95% {
-    transform: translate(0);
-    opacity: 1;
-  }
+  0%, 88%, 100% { transform: translate(0); opacity: 1; }
+  89% { transform: translate(-3px, 1px); text-shadow: 3px 0 #00ffd5, -3px 0 #bf00ff; opacity: 0.9; }
+  90% { transform: translate(3px, -1px); text-shadow: -3px 0 #00ffd5, 3px 0 #bf00ff; }
+  91% { transform: translate(0); }
+  92% { transform: translate(-1px, 2px); text-shadow: 1px 0 #00c8ff; opacity: 0.85; }
+  93% { transform: translate(0); opacity: 1; }
 }
 
 @keyframes blink {
