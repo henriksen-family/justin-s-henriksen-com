@@ -426,6 +426,54 @@ export default function SolutionsArchitectPage() {
         </Container>
       </section>
 
+      {/* How it works */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-10"
+          >
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">How engagements work</h2>
+            <p className="text-[var(--muted)]">Project-based monthly retainers. Scoped to your technical situation.</p>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-3 gap-5">
+            {[
+              {
+                step: '01',
+                title: 'Architecture conversation',
+                desc: '30 minutes to understand your technical challenge, current stack, and where things are fragile. If there\'s a fit, we scope it together.',
+              },
+              {
+                step: '02',
+                title: 'Scoped project',
+                desc: 'Defined deliverables, timeline, and monthly retainer. Architecture review, AI system design, or ongoing advisory - scoped to what you actually need.',
+              },
+              {
+                step: '03',
+                title: 'Monthly retainer',
+                desc: 'Ongoing engagement billed monthly. Adjust scope as the project evolves. No long-term lock-in - wind down when the architecture work is done.',
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.1 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-6"
+              >
+                <div className="text-3xl font-bold text-[var(--primary)] font-mono mb-3">{item.step}</div>
+                <h3 className="font-bold text-[var(--text)] mb-2">{item.title}</h3>
+                <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* CTA */}
       <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
