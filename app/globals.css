@@ -100,14 +100,16 @@ body {
 /* Starfield / pixel grid background */
 [data-theme="arcade"] body {
   background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(255,230,0,0.08) 0%, transparent 60%),
-    linear-gradient(rgba(255, 230, 0, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 45, 155, 0.04) 1px, transparent 1px);
-  background-size: 100% 100%, 24px 24px, 24px 24px;
+    radial-gradient(ellipse at 20% 10%, rgba(255,45,155,0.12) 0%, transparent 40%),
+    radial-gradient(ellipse at 80% 60%, rgba(0,229,255,0.10) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 100%, rgba(255,230,0,0.08) 0%, transparent 50%),
+    linear-gradient(rgba(255, 230, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 45, 155, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px, 24px 24px;
   animation: crt-flicker 10s infinite;
 }
 
-/* Heavy scanlines */
+/* Lighter scanlines - less darkening */
 [data-theme="arcade"] body::after {
   content: '';
   position: fixed;
@@ -115,35 +117,33 @@ body {
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.35) 2px,
-    rgba(0, 0, 0, 0.35) 4px
+    transparent 3px,
+    rgba(0, 0, 0, 0.15) 3px,
+    rgba(0, 0, 0, 0.15) 4px
   );
   pointer-events: none;
   z-index: 9998;
 }
 
-/* Vignette */
+/* Softer vignette */
 [data-theme="arcade"] body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.75) 100%);
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
   pointer-events: none;
   z-index: 9997;
 }
 
-/* Pixel headings - gold glow with pink shadow */
+/* Pixel headings - readable gold with pink drop shadow, no glow blur */
 [data-theme="arcade"] h1,
 [data-theme="arcade"] h2,
 [data-theme="arcade"] h3 {
   font-family: var(--font-pixel, '"Press Start 2P"', monospace) !important;
   color: #ffe600;
   text-shadow:
-    0 0 8px #ffe600,
-    0 0 24px rgba(255, 230, 0, 0.7),
-    4px 4px 0 #ff2d9b,
-    4px 4px 12px rgba(255, 45, 155, 0.5);
+    0 0 5px rgba(255, 230, 0, 0.6),
+    3px 3px 0 #ff2d9b;
   letter-spacing: 0.04em;
 }
 
@@ -166,17 +166,37 @@ body {
   color: #ffe600;
 }
 
-/* Yellow neon borders */
-[data-theme="arcade"] [class*="border-[var(--border)]"],
-[data-theme="arcade"] [class*="border-[var(--primary)]"] {
-  border-color: #ffe600 !important;
-  box-shadow: 0 0 6px rgba(255,230,0,0.5), inset 0 0 4px rgba(255,230,0,0.05);
+/* Card borders - gold with inner glow */
+[data-theme="arcade"] [class*="border-[var(--border)]"] {
+  border-color: rgba(255,230,0,0.5) !important;
+  box-shadow: 0 0 8px rgba(255,230,0,0.2), inset 0 0 6px rgba(255,230,0,0.03);
 }
 
-/* Pink glow on buttons */
+/* Primary-colored borders stay gold + bright */
+[data-theme="arcade"] [class*="border-[var(--primary)]"] {
+  border-color: #ffe600 !important;
+  box-shadow: 0 0 10px rgba(255,230,0,0.6), inset 0 0 4px rgba(255,230,0,0.05);
+}
+
+/* Tag / badge pills - pink */
+[data-theme="arcade"] .rounded-full {
+  background: rgba(255, 45, 155, 0.15) !important;
+  border-color: #ff2d9b !important;
+  color: #ff2d9b !important;
+  text-shadow: 0 0 6px rgba(255, 45, 155, 0.5) !important;
+  box-shadow: 0 0 8px rgba(255, 45, 155, 0.3) !important;
+}
+
+/* "Learn more" and external links inside cards - cyan */
+[data-theme="arcade"] a[class*="border-t"] {
+  color: #00e5ff !important;
+  border-color: rgba(0, 229, 255, 0.2) !important;
+  text-shadow: 0 0 6px rgba(0, 229, 255, 0.5) !important;
+}
+
+/* Pink glow on CTA buttons */
 [data-theme="arcade"] button,
-[data-theme="arcade"] a[class*="border"] {
-  box-shadow: 0 0 10px rgba(255,45,155,0.6), 0 0 20px rgba(255,45,155,0.2);
+[data-theme="arcade"] a[class*="border"][class*="px-"] {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -187,11 +207,15 @@ body {
   box-shadow: 0 0 16px rgba(0,229,255,0.7), 0 0 32px rgba(0,229,255,0.3) !important;
 }
 
-/* Stat values in pink */
-[data-theme="arcade"] [class*="text-5xl"],
+/* Stat values - alternate pink/cyan via odd/even */
+[data-theme="arcade"] [class*="text-5xl"] {
+  color: #00e5ff !important;
+  text-shadow: 0 0 14px rgba(0, 229, 255, 0.8) !important;
+}
+
 [data-theme="arcade"] [class*="text-4xl"] {
-  color: #ff2d9b;
-  text-shadow: 0 0 12px rgba(255,45,155,0.7);
+  color: #ff2d9b !important;
+  text-shadow: 0 0 12px rgba(255, 45, 155, 0.7) !important;
 }
 
 @keyframes crt-flicker {
