@@ -97,19 +97,20 @@ body {
    ARCADE THEME - FULL RETRO CABINET
    ============================================= */
 
-/* Starfield / pixel grid background */
+/* Starfield / pixel grid background - red, blue, gold ambient */
 [data-theme="arcade"] body {
   background-image:
-    radial-gradient(ellipse at 20% 10%, rgba(255,45,155,0.12) 0%, transparent 40%),
-    radial-gradient(ellipse at 80% 60%, rgba(0,229,255,0.10) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 100%, rgba(255,230,0,0.08) 0%, transparent 50%),
-    linear-gradient(rgba(255, 230, 0, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 45, 155, 0.035) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+    radial-gradient(ellipse at 15% 15%, rgba(255, 0, 40, 0.18) 0%, transparent 38%),
+    radial-gradient(ellipse at 85% 25%, rgba(30, 60, 255, 0.18) 0%, transparent 38%),
+    radial-gradient(ellipse at 50% 85%, rgba(255, 230, 0, 0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 75% 75%, rgba(255, 0, 40, 0.10) 0%, transparent 30%),
+    linear-gradient(rgba(255, 230, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 60, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 28px 28px, 28px 28px;
   animation: crt-flicker 10s infinite;
 }
 
-/* Lighter scanlines - less darkening */
+/* Light scanlines */
 [data-theme="arcade"] body::after {
   content: '';
   position: fixed;
@@ -118,32 +119,32 @@ body {
     0deg,
     transparent,
     transparent 3px,
-    rgba(0, 0, 0, 0.15) 3px,
-    rgba(0, 0, 0, 0.15) 4px
+    rgba(0, 0, 0, 0.12) 3px,
+    rgba(0, 0, 0, 0.12) 4px
   );
   pointer-events: none;
   z-index: 9998;
 }
 
-/* Softer vignette */
+/* Vignette */
 [data-theme="arcade"] body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 60%, rgba(0,0,0,0.5) 100%);
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%);
   pointer-events: none;
   z-index: 9997;
 }
 
-/* Pixel headings - readable gold with pink drop shadow, no glow blur */
+/* Pixel headings - crisp gold, hard red drop shadow, zero blur */
 [data-theme="arcade"] h1,
 [data-theme="arcade"] h2,
 [data-theme="arcade"] h3 {
   font-family: var(--font-pixel, '"Press Start 2P"', monospace) !important;
   color: #ffe600;
   text-shadow:
-    0 0 5px rgba(255, 230, 0, 0.6),
-    3px 3px 0 #ff2d9b;
+    3px 3px 0 #ff0033,
+    -1px -1px 0 rgba(30, 60, 255, 0.5);
   letter-spacing: 0.04em;
 }
 
@@ -164,58 +165,57 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: #ffe600;
+  text-shadow: 2px 2px 0 #ff0033 !important;
 }
 
-/* Card borders - gold with inner glow */
+/* Card borders - gold */
 [data-theme="arcade"] [class*="border-[var(--border)]"] {
-  border-color: rgba(255,230,0,0.5) !important;
-  box-shadow: 0 0 8px rgba(255,230,0,0.2), inset 0 0 6px rgba(255,230,0,0.03);
+  border-color: rgba(255,230,0,0.45) !important;
+  box-shadow: 0 0 6px rgba(255,230,0,0.15);
 }
 
-/* Primary-colored borders stay gold + bright */
+/* Primary-colored borders - bright gold */
 [data-theme="arcade"] [class*="border-[var(--primary)]"] {
   border-color: #ffe600 !important;
-  box-shadow: 0 0 10px rgba(255,230,0,0.6), inset 0 0 4px rgba(255,230,0,0.05);
+  box-shadow: 0 0 10px rgba(255,230,0,0.5);
 }
 
-/* Tag / badge pills - pink */
+/* Tag / badge pills - red */
 [data-theme="arcade"] .rounded-full {
-  background: rgba(255, 45, 155, 0.15) !important;
-  border-color: #ff2d9b !important;
-  color: #ff2d9b !important;
-  text-shadow: 0 0 6px rgba(255, 45, 155, 0.5) !important;
-  box-shadow: 0 0 8px rgba(255, 45, 155, 0.3) !important;
+  background: rgba(255, 0, 51, 0.15) !important;
+  border-color: #ff0033 !important;
+  color: #ff4455 !important;
+  box-shadow: 0 0 6px rgba(255, 0, 51, 0.4) !important;
 }
 
-/* "Learn more" and external links inside cards - cyan */
+/* External links inside cards - electric blue */
 [data-theme="arcade"] a[class*="border-t"] {
-  color: #00e5ff !important;
-  border-color: rgba(0, 229, 255, 0.2) !important;
-  text-shadow: 0 0 6px rgba(0, 229, 255, 0.5) !important;
+  color: #4488ff !important;
+  border-color: rgba(40, 80, 255, 0.25) !important;
 }
 
-/* Pink glow on CTA buttons */
+/* Buttons */
 [data-theme="arcade"] button,
 [data-theme="arcade"] a[class*="border"][class*="px-"] {
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-/* Hover: cyan flash */
+/* Hover: blue flash */
 [data-theme="arcade"] [class*="hover:border"]:hover {
-  border-color: #00e5ff !important;
-  box-shadow: 0 0 16px rgba(0,229,255,0.7), 0 0 32px rgba(0,229,255,0.3) !important;
+  border-color: #2244ff !important;
+  box-shadow: 0 0 16px rgba(30, 60, 255, 0.8), 0 0 32px rgba(30, 60, 255, 0.3) !important;
 }
 
-/* Stat values - alternate pink/cyan via odd/even */
+/* Stat values - gold at 5xl, red at 4xl */
 [data-theme="arcade"] [class*="text-5xl"] {
-  color: #00e5ff !important;
-  text-shadow: 0 0 14px rgba(0, 229, 255, 0.8) !important;
+  color: #ffe600 !important;
+  text-shadow: 2px 2px 0 #ff0033 !important;
 }
 
 [data-theme="arcade"] [class*="text-4xl"] {
-  color: #ff2d9b !important;
-  text-shadow: 0 0 12px rgba(255, 45, 155, 0.7) !important;
+  color: #ff3344 !important;
+  text-shadow: 0 0 10px rgba(255, 0, 40, 0.6) !important;
 }
 
 @keyframes crt-flicker {
