@@ -155,26 +155,30 @@ function EvidenceCard({ item, index }: { item: EvidenceItem; index: number }) {
   )
 }
 
-export function EvidenceSection() {
+export function EvidenceSection({ hideProducts = false }: { hideProducts?: boolean }) {
   return (
     <section className="py-20 border-t border-[var(--border)]">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-10"
-        >
-          <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Products built and shipped</h2>
-          <p className="text-[var(--muted)]">Four products in production. Not demos - live systems with real users.</p>
-        </motion.div>
+        {!hideProducts && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-10"
+            >
+              <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Products built and shipped</h2>
+              <p className="text-[var(--muted)]">Four products in production. Not demos - live systems with real users.</p>
+            </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-16">
-          {products.map((item, i) => (
-            <EvidenceCard key={i} item={item} index={i} />
-          ))}
-        </div>
+            <div className="grid sm:grid-cols-2 gap-4 mb-16">
+              {products.map((item, i) => (
+                <EvidenceCard key={i} item={item} index={i} />
+              ))}
+            </div>
+          </>
+        )}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

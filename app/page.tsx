@@ -13,31 +13,11 @@ import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
 
 const building = [
-  {
-    name: 'SnappyClaw',
-    url: 'https://snappyclaw.ai',
-    desc: 'An AI assistant that\'s powerful, private, and dead simple.',
-  },
-  {
-    name: 'Ronin',
-    url: 'https://myronin.ai',
-    desc: 'Your AI powered job search agent.',
-  },
-  {
-    name: 'FindTime',
-    url: 'https://find-time.ai',
-    desc: 'The scheduling platform built for AI agents.',
-  },
-  {
-    name: 'Helix',
-    url: 'https://helix.getlatest.ai',
-    desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.',
-  },
-  {
-    name: 'Heimdall',
-    url: 'https://heimdall.getlatest.ai',
-    desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.',
-  },
+  { name: 'SnappyClaw', url: 'https://snappyclaw.ai', desc: 'An AI assistant that\'s powerful, private, and dead simple.' },
+  { name: 'Ronin', url: 'https://myronin.ai', desc: 'Your AI powered job search agent.' },
+  { name: 'FindTime', url: 'https://find-time.ai', desc: 'The scheduling platform built for AI agents.' },
+  { name: 'Helix', url: 'https://helix.getlatest.ai', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
+  { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
 ]
 
 const investments = [
@@ -58,22 +38,10 @@ const stats = [
 ]
 
 const programs = [
-  {
-    title: 'AI Accelerate',
-    desc: "Microsoft's partner enablement program for AI: strategy briefings, envisioning sessions, solution acceleration. Scaled across multiple countries and hundreds of partners.",
-  },
-  {
-    title: 'Data Science Partner Program',
-    desc: 'Curriculum, maturity assessments, and graduation criteria for Microsoft partners building data science practices. Deployed across the US partner ecosystem.',
-  },
-  {
-    title: 'AI Country Plans',
-    desc: 'Country-level AI adoption playbooks. Strategic plans for AI readiness implemented across multiple geographies.',
-  },
-  {
-    title: 'Cloud Center of Excellence',
-    desc: 'Cloud architecture frameworks and best practices for enterprise adoption. Reference patterns the partner ecosystem built against.',
-  },
+  { title: 'AI Accelerate', desc: "Microsoft's partner enablement program for AI: strategy briefings, envisioning sessions, solution acceleration. Scaled across multiple countries and hundreds of partners." },
+  { title: 'Data Science Partner Program', desc: 'Curriculum, maturity assessments, and graduation criteria for Microsoft partners building data science practices. Deployed across the US partner ecosystem.' },
+  { title: 'AI Country Plans', desc: 'Country-level AI adoption playbooks. Strategic plans for AI readiness implemented across multiple geographies.' },
+  { title: 'Cloud Center of Excellence', desc: 'Cloud architecture frameworks and best practices for enterprise adoption. Reference patterns the partner ecosystem built against.' },
 ]
 
 const careerTimeline: TimelineItem[] = [
@@ -127,9 +95,7 @@ const careerTimeline: TimelineItem[] = [
     title: 'Software Engineering Manager',
     company: 'Microsoft',
     period: 'Mar 2012 - Sept 2013',
-    bullets: [
-      'Massively distributed software systems for global data center infrastructure.',
-    ],
+    bullets: ['Massively distributed software systems for global data center infrastructure.'],
   },
   {
     title: 'Solutions Architect',
@@ -163,27 +129,50 @@ export default function Home() {
 
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────────── */}
+      {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] flex items-center pt-20 pb-16">
         <Container>
-          <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+          <div className="flex flex-col items-center text-center lg:flex-row lg:items-center lg:text-left lg:gap-16">
+
+            {/* Avatar - visible on all screen sizes */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="shrink-0 mb-8 lg:mb-0 lg:order-2"
+            >
+              <div
+                className="relative w-40 h-40 sm:w-52 sm:h-52 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-[var(--primary)]"
+                style={{ boxShadow: '0 0 40px color-mix(in srgb, var(--primary) 20%, transparent)' }}
+              >
+                <Image
+                  src="/jh-avatar.jpg"
+                  alt="Justin S. Henriksen"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </motion.div>
+
+            {/* Text */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl flex-1"
+              className="max-w-2xl flex-1 lg:order-1"
             >
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 }}
-                className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-8"
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-6"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
                 Accepting new clients - limited availability
               </motion.div>
 
-              <h1 className={`text-[var(--text)] ${headlineSize} leading-tight mb-4`}>
+              <h1 className={`text-[var(--text)] ${headlineSize} leading-tight mb-3`}>
                 {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
                 Justin S. Henriksen
                 {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
@@ -220,7 +209,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-wrap gap-4"
+                className="flex flex-wrap justify-center lg:justify-start gap-4"
               >
                 <Button href="/fractional/ai-officer" variant="primary">
                   Fractional AI Officer
@@ -230,44 +219,22 @@ export default function Home() {
                 </Button>
               </motion.div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block shrink-0"
-            >
-              <div
-                className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[var(--primary)] shadow-lg"
-                style={{ boxShadow: '0 0 40px var(--primary)20' }}
-              >
-                <Image
-                  src="/justin.jpg"
-                  alt="Justin S. Henriksen"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </motion.div>
           </div>
         </Container>
       </section>
 
-      {/* ── Currently building ────────────────────────────────── */}
+      {/* ── Currently building ───────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className={`text-[var(--text)] ${sectionHeading} mb-8`}
           >
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              {"I'm currently building"}
-            </h2>
-          </motion.div>
+            {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+            {"I'm currently building"}
+          </motion.h2>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {building.map((item, i) => (
@@ -292,18 +259,23 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Fractional services ───────────────────────────────── */}
+      {/* ── Available fractionally ───────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`text-[var(--text)] ${sectionHeading} mb-10`}
+            className="mb-10"
           >
-            {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-            Available fractionally
-          </motion.h2>
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Available fractionally
+            </h2>
+            <p className="text-[var(--muted)]">
+              25 years from developer to CEO. Senior AI leadership without the $400K+ full-time cost.
+            </p>
+          </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-6">
             <motion.div
@@ -357,67 +329,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Fenix Venture ─────────────────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-6`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Fenix Venture
-            </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed mb-10 max-w-3xl">
-              {"I'm the founder of Fenix Venture, my personal investment vehicle. Through it, I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
-            </p>
-            <p className="text-[var(--muted)] mb-5 text-sm">
-              {'I also invest and advise where I can contribute leadership, insight, and judgment:'}
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
-              {investments.map((item, i) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: i * 0.06 }}
-                  className="flex items-baseline gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3"
-                >
-                  <span className="text-[var(--primary)] font-mono text-xs shrink-0">—</span>
-                  <span className="text-sm text-[var(--muted)]">
-                    <span className="text-[var(--text)] font-medium">{item.role}</span>
-                    {', '}
-                    {item.name}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* ── Giving ────────────────────────────────────────────── */}
-      <section className="py-12 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Henriksen Family Giving Fund
-            </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
-              {'Alongside my business work, my family and I run the Henriksen Family Giving Fund, which reflects how we think about responsibility, stewardship, and long-term impact.'}
-            </p>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* ── By the numbers ────────────────────────────────────── */}
+      {/* ── By the numbers ───────────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -467,7 +379,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Career snapshot ───────────────────────────────────── */}
+      {/* ── Career snapshot ──────────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -480,21 +392,79 @@ export default function Home() {
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
               Career snapshot
             </h2>
-            <p className="text-[var(--muted)]">
-              25 years from developer to CEO - and now fractional.
-            </p>
+            <p className="text-[var(--muted)]">25 years from developer to CEO - and now fractional.</p>
           </motion.div>
           <Timeline items={careerTimeline} condensed />
         </Container>
       </section>
 
-      {/* ── Testimonials ──────────────────────────────────────── */}
+      {/* ── Testimonials ─────────────────────────────────────── */}
       <TestimonialsSection />
 
-      {/* ── Evidence: products, engineering, writing, speaking ── */}
-      <EvidenceSection />
+      {/* ── Engineering, writing, speaking (products shown above) */}
+      <EvidenceSection hideProducts />
 
-      {/* ── Credentials ───────────────────────────────────────── */}
+      {/* ── Fenix Venture ────────────────────────────────────── */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-6`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Fenix Venture
+            </h2>
+            <p className="text-[var(--muted)] text-lg leading-relaxed mb-10 max-w-3xl">
+              {"I'm the founder of Fenix Venture, my personal investment vehicle. Through it, I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
+            </p>
+            <p className="text-[var(--muted)] mb-5 text-sm">
+              {'I also invest and advise where I can contribute leadership, insight, and judgment:'}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {investments.map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: i * 0.06 }}
+                  className="flex items-baseline gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3"
+                >
+                  <span className="text-[var(--primary)] font-mono text-xs shrink-0">—</span>
+                  <span className="text-sm text-[var(--muted)]">
+                    <span className="text-[var(--text)] font-medium">{item.role}</span>
+                    {', '}
+                    {item.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ── Giving ───────────────────────────────────────────── */}
+      <section className="py-12 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Henriksen Family Giving Fund
+            </h2>
+            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
+              {'Alongside my business work, my family and I run the Henriksen Family Giving Fund, which reflects how we think about responsibility, stewardship, and long-term impact.'}
+            </p>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ── Education & credentials ──────────────────────────── */}
       <section className="py-12 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -526,7 +496,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────────── */}
+      {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
           <motion.div
