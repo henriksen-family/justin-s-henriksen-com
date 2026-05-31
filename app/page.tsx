@@ -1,9 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import Image from 'next/image'
-import { Brain, Cpu } from 'lucide-react'
 import { Container } from '@/components/ui/container'
 import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
@@ -18,14 +16,15 @@ const building = [
   { name: 'FindTime', url: 'https://find-time.ai', desc: 'The scheduling platform built for AI agents.' },
   { name: 'Helix', url: 'https://helix.getlatest.ai', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
   { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
+  { name: 'Shelfer', url: 'https://shelfer.co', desc: 'Growth platform helping CPG brands coordinate ecommerce, retail distribution, affiliate channels, and working capital from launch to shelf.' },
 ]
 
 const investments = [
-  { role: 'Investor and Board Member', name: 'AromaTherapist' },
-  { role: 'Investor and Board Member', name: 'Boss Strategy Global' },
-  { role: 'Strategic Advisor', name: 'Black Star Syndicate' },
-  { role: 'Investor', name: 'Anchor 3PL' },
-  { role: 'Investor', name: 'OTP Tequila' },
+  { role: 'Investor and Board Member', name: 'AromaTherapist', url: 'https://aromatherapist.com' },
+  { role: 'Investor and Board Member', name: 'Boss Strategy Global', url: '' },
+  { role: 'Strategic Advisor', name: 'Black Star Syndicate', url: '' },
+  { role: 'Investor', name: 'Anchor 3PL', url: '' },
+  { role: 'Investor', name: 'OTP Tequila', url: '' },
 ]
 
 const stats = [
@@ -259,76 +258,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Available fractionally ───────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Available fractionally
-            </h2>
-            <p className="text-[var(--muted)]">
-              25 years from developer to CEO. Senior AI leadership without the $400K+ full-time cost.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-            >
-              <Link
-                href="/fractional/ai-officer"
-                className="block border border-[var(--border)] bg-[var(--card)] rounded p-8 hover:border-[var(--primary)] transition-all duration-300 group h-full"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded border border-[var(--primary)] mb-5 bg-[var(--bg)] group-hover:bg-[var(--primary)]/10 transition-colors">
-                  <Brain className="w-6 h-6 text-[var(--primary)]" />
-                </div>
-                <h3 className="text-xl font-bold text-[var(--text)] mb-3 group-hover:text-[var(--primary)] transition-colors">
-                  Fractional AI Officer
-                </h3>
-                <p className="text-[var(--muted)] mb-6 leading-relaxed">
-                  AI strategy, governance, vendor selection, and implementation oversight.
-                  Get senior AI leadership without the $400K+ full-time cost.
-                </p>
-                <span className="text-sm font-mono text-[var(--primary)]">Learn more ›</span>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.1 }}
-            >
-              <Link
-                href="/fractional/solutions-architect"
-                className="block border border-[var(--border)] bg-[var(--card)] rounded p-8 hover:border-[var(--primary)] transition-all duration-300 group h-full"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded border border-[var(--primary)] mb-5 bg-[var(--bg)] group-hover:bg-[var(--primary)]/10 transition-colors">
-                  <Cpu className="w-6 h-6 text-[var(--primary)]" />
-                </div>
-                <h3 className="text-xl font-bold text-[var(--text)] mb-3 group-hover:text-[var(--primary)] transition-colors">
-                  Fractional Solutions Architect
-                </h3>
-                <p className="text-[var(--muted)] mb-6 leading-relaxed">
-                  AI system design, cloud architecture, M365 agent deployments, and the technical
-                  decisions that compound over time.
-                </p>
-                <span className="text-sm font-mono text-[var(--primary)]">Learn more ›</span>
-              </Link>
-            </motion.div>
-          </div>
-        </Container>
-      </section>
-
       {/* ── By the numbers ───────────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
@@ -434,9 +363,20 @@ export default function Home() {
                 >
                   <span className="text-[var(--primary)] font-mono text-xs shrink-0">—</span>
                   <span className="text-sm text-[var(--muted)]">
-                    <span className="text-[var(--text)] font-medium">{item.role}</span>
-                    {', '}
-                    {item.name}
+                    {item.url ? (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[var(--text)] font-medium hover:text-[var(--primary)] transition-colors"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <span className="text-[var(--text)] font-medium">{item.name}</span>
+                    )}
+                    {' — '}
+                    {item.role}
                   </span>
                 </motion.div>
               ))}
