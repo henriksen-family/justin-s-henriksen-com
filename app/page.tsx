@@ -12,6 +12,42 @@ import { EvidenceSection } from '@/components/sections/evidence-section'
 import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
 
+const building = [
+  {
+    name: 'SnappyClaw',
+    url: 'https://snappyclaw.ai',
+    desc: 'An AI assistant that\'s powerful, private, and dead simple.',
+  },
+  {
+    name: 'Ronin',
+    url: 'https://myronin.ai',
+    desc: 'Your AI powered job search agent.',
+  },
+  {
+    name: 'FindTime',
+    url: 'https://find-time.ai',
+    desc: 'The scheduling platform built for AI agents.',
+  },
+  {
+    name: 'Helix',
+    url: 'https://helix.getlatest.ai',
+    desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.',
+  },
+  {
+    name: 'Heimdall',
+    url: 'https://heimdall.getlatest.ai',
+    desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.',
+  },
+]
+
+const investments = [
+  { role: 'Investor and Board Member', name: 'AromaTherapist' },
+  { role: 'Investor and Board Member', name: 'Boss Strategy Global' },
+  { role: 'Strategic Advisor', name: 'Black Star Syndicate' },
+  { role: 'Investor', name: 'Anchor 3PL' },
+  { role: 'Investor', name: 'OTP Tequila' },
+]
+
 const stats = [
   { value: '172%', label: 'MRR increase', detail: '$440K to $1.2M in 8 months' },
   { value: '$100M+', label: 'Customer growth', detail: 'Microsoft partner ecosystem' },
@@ -119,9 +155,15 @@ export default function Home() {
     ? 'font-pixel text-lg sm:text-xl lg:text-2xl leading-loose'
     : 'text-4xl sm:text-5xl lg:text-6xl font-bold'
 
+  const sectionHeading = theme === 'arcade'
+    ? 'font-pixel text-sm leading-relaxed'
+    : theme === 'terminal' || theme === 'futuristic'
+    ? 'font-mono text-lg sm:text-xl'
+    : 'font-bold text-2xl'
+
   return (
     <>
-      {/* Hero */}
+      {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative min-h-[85vh] flex items-center pt-20 pb-16">
         <Container>
           <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
@@ -153,7 +195,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-[var(--primary)] text-xl sm:text-2xl font-semibold mb-4"
               >
-                25 years building technology. Available fractionally.
+                {'I build AI solutions and tinker with other things.'}
               </motion.p>
 
               <motion.p
@@ -162,9 +204,16 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-[var(--muted)] text-lg max-w-2xl mb-10 leading-relaxed"
               >
-                Former Microsoft Sr. Director. CEO twice over. Now applying that experience as a
-                fractional AI Officer and Solutions Architect to companies that need senior leadership
-                without the full-time overhead.
+                {'I co-founded '}
+                <a
+                  href="https://getlatest.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--primary)] hover:opacity-80 transition-opacity"
+                >
+                  GetLatest AI
+                </a>
+                {', where we work with leaders who don\'t want to "learn AI" or experiment endlessly. They want to place smarter bets and see measurable outcomes. We help you identify the areas of your business where AI has the most impact and then we build the solution for you.'}
               </motion.p>
 
               <motion.div
@@ -188,8 +237,10 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block shrink-0"
             >
-              <div className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[var(--primary)] shadow-lg"
-                style={{ boxShadow: '0 0 40px var(--primary)20' }}>
+              <div
+                className="relative w-64 h-64 rounded-full overflow-hidden border-2 border-[var(--primary)] shadow-lg"
+                style={{ boxShadow: '0 0 40px var(--primary)20' }}
+              >
                 <Image
                   src="/justin.jpg"
                   alt="Justin S. Henriksen"
@@ -203,16 +254,55 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* What I Do */}
+      {/* ── Currently building ────────────────────────────────── */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              {"I'm currently building"}
+            </h2>
+          </motion.div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {building.map((item, i) => (
+              <motion.a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.07 }}
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
+              >
+                <div className="font-mono text-sm font-semibold text-[var(--primary)] group-hover:opacity-80 transition-opacity uppercase tracking-wide mb-2">
+                  {item.name} ↗
+                </div>
+                <p className="text-[var(--muted)] text-sm leading-relaxed">{item.desc}</p>
+              </motion.a>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Fractional services ───────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-2xl font-bold text-[var(--text)] mb-10"
+            className={`text-[var(--text)] ${sectionHeading} mb-10`}
           >
-            What I do
+            {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+            Available fractionally
           </motion.h2>
 
           <div className="grid sm:grid-cols-2 gap-6">
@@ -267,7 +357,67 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Key Stats */}
+      {/* ── Fenix Venture ─────────────────────────────────────── */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-6`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Fenix Venture
+            </h2>
+            <p className="text-[var(--muted)] text-lg leading-relaxed mb-10 max-w-3xl">
+              {"I'm the founder of Fenix Venture, my personal investment vehicle. Through it, I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
+            </p>
+            <p className="text-[var(--muted)] mb-5 text-sm">
+              {'I also invest and advise where I can contribute leadership, insight, and judgment:'}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-3">
+              {investments.map((item, i) => (
+                <motion.div
+                  key={item.name}
+                  initial={{ opacity: 0, x: -12 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: i * 0.06 }}
+                  className="flex items-baseline gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3"
+                >
+                  <span className="text-[var(--primary)] font-mono text-xs shrink-0">—</span>
+                  <span className="text-sm text-[var(--muted)]">
+                    <span className="text-[var(--text)] font-medium">{item.role}</span>
+                    {', '}
+                    {item.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ── Giving ────────────────────────────────────────────── */}
+      <section className="py-12 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Henriksen Family Giving Fund
+            </h2>
+            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
+              {'Alongside my business work, my family and I run the Henriksen Family Giving Fund, which reflects how we think about responsibility, stewardship, and long-term impact.'}
+            </p>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ── By the numbers ────────────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -276,7 +426,10 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">By the numbers</h2>
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              By the numbers
+            </h2>
             <p className="text-[var(--muted)]">Results from two decades of building and leading technology organizations.</p>
           </motion.div>
 
@@ -314,7 +467,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Career Snapshot */}
+      {/* ── Career snapshot ───────────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -323,23 +476,25 @@ export default function Home() {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Career snapshot</h2>
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Career snapshot
+            </h2>
             <p className="text-[var(--muted)]">
               25 years from developer to CEO - and now fractional.
             </p>
           </motion.div>
-
           <Timeline items={careerTimeline} condensed />
         </Container>
       </section>
 
-      {/* Testimonials */}
+      {/* ── Testimonials ──────────────────────────────────────── */}
       <TestimonialsSection />
 
-      {/* Evidence */}
+      {/* ── Evidence: products, engineering, writing, speaking ── */}
       <EvidenceSection />
 
-      {/* Credentials */}
+      {/* ── Credentials ───────────────────────────────────────── */}
       <section className="py-12 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -371,7 +526,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ───────────────────────────────────────────────── */}
       <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
           <motion.div
@@ -380,16 +535,17 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl font-bold text-[var(--text)] mb-4">
-              Ready to talk?
-            </h2>
-            <p className="text-[var(--muted)] mb-8 max-w-xl mx-auto">
-              Whether you need AI strategy, technical architecture, or both -
-              let&apos;s figure out if there&apos;s a fit.
+            <p className="text-[var(--muted)] text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+              {'I work with people who are fun to be around, passionate about their purpose, and like to build cool things. If there\'s overlap, let\'s talk.'}
             </p>
-            <Button href="https://cal.com/justinh-cal" variant="primary">
-              Book a strategy conversation
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button href="https://cal.com/justinh-cal" external variant="primary">
+                Book a conversation
+              </Button>
+              <Button href="mailto:justin@getlatest.ai" variant="secondary">
+                Send an email
+              </Button>
+            </div>
           </motion.div>
         </Container>
       </section>
