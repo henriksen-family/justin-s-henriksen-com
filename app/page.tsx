@@ -21,10 +21,10 @@ const building = [
 
 const investments = [
   { role: 'Investor and Board Member', name: 'AromaTherapist', url: 'https://aromatherapist.com' },
-  { role: 'Investor and Board Member', name: 'Boss Strategy Global', url: '' },
-  { role: 'Strategic Advisor', name: 'Black Star Syndicate', url: '' },
-  { role: 'Investor', name: 'Anchor 3PL', url: '' },
-  { role: 'Investor', name: 'OTP Tequila', url: '' },
+  { role: 'Investor and Board Member', name: 'Boss Strategy Global', url: 'https://www.bosstrategy.com' },
+  { role: 'Strategic Advisor', name: 'Black Star Syndicate', url: 'https://blackstarsyndicate.com' },
+  { role: 'Investor', name: 'Anchor 3PL', url: 'https://www.anchor3pl.com' },
+  { role: 'Investor', name: 'OTP Tequila', url: 'https://www.otptequila.com/en' },
 ]
 
 const stats = [
@@ -258,7 +258,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── By the numbers ───────────────────────────────────── */}
+      {/* ── Track record ─────────────────────────────────────── */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -269,9 +269,11 @@ export default function Home() {
           >
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              By the numbers
+              Track record
             </h2>
-            <p className="text-[var(--muted)]">Results from two decades of building and leading technology organizations.</p>
+            <p className="text-[var(--muted)]">
+              {'I\'ve been building since 2004 - as an engineer, an architect, a GM, and a founder. Here\'s what that looks like in numbers.'}
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
@@ -345,40 +347,46 @@ export default function Home() {
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
               Fenix Venture
             </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed mb-10 max-w-3xl">
+            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
               {"I'm the founder of Fenix Venture, my personal investment vehicle. Through it, I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
             </p>
-            <p className="text-[var(--muted)] mb-5 text-sm">
-              {'I also invest and advise where I can contribute leadership, insight, and judgment:'}
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* ── Investing & advising ─────────────────────────────── */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-3`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              Investing &amp; advising
+            </h2>
+            <p className="text-[var(--muted)] mb-8">
+              {'Where I contribute leadership, insight, and judgment:'}
             </p>
             <div className="grid sm:grid-cols-2 gap-3">
               {investments.map((item, i) => (
-                <motion.div
+                <motion.a
                   key={item.name}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.35, delay: i * 0.06 }}
-                  className="flex items-baseline gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3"
+                  className="border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3 hover:border-[var(--primary)] transition-colors group"
                 >
-                  <span className="text-[var(--primary)] font-mono text-xs shrink-0">—</span>
-                  <span className="text-sm text-[var(--muted)]">
-                    {item.url ? (
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[var(--text)] font-medium hover:text-[var(--primary)] transition-colors"
-                      >
-                        {item.name}
-                      </a>
-                    ) : (
-                      <span className="text-[var(--text)] font-medium">{item.name}</span>
-                    )}
-                    {' — '}
-                    {item.role}
-                  </span>
-                </motion.div>
+                  <div className="font-medium text-[var(--text)] group-hover:text-[var(--primary)] transition-colors text-sm mb-0.5">
+                    {item.name} ↗
+                  </div>
+                  <div className="text-xs text-[var(--muted)] font-mono">{item.role}</div>
+                </motion.a>
               ))}
             </div>
           </motion.div>
