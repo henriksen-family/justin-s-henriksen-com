@@ -222,8 +222,8 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── TOC ──────────────────────────────────────────────── */}
-      <nav className="border-t border-[var(--border)] overflow-x-auto">
+      {/* ── TOC (desktop only) ───────────────────────────────── */}
+      <nav className="hidden sm:block border-t border-[var(--border)] overflow-x-auto">
         <Container>
           <div className="flex items-center gap-0 py-0 whitespace-nowrap">
             {[
