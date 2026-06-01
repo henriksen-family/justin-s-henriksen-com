@@ -222,8 +222,35 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Currently building ───────────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
+      {/* ── TOC ──────────────────────────────────────────────── */}
+      <nav className="border-t border-[var(--border)] overflow-x-auto">
+        <Container>
+          <div className="flex items-center gap-0 py-0 whitespace-nowrap">
+            {[
+              { label: "What I'm building", href: '#building' },
+              { label: "What I've accomplished", href: '#accomplished' },
+              { label: "Where I've been", href: '#career' },
+              { label: "What people say", href: '#testimonials' },
+              { label: "What I've shipped", href: '#shipped' },
+              { label: "Where I've worked", href: '#industries' },
+              { label: "What I've written", href: '#writing' },
+              { label: "What I've spoken about", href: '#speaking' },
+              { label: "Where I invest", href: '#investing' },
+            ].map((item, i) => (
+              <a
+                key={i}
+                href={item.href}
+                className="text-xs font-mono text-[var(--muted)] hover:text-[var(--primary)] transition-colors px-4 py-3 border-r border-[var(--border)] last:border-r-0 shrink-0"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </Container>
+      </nav>
+
+      {/* ── What I'm building ────────────────────────────────── */}
+      <section id="building" className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -232,9 +259,8 @@ export default function Home() {
             className={`text-[var(--text)] ${sectionHeading} mb-8`}
           >
             {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-            {"I'm currently building"}
+            {"What I'm building"}
           </motion.h2>
-
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {building.map((item, i) => (
               <motion.a
@@ -258,50 +284,28 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Track record ─────────────────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
+      {/* ── What I've accomplished ───────────────────────────── */}
+      <section id="accomplished" className="py-16 border-t border-[var(--border)]">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Track record
+              {"What I've accomplished"}
             </h2>
             <p className="text-[var(--muted)]">
-              {'I\'ve been building since 2004 - as an engineer, an architect, a GM, and a founder. Here\'s what that looks like in numbers.'}
+              {"I've been building since 2004 - as an engineer, an architect, a GM, and a founder. Here's what that looks like in numbers."}
             </p>
           </motion.div>
-
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12">
-            {stats.map((stat, i) => (
-              <StatCard key={i} {...stat} index={i} />
-            ))}
+            {stats.map((stat, i) => <StatCard key={i} {...stat} index={i} />)}
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-6"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-6">
             <h3 className="text-lg font-bold text-[var(--text)] mb-1">Programs built at scale</h3>
             <p className="text-sm text-[var(--muted)]">Named programs from the Microsoft AI partner motion.</p>
           </motion.div>
-
           <div className="grid sm:grid-cols-2 gap-4">
             {programs.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="border border-[var(--border)] bg-[var(--card)] rounded p-5"
-              >
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.06 }} className="border border-[var(--border)] bg-[var(--card)] rounded p-5">
                 <h4 className="font-bold text-[var(--text)] mb-2">{p.title}</h4>
                 <p className="text-sm text-[var(--muted)] leading-relaxed">{p.desc}</p>
               </motion.div>
@@ -310,18 +314,13 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Career snapshot ──────────────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
+      {/* ── Where I've been ──────────────────────────────────── */}
+      <section id="career" className="py-16 border-t border-[var(--border)]">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Career snapshot
+              {"Where I've been"}
             </h2>
             <p className="text-[var(--muted)]">25 years from developer to CEO - and now fractional.</p>
           </motion.div>
@@ -329,47 +328,26 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Testimonials ─────────────────────────────────────── */}
-      <TestimonialsSection />
+      {/* ── What people say ──────────────────────────────────── */}
+      <div id="testimonials">
+        <TestimonialsSection />
+      </div>
 
-      {/* ── Engineering, writing, speaking (products shown above) */}
+      {/* ── What I've shipped / worked / written / spoken about  */}
       <EvidenceSection hideProducts />
 
-      {/* ── Fenix Venture ────────────────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
+      {/* ── Where I invest ───────────────────────────────────── */}
+      <section id="investing" className="py-16 border-t border-[var(--border)]">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-6`}>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Fenix Venture
+              {"Where I invest"}
             </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
-              {"I'm the founder of Fenix Venture, my personal investment vehicle. Through it, I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
+            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl mb-10">
+              {"I'm the founder of Fenix Venture, my personal investment vehicle. I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
             </p>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* ── Investing & advising ─────────────────────────────── */}
-      <section className="py-16 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-3`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Investing &amp; advising
-            </h2>
-            <p className="text-[var(--muted)] mb-8">
-              {'Where I contribute leadership, insight, and judgment:'}
-            </p>
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {investments.map((item, i) => (
                 <motion.a
                   key={item.name}
@@ -393,20 +371,16 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── Giving ───────────────────────────────────────────── */}
-      <section className="py-12 border-t border-[var(--border)]">
+      {/* ── How we give ──────────────────────────────────────── */}
+      <section id="giving" className="py-12 border-t border-[var(--border)]">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              Henriksen Family Giving Fund
+              How we give
             </h2>
             <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
-              {'Alongside my business work, my family and I run the Henriksen Family Giving Fund, which reflects how we think about responsibility, stewardship, and long-term impact.'}
+              {'My family and I run the Henriksen Family Giving Fund, which reflects how we think about responsibility, stewardship, and long-term impact.'}
             </p>
           </motion.div>
         </Container>
@@ -415,11 +389,7 @@ export default function Home() {
       {/* ── Education & credentials ──────────────────────────── */}
       <section className="py-12 border-t border-[var(--border)]">
         <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="text-lg font-bold text-[var(--text)] mb-5">Education and credentials</h2>
             <div className="flex flex-wrap gap-3">
               {[
@@ -432,10 +402,7 @@ export default function Home() {
                 'Deep Learning Specialization (Andrew Ng / Coursera)',
                 'Six Sigma Green Belt',
               ].map((cred, i) => (
-                <span
-                  key={i}
-                  className="text-sm text-[var(--muted)] border border-[var(--border)] bg-[var(--card)] rounded px-3 py-1.5 font-mono"
-                >
+                <span key={i} className="text-sm text-[var(--muted)] border border-[var(--border)] bg-[var(--card)] rounded px-3 py-1.5 font-mono">
                   {cred}
                 </span>
               ))}
@@ -447,12 +414,7 @@ export default function Home() {
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
             <p className="text-[var(--muted)] text-lg mb-8 max-w-xl mx-auto leading-relaxed">
               {'I work with people who are fun to be around, passionate about their purpose, and like to build cool things. If there\'s overlap, let\'s talk.'}
             </p>
