@@ -378,7 +378,16 @@ export default function Home() {
               How we give
             </h2>
             <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
-              {'My family and I run the Henriksen Family Giving Fund, which reflects how we think about responsibility, stewardship, and long-term impact.'}
+              {'My family and I run the '}
+              <a
+                href="https://henriksenfamily.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--primary)] hover:opacity-80 transition-opacity"
+              >
+                Henriksen Family Giving Fund
+              </a>
+              {', which reflects how we think about responsibility, stewardship, and long-term impact.'}
             </p>
           </motion.div>
         </Container>
