@@ -155,7 +155,15 @@ function EvidenceCard({ item, index }: { item: EvidenceItem; index: number }) {
   )
 }
 
-export function EvidenceSection({ hideProducts = false }: { hideProducts?: boolean }) {
+export function EvidenceSection({
+  hideProducts = false,
+  hideShipped = false,
+  hideIndustries = false,
+}: {
+  hideProducts?: boolean
+  hideShipped?: boolean
+  hideIndustries?: boolean
+}) {
   return (
     <>
       {!hideProducts && (
@@ -172,34 +180,38 @@ export function EvidenceSection({ hideProducts = false }: { hideProducts?: boole
         </section>
       )}
 
-      <section id="shipped" className="py-20 border-t border-[var(--border)]">
-        <Container>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{"What I've shipped"}</h2>
-            <p className="text-[var(--muted)]">Shipped, used in production, predates the current portfolio.</p>
-          </motion.div>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {selectedWork.map((item, i) => <EvidenceCard key={i} item={item} index={i} />)}
-          </div>
-        </Container>
-      </section>
+      {!hideShipped && (
+        <section id="shipped" className="py-20 border-t border-[var(--border)]">
+          <Container>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+              <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{"What I've shipped"}</h2>
+              <p className="text-[var(--muted)]">Shipped, used in production, predates the current portfolio.</p>
+            </motion.div>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {selectedWork.map((item, i) => <EvidenceCard key={i} item={item} index={i} />)}
+            </div>
+          </Container>
+        </section>
+      )}
 
-      <section id="industries" className="py-20 border-t border-[var(--border)]">
-        <Container>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{"Where I've worked"}</h2>
-            <p className="text-[var(--muted)]">Vertical experience from the Microsoft partner ecosystem.</p>
-          </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid sm:grid-cols-2 gap-3">
-            {industries.map((row, i) => (
-              <div key={i} className="flex gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3">
-                <span className="font-bold text-[var(--text)] text-sm shrink-0 w-36">{row.vertical}</span>
-                <span className="text-sm text-[var(--muted)]">{row.segments}</span>
-              </div>
-            ))}
-          </motion.div>
-        </Container>
-      </section>
+      {!hideIndustries && (
+        <section id="industries" className="py-20 border-t border-[var(--border)]">
+          <Container>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
+              <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{"Where I've worked"}</h2>
+              <p className="text-[var(--muted)]">Vertical experience from the Microsoft partner ecosystem.</p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid sm:grid-cols-2 gap-3">
+              {industries.map((row, i) => (
+                <div key={i} className="flex gap-3 border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3">
+                  <span className="font-bold text-[var(--text)] text-sm shrink-0 w-36">{row.vertical}</span>
+                  <span className="text-sm text-[var(--muted)]">{row.segments}</span>
+                </div>
+              ))}
+            </motion.div>
+          </Container>
+        </section>
+      )}
 
       <section id="writing" className="py-20 border-t border-[var(--border)]">
         <Container>

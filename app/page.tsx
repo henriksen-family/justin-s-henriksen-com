@@ -231,8 +231,6 @@ export default function Home() {
               { label: "What I've accomplished", href: '#accomplished' },
               { label: "Where I've been", href: '#career' },
               { label: "What people say", href: '#testimonials' },
-              { label: "What I've shipped", href: '#shipped' },
-              { label: "Where I've worked", href: '#industries' },
               { label: "What I've written", href: '#writing' },
               { label: "What I've spoken about", href: '#speaking' },
               { label: "Where I invest", href: '#investing' },
@@ -333,8 +331,8 @@ export default function Home() {
         <TestimonialsSection />
       </div>
 
-      {/* ── What I've shipped / worked / written / spoken about  */}
-      <EvidenceSection hideProducts />
+      {/* ── What I've written / spoken about ─────────────────── */}
+      <EvidenceSection hideProducts hideShipped hideIndustries />
 
       {/* ── Where I invest ───────────────────────────────────── */}
       <section id="investing" className="py-16 border-t border-[var(--border)]">
