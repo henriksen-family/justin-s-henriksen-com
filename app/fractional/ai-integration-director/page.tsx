@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { Map, GraduationCap, BarChart3, Users, Shield, GitMerge, CheckCircle2 } from 'lucide-react'
 import { Container } from '@/components/ui/container'
-import { Button } from '@/components/ui/button'
 import { StatCard } from '@/components/sections/stat-card'
 import { useTheme } from '@/components/theme/theme-provider'
 
@@ -11,65 +10,32 @@ const jobRequirements = [
   {
     icon: Map,
     requirement: 'Architect and lead a statewide AI integration strategy',
-    delivery: 'A sequenced AI roadmap built around your actual institutional priorities - curriculum, workforce, research, and operations. Not a generic framework. A plan you can act on.',
+    delivery: 'At Microsoft, I designed and executed AI strategy across hundreds of partners, universities, and employers spanning multiple states and countries. I know what a statewide program requires structurally - and where these initiatives typically break down two years in.',
   },
   {
     icon: Users,
     requirement: 'Collaborate with industry and higher education partners to develop AI-centric curricula and certification programs',
-    delivery: 'Experience building AI partner programs at scale across industry and education. At Microsoft, led 30+ AI enablement initiatives with universities and employers. I know how these partnerships get built - and where they break down.',
+    delivery: 'I built the AI partner enablement programs that connected the Microsoft ecosystem to universities and employers at scale - AI Accelerate, the Data Science Partner Program, AI Country Plans. The U already has strong industry relationships through Silicon Slopes. I know how to activate them for something like this.',
   },
   {
     icon: BarChart3,
     requirement: 'Establish performance indicators to measure the impact of AI-related initiatives',
-    delivery: 'KPIs, adoption metrics, and outcome frameworks that connect AI activity to institutional goals. Built into the engagement from day one, not added as an afterthought.',
+    delivery: 'I\'ve run $1.5M in AI initiative funding and tracked it to $5M+ in measurable outcomes. I can build the measurement framework this program needs - one that will hold up when the legislature or the board asks how it\'s going.',
   },
   {
     icon: GraduationCap,
     requirement: 'Develop AI upskilling programs for faculty, staff, and students',
-    delivery: 'Training design, change management, and the playbooks that make adoption stick. I have built these for organizations ranging from 200-person teams to partner networks spanning multiple countries.',
+    delivery: 'Training design and change management for AI adoption is something I\'ve done at organizations ranging from 200-person teams to partner networks across multiple countries. Faculty adoption in particular requires a different approach than corporate upskilling. I\'ve thought carefully about this.',
   },
   {
     icon: Shield,
     requirement: 'Governance, policy, and responsible AI frameworks',
-    delivery: 'Academic AI governance is different from enterprise AI governance. I can help you build guardrails, responsible use policy, and human review processes that work in an educational context - before something surfaces in a faculty senate meeting.',
+    delivery: 'Academic AI governance has to work in a shared governance environment - faculty senate, IRB considerations, student data, research integrity. I can build a framework that doesn\'t just satisfy a compliance checklist, but actually holds up in practice.',
   },
   {
     icon: GitMerge,
     requirement: 'Implementation oversight and vendor evaluation',
-    delivery: 'Unbiased vendor assessment - no kickbacks, no preferred partners. And unlike a pure strategist, I can read a vendor\'s architecture proposal and tell you when it doesn\'t match what they pitched.',
-  },
-]
-
-const comparison = [
-  {
-    label: 'Cost',
-    fte: '$100,000 - $120,000 salary + benefits + recruiting',
-    fractional: 'Monthly retainer scaled to your actual need',
-  },
-  {
-    label: 'Time to start',
-    fte: '3-6 month search, interview, and onboarding',
-    fractional: 'Engaged within weeks',
-  },
-  {
-    label: 'Flexibility',
-    fte: 'Full-time headcount, annual budget commitment',
-    fractional: 'Adjusts as priorities shift - no severance',
-  },
-  {
-    label: 'Risk',
-    fte: 'Wrong hire = a year of budget and momentum lost',
-    fractional: 'Disengage without consequence if it isn\'t working',
-  },
-  {
-    label: 'Caliber',
-    fte: 'Sr. AI leaders command $300K-$500K+ in total comp. At $120K, you get who\'s available.',
-    fractional: 'Former Microsoft Sr. Director, CEO who led $51M AI transformation - scoped to your budget',
-  },
-  {
-    label: 'Overhead',
-    fte: 'HR, benefits administration, equity, onboarding',
-    fractional: 'None',
+    delivery: 'The AI vendor landscape is full of promises. I can read a proposal and tell you whether the architecture will actually do what they say. No vendor relationships to protect. No kickbacks. Just an honest assessment.',
   },
 ]
 
@@ -77,7 +43,7 @@ const proofPoints = [
   { value: '25yr', label: 'Building with technology', detail: 'IC to CEO and back to shipping code' },
   { value: '30+', label: 'AI initiatives led', detail: '$1.5M funding into $5M+ revenue' },
   { value: '$51M', label: 'P&L transformed', detail: 'After AI/ML shift at Crayon' },
-  { value: 'Utah', label: 'MBA, U of U', detail: 'Local. Knows the ecosystem.' },
+  { value: 'Eccles', label: 'MBA, U of U', detail: 'David Eccles School of Business' },
 ]
 
 export default function AIIntegrationDirectorPage() {
@@ -86,23 +52,22 @@ export default function AIIntegrationDirectorPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative min-h-[70vh] flex items-center pt-20 pb-16">
+      <section className="relative min-h-[60vh] flex items-center pt-20 pb-16">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl"
+            className="max-w-3xl"
           >
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.1 }}
-              className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-8"
+              className="text-xs font-mono text-[var(--muted)] mb-8 uppercase tracking-widest"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
-              Fractional AI Integration Director
-            </motion.div>
+              University of Utah - Director of AI Integration
+            </motion.p>
 
             <h1 className={`text-[var(--text)] leading-tight mb-6 ${
               theme === 'arcade'
@@ -112,7 +77,7 @@ export default function AIIntegrationDirectorPage() {
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
             }`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              $100,000 - $120,000 won&apos;t attract someone who has actually done this at scale. Fractional will.
+              A U of U MBA who has actually built what this role requires.
               {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
             </h1>
 
@@ -120,61 +85,55 @@ export default function AIIntegrationDirectorPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed"
+              className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed"
             >
-              A Director of AI Integration with real credentials - someone who has led AI transformation
-              at a major organization, shipped production systems, and built programs that lasted - commands
-              $300,000 to $500,000+ in total compensation. At $100K-$120K, you&apos;re competing for people
-              who are figuring it out on your timeline and your budget. A fractional engagement gets you
-              the senior leader the role actually requires, scoped to what you need.
+              I graduated from the David Eccles School of Business. I spent four years at Microsoft
+              building the AI programs that connected universities and employers across the country.
+              I ran a $51M P&L transformation into AI/ML managed services. And I&apos;m currently
+              building and operating a production AI platform in Salt Lake City.
             </motion.p>
 
-            <motion.div
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed mt-4"
             >
-              <Button href="https://cal.com/justinh-cal" variant="primary">
-                Book a 30-minute conversation
-              </Button>
-              <Button href="/fractional/ai-officer" variant="secondary">
-                See the full AI Officer page
-              </Button>
-            </motion.div>
+              The role the University is trying to fill is one I am uniquely qualified to do -
+              and the fractional model means you get that experience without waiting six months
+              to hire and without the compensation a person with this background commands full-time.
+            </motion.p>
           </motion.div>
         </Container>
       </section>
 
-      {/* Salary reality check */}
-      <section className="py-16 border-t border-[var(--border)]">
+      {/* Salary reality */}
+      <section className="py-12 border-t border-[var(--border)]">
         <Container>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="border border-[var(--primary)] bg-[var(--card)] rounded p-6 sm:p-8 max-w-3xl"
+            className="border border-[var(--border)] bg-[var(--card)] rounded p-6 sm:p-8 max-w-3xl"
           >
-            <h2 className="text-xl font-bold text-[var(--text)] mb-4">
-              The honest picture on AI talent at this salary band
+            <h2 className="text-lg font-bold text-[var(--text)] mb-4">
+              On the $100K - $120K salary range
             </h2>
-            <div className="space-y-4 text-sm text-[var(--muted)] leading-relaxed">
+            <div className="space-y-3 text-sm text-[var(--muted)] leading-relaxed">
               <p>
-                Senior AI leaders with real-world track records - people who have run large-scale AI programs,
-                managed vendor relationships worth millions, transformed organizational capabilities, and shipped
-                production systems - are compensated at $300,000 to $500,000+ in total comp. That&apos;s the market.
+                Senior AI leaders with real implementation track records are compensated at
+                $300,000 to $500,000+ in total comp. That&apos;s not a negotiating position - that&apos;s
+                the market for people who have actually transformed organizations with AI at scale.
               </p>
               <p>
-                At $100K-$120K, the applicant pool is mostly people who have studied AI, advised on AI,
-                or been adjacent to AI initiatives without owning outcomes. You will find candidates with
-                impressive-sounding titles and certifications. You will have a harder time finding someone
-                who has been accountable for results.
+                At $100K-$120K, the University will attract people who have studied AI, consulted on AI,
+                or been close to AI initiatives. Finding someone who has been fully accountable for
+                building something that worked - and can point to the outcomes - will be harder.
               </p>
-              <p className="text-[var(--text)] font-medium">
-                Fractional changes the math. You get a former Microsoft Sr. Director and CEO who has
-                led $51M P&L transformation, managed 30+ AI initiatives, and is shipping production AI
-                today - not in theory. The engagement is scoped to your actual need, so the cost
-                fits your budget. The capability doesn&apos;t get watered down to match it.
+              <p className="text-[var(--text)]">
+                A fractional engagement is a different structure. You get the senior experience
+                the role requires, scoped to what you actually need, at a cost that fits a
+                university budget. The capability doesn&apos;t get watered down to match the salary band.
               </p>
             </div>
           </motion.div>
@@ -191,10 +150,10 @@ export default function AIIntegrationDirectorPage() {
             className="mb-10"
           >
             <h2 className="text-2xl font-bold text-[var(--text)] mb-2">
-              What the job requires. What I deliver.
+              What the position requires. What I bring to it.
             </h2>
             <p className="text-[var(--muted)]">
-              The standard Director of AI Integration job description, mapped to concrete deliverables.
+              The U&apos;s job posting, mapped against actual experience.
             </p>
           </motion.div>
 
@@ -224,7 +183,7 @@ export default function AIIntegrationDirectorPage() {
         </Container>
       </section>
 
-      {/* Comparison */}
+      {/* Background */}
       <section className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div
@@ -233,59 +192,8 @@ export default function AIIntegrationDirectorPage() {
             viewport={{ once: true }}
             className="mb-10"
           >
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">
-              Full-time hire vs. fractional engagement
-            </h2>
-            <p className="text-[var(--muted)]">
-              The math works differently when you need the capability, not the headcount.
-            </p>
-          </motion.div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr>
-                  <th className="text-left py-3 px-4 text-[var(--muted)] font-mono font-normal border-b border-[var(--border)] w-1/3"></th>
-                  <th className="text-left py-3 px-4 font-bold text-[var(--text)] border-b border-[var(--border)]">
-                    FTE Director ($100K - $120K)
-                  </th>
-                  <th className="text-left py-3 px-4 font-bold text-[var(--primary)] border-b border-[var(--border)]">
-                    Fractional (Justin)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparison.map((row, i) => (
-                  <motion.tr
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.05 }}
-                    className="border-b border-[var(--border)] hover:bg-[var(--card)] transition-colors"
-                  >
-                    <td className="py-3 px-4 text-[var(--muted)] font-mono font-semibold">{row.label}</td>
-                    <td className="py-3 px-4 text-[var(--text)]">{row.fte}</td>
-                    <td className="py-3 px-4 text-[var(--primary)] font-semibold">{row.fractional}</td>
-                  </motion.tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </Container>
-      </section>
-
-      {/* Proof points */}
-      <section className="py-16 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Why Justin specifically</h2>
-            <p className="text-[var(--muted)]">Proof over positioning.</p>
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">Background</h2>
+            <p className="text-[var(--muted)]">The experience that makes this relevant.</p>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
@@ -297,20 +205,20 @@ export default function AIIntegrationDirectorPage() {
           <div className="grid sm:grid-cols-2 gap-6">
             {[
               {
-                headline: 'Built AI/ML education programs at Microsoft scale',
-                body: 'As Sr. Director of Partner Ecosystem for AI/ML at Microsoft, built the programs that trained and certified hundreds of partners across the US and multiple countries. AI Accelerate, the Data Science Partner Program, and AI Country Plans - curriculum design, partner enablement, and scaled adoption all in scope. This is directly applicable to building AI integration programs across institutions and employers.',
+                headline: 'MBA, David Eccles School of Business',
+                body: 'I understand the University\'s context - the academic priorities, the faculty governance structure, the relationship between the U and the state, and the Silicon Slopes industry ecosystem the U is already embedded in. This isn\'t a national search candidate who will spend their first year learning the landscape.',
               },
               {
-                headline: 'MBA, University of Utah - local, connected',
-                body: 'Not someone parachuting in. I understand the Utah education landscape, the state\'s workforce development priorities, and the industry relationships that make programs like this actually work. The ecosystem that a statewide AI integration initiative depends on is one I\'m already part of.',
+                headline: 'Built the Microsoft AI/ML partner programs that connected employers and universities',
+                body: 'AI Accelerate, the Data Science Partner Program, AI Country Plans. Curriculum design, employer certification pathways, and adoption programs built at scale across the US and multiple countries. The institutional partnership model the U is describing is work I\'ve done - just at the Microsoft partner ecosystem level.',
               },
               {
-                headline: 'Led AI transformation at the P&L level',
-                body: 'As GM at Crayon US, transformed a $43M to $51M business from a licensing reseller into a full AI/ML managed services provider. This wasn\'t advisory work. It was building practices, hiring, pricing, delivery, and go-to-market from scratch. That\'s the experience that makes an AI integration strategy credible - I\'ve operated the thing, not just designed it.',
+                headline: 'Led AI transformation at P&L accountability level',
+                body: 'As GM at Crayon US, transformed a $43M to $51M business from a traditional reseller into a full AI/ML managed services provider. Not advisory work - building practices, hiring, service delivery, and go-to-market. The credibility to lead an AI integration strategy comes from having been responsible for one.',
               },
               {
-                headline: 'Shipping production AI today',
-                body: 'SnappyClaw is a live, multi-tenant AI agent platform with real enterprise customers. When I advise on AI tool selection, curriculum design, or implementation risk, it\'s grounded in what\'s actually working in production in 2026 - not what a vendor slide deck says.',
+                headline: 'Shipping production AI in Salt Lake City today',
+                body: 'SnappyClaw is a live, multi-tenant AI agent platform with enterprise customers. When I advise on AI tools, implementation risk, or what a curriculum should prepare students to work with, it is grounded in what is actually working in production systems in 2026 - not white papers or vendor roadmaps.',
               },
             ].map((item, i) => (
               <motion.div
@@ -340,7 +248,7 @@ export default function AIIntegrationDirectorPage() {
             <h3 className="font-bold text-[var(--text)] mb-3">Credentials</h3>
             <div className="grid sm:grid-cols-2 gap-2">
               {[
-                'MBA, University of Utah',
+                'MBA, University of Utah - David Eccles School of Business',
                 'BA Computer Science, Weber State University',
                 'Microsoft Data Science Degree',
                 'Azure MCSE (Microsoft Certified Solutions Expert)',
@@ -356,73 +264,39 @@ export default function AIIntegrationDirectorPage() {
         </Container>
       </section>
 
-      {/* How it works */}
+      {/* Close */}
       <section className="py-16 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10"
-          >
-            <h2 className="text-2xl font-bold text-[var(--text)] mb-2">How it works</h2>
-            <p className="text-[var(--muted)]">Scoped engagements. No long procurement cycles.</p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-3 gap-5">
-            {[
-              {
-                step: '01',
-                title: '30-minute conversation',
-                desc: 'Tell me what you\'re trying to accomplish and where you\'re stuck. I\'ll tell you honestly if a fractional engagement makes sense for your situation. No pitch deck.',
-              },
-              {
-                step: '02',
-                title: 'Scoped engagement',
-                desc: 'Clear deliverables, timeline, and a monthly retainer. You know exactly what you\'re getting and what it costs before anything starts.',
-              },
-              {
-                step: '03',
-                title: 'Monthly retainer',
-                desc: 'Adjust scope as priorities shift. Disengage without severance when the work is done. Or build on the engagement as the program scales.',
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="border border-[var(--border)] bg-[var(--card)] rounded p-6"
-              >
-                <div className="text-3xl font-bold text-[var(--primary)] font-mono mb-3">{item.step}</div>
-                <h3 className="font-bold text-[var(--text)] mb-2">{item.title}</h3>
-                <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center"
           >
-            <h2 className="text-3xl font-bold text-[var(--text)] mb-4">
-              Worth a 30-minute conversation
+            <h2 className="text-2xl font-bold text-[var(--text)] mb-4">
+              If it&apos;s worth a conversation
             </h2>
-            <p className="text-[var(--muted)] mb-8 max-w-xl mx-auto">
-              If you&apos;re building an AI integration program and need senior leadership to get it right,
-              let&apos;s talk. No obligation, no pitch deck.
+            <p className="text-[var(--muted)] mb-6 leading-relaxed">
+              I&apos;m local, I know the institution, and I have done exactly this kind of work.
+              If the Dean or the hiring team wants to talk through what a fractional engagement
+              could look like for what the U is trying to build, I&apos;m easy to reach.
             </p>
-            <Button href="https://cal.com/justinh-cal" variant="primary">
-              Book a strategy conversation
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-3 text-sm">
+              <a
+                href="mailto:justin@getlatest.ai"
+                className="inline-flex items-center gap-2 text-[var(--primary)] hover:underline font-medium"
+              >
+                justin@getlatest.ai
+              </a>
+              <span className="text-[var(--muted)] hidden sm:inline">·</span>
+              <a
+                href="https://www.linkedin.com/in/henriksenjustin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[var(--primary)] hover:underline font-medium"
+              >
+                linkedin.com/in/henriksenjustin
+              </a>
+            </div>
           </motion.div>
         </Container>
       </section>
