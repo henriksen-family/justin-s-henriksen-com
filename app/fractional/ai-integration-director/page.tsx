@@ -87,9 +87,10 @@ export default function AIIntegrationDirectorPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed"
             >
-              I graduated from the David Eccles School of Business. I spent four years at Microsoft
-              building the AI programs that connected universities and employers across the country.
-              I ran a $51M P&L transformation into AI/ML managed services. And I&apos;m currently
+              I graduated from the David Eccles School of Business. I spent nearly a decade at Microsoft -
+              as a software engineering manager, a principal engineer, and ultimately Sr. Director of Partner
+              Ecosystem for AI/ML - building the programs that connected universities and employers across
+              the country. I ran a $51M P&L transformation into AI/ML managed services. And I&apos;m currently
               building and operating a production AI platform in Salt Lake City.
             </motion.p>
 
