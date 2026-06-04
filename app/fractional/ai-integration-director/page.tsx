@@ -62,9 +62,9 @@ const comparison = [
     fractional: 'Disengage without consequence if it isn\'t working',
   },
   {
-    label: 'Seniority',
-    fte: 'Depends on who applies at that salary band',
-    fractional: 'Former Microsoft Sr. Director, CEO-level from day one',
+    label: 'Caliber',
+    fte: 'Sr. AI leaders command $300K-$500K+ in total comp. At $120K, you get who\'s available.',
+    fractional: 'Former Microsoft Sr. Director, CEO who led $51M AI transformation - scoped to your budget',
   },
   {
     label: 'Overhead',
@@ -112,7 +112,7 @@ export default function AIIntegrationDirectorPage() {
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
             }`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              You&apos;re searching for a Director of AI Integration. Let&apos;s talk about what you actually need.
+              $100,000 - $120,000 won&apos;t attract someone who has actually done this at scale. Fractional will.
               {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
             </h1>
 
@@ -122,10 +122,11 @@ export default function AIIntegrationDirectorPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed"
             >
-              Most organizations posting this role need AI integration leadership - a clear strategy,
-              working partnerships, and programs that actually get adopted. A fractional engagement
-              delivers exactly that, without a 6-month hiring process, a $120K salary commitment, or
-              the risk of the wrong hire.
+              A Director of AI Integration with real credentials - someone who has led AI transformation
+              at a major organization, shipped production systems, and built programs that lasted - commands
+              $300,000 to $500,000+ in total compensation. At $100K-$120K, you&apos;re competing for people
+              who are figuring it out on your timeline and your budget. A fractional engagement gets you
+              the senior leader the role actually requires, scoped to what you need.
             </motion.p>
 
             <motion.div
@@ -141,6 +142,41 @@ export default function AIIntegrationDirectorPage() {
                 See the full AI Officer page
               </Button>
             </motion.div>
+          </motion.div>
+        </Container>
+      </section>
+
+      {/* Salary reality check */}
+      <section className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="border border-[var(--primary)] bg-[var(--card)] rounded p-6 sm:p-8 max-w-3xl"
+          >
+            <h2 className="text-xl font-bold text-[var(--text)] mb-4">
+              The honest picture on AI talent at this salary band
+            </h2>
+            <div className="space-y-4 text-sm text-[var(--muted)] leading-relaxed">
+              <p>
+                Senior AI leaders with real-world track records - people who have run large-scale AI programs,
+                managed vendor relationships worth millions, transformed organizational capabilities, and shipped
+                production systems - are compensated at $300,000 to $500,000+ in total comp. That&apos;s the market.
+              </p>
+              <p>
+                At $100K-$120K, the applicant pool is mostly people who have studied AI, advised on AI,
+                or been adjacent to AI initiatives without owning outcomes. You will find candidates with
+                impressive-sounding titles and certifications. You will have a harder time finding someone
+                who has been accountable for results.
+              </p>
+              <p className="text-[var(--text)] font-medium">
+                Fractional changes the math. You get a former Microsoft Sr. Director and CEO who has
+                led $51M P&L transformation, managed 30+ AI initiatives, and is shipping production AI
+                today - not in theory. The engagement is scoped to your actual need, so the cost
+                fits your budget. The capability doesn&apos;t get watered down to match it.
+              </p>
+            </div>
           </motion.div>
         </Container>
       </section>
