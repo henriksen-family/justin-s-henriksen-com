@@ -77,7 +77,7 @@ export default function AIIntegrationDirectorPage() {
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
             }`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              A U of U MBA who has actually built what this role requires.
+              The U needs senior AI leadership. The salary band won&apos;t attract it. Fractional solves that.
               {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
             </h1>
 
@@ -87,11 +87,11 @@ export default function AIIntegrationDirectorPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed"
             >
-              I graduated from the David Eccles School of Business. I spent nearly a decade at Microsoft -
-              as a software engineering manager, a principal engineer, and ultimately Sr. Director of Partner
-              Ecosystem for AI/ML - building the programs that connected universities and employers across
-              the country. I ran a $51M P&L transformation into AI/ML managed services. And I&apos;m currently
-              building and operating a production AI platform in Salt Lake City.
+              People who have actually led AI integration at scale - built the programs, managed the
+              vendors, transformed organizations, and shipped systems that worked - command $300K-$500K+
+              in total comp. At $100K-$120K, the U will get applicants who are adjacent to that work,
+              not accountable for it. A fractional engagement is a different structure: senior
+              experience scoped to what the University actually needs, at a cost that fits the budget.
             </motion.p>
 
             <motion.p
@@ -100,43 +100,13 @@ export default function AIIntegrationDirectorPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed mt-4"
             >
-              The role the University is trying to fill is one I am uniquely qualified to do -
-              and the fractional model means you get that experience without waiting six months
-              to hire and without the compensation a person with this background commands full-time.
+              I graduated from the David Eccles School of Business. I spent nearly a decade at
+              Microsoft - as a software engineering manager, principal engineer, and ultimately Sr.
+              Director of Partner Ecosystem for AI/ML - building the programs that connected
+              universities and employers across the country. I ran a $51M P&amp;L transformation into
+              AI/ML managed services. I&apos;m local, I know the institution, and I&apos;m currently building
+              and operating a production AI platform in Salt Lake City.
             </motion.p>
-          </motion.div>
-        </Container>
-      </section>
-
-      {/* Salary reality */}
-      <section className="py-12 border-t border-[var(--border)]">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="border border-[var(--border)] bg-[var(--card)] rounded p-6 sm:p-8 max-w-3xl"
-          >
-            <h2 className="text-lg font-bold text-[var(--text)] mb-4">
-              On the $100K - $120K salary range
-            </h2>
-            <div className="space-y-3 text-sm text-[var(--muted)] leading-relaxed">
-              <p>
-                Senior AI leaders with real implementation track records are compensated at
-                $300,000 to $500,000+ in total comp. That&apos;s not a negotiating position - that&apos;s
-                the market for people who have actually transformed organizations with AI at scale.
-              </p>
-              <p>
-                At $100K-$120K, the University will attract people who have studied AI, consulted on AI,
-                or been close to AI initiatives. Finding someone who has been fully accountable for
-                building something that worked - and can point to the outcomes - will be harder.
-              </p>
-              <p className="text-[var(--text)]">
-                A fractional engagement is a different structure. You get the senior experience
-                the role requires, scoped to what you actually need, at a cost that fits a
-                university budget. The capability doesn&apos;t get watered down to match the salary band.
-              </p>
-            </div>
           </motion.div>
         </Container>
       </section>
