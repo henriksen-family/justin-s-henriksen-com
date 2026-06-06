@@ -13,20 +13,11 @@ export const metadata: Metadata = {
     siteName: 'Justin S. Henriksen',
     type: 'website',
     locale: 'en_US',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Fractional AI Officer - Justin S. Henriksen',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional AI Officer - Justin S. Henriksen',
     description: 'Senior AI leadership without the full-time overhead. Former Microsoft Sr. Director. Production AI platform today.',
-    images: ['/og-image.jpg'],
   },
 }
 
