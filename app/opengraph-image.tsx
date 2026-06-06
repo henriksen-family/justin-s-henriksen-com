@@ -5,5 +5,5 @@ export const contentType = 'image/png'
 import { buildOgImage } from '@/lib/og-image'
 
 export default function Image() {
-  return buildOgImage('Fractional AI Officer & Solutions Architect')
+  return buildOgImage('Founder. Builder. Investor.')
 }

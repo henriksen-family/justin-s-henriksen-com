@@ -45,7 +45,7 @@ export function buildOgImage(title: string) {
           <div
             style={{
               fontSize: '15px',
-              color: '#4b5563',
+              color: '#6b7280',
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               marginBottom: '20px',
@@ -103,7 +103,7 @@ export function buildOgImage(title: string) {
                     flexShrink: 0,
                   }}
                 />
-                <span style={{ fontSize: '17px', color: '#6b7280' }}>{item}</span>
+                <span style={{ fontSize: '17px', color: '#d1d5db' }}>{item}</span>
               </div>
             ))}
           </div>

@@ -32,8 +32,8 @@ const specialElite = Special_Elite({
 })
 
 export const metadata: Metadata = {
-  title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
-  description: '25 years building technology. Available fractionally. Fractional AI Officer and Solutions Architect with deep Microsoft, Azure, and enterprise AI experience.',
+  title: 'Justin S. Henriksen',
+  description: 'Founder of GetLatest AI. Building SnappyClaw and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
   metadataBase: new URL('https://justinshenriksen.com'),
   alternates: {
     canonical: 'https://justinshenriksen.com',
@@ -50,8 +50,8 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   openGraph: {
-    title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
-    description: '25 years building technology. Available fractionally. Former Microsoft Sr. Director. CEO twice over. Fractional AI Officer and Solutions Architect.',
+    title: 'Justin S. Henriksen',
+    description: 'Founder of GetLatest AI. Building SnappyClaw and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
     url: 'https://justinshenriksen.com',
     siteName: 'Justin S. Henriksen',
     type: 'profile',
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Justin S. Henriksen - Fractional AI Officer & Solutions Architect',
-    description: '25 years building technology. Available fractionally. Former Microsoft Sr. Director. CEO twice over.',
+    title: 'Justin S. Henriksen',
+    description: 'Founder of GetLatest AI. Building SnappyClaw and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
   },
   robots: {
     index: true,
