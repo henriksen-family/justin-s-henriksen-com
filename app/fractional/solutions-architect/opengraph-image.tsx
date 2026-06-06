@@ -5,5 +5,9 @@ export const contentType = 'image/png'
 import { buildOgImage } from '@/lib/og-image'
 
 export default function Image() {
-  return buildOgImage('Fractional Solutions Architect')
+  return buildOgImage('Fractional Solutions Architect', [
+    '25 years IC to CEO and back to shipping code daily',
+    'Azure MCSE, AWS since 2008, GCP Vertex AI',
+    'Architecting SnappyClaw - live multi-agent AI platform',
+  ])
 }

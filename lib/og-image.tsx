@@ -4,7 +4,7 @@ import path from 'path'
 
 export const OG_SIZE = { width: 1200, height: 630 }
 
-export function buildOgImage(title: string) {
+export function buildOgImage(title: string, bullets: [string, string, string]) {
   const avatarData = fs.readFileSync(path.join(process.cwd(), 'public', 'justin.jpg'))
   const avatarBase64 = `data:image/jpeg;base64,${avatarData.toString('base64')}`
 
@@ -88,11 +88,7 @@ export function buildOgImage(title: string) {
           />
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-            {[
-              'Former Microsoft Sr. Director, AI/ML',
-              'MBA - David Eccles School of Business',
-              '25 years building technology',
-            ].map((item, i) => (
+            {bullets.map((item, i) => (
               <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <div
                   style={{
