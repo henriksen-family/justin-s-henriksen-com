@@ -1,13 +1,12 @@
 import { ImageResponse } from 'next/og'
+import fs from 'fs'
+import path from 'path'
 
 export const OG_SIZE = { width: 1200, height: 630 }
 
-export async function buildOgImage(title: string) {
-  const avatarData = await fetch(
-    new URL('/justin.jpg', 'https://justinshenriksen.com')
-  ).then((res) => res.arrayBuffer())
-
-  const avatarBase64 = `data:image/jpeg;base64,${Buffer.from(avatarData).toString('base64')}`
+export function buildOgImage(title: string) {
+  const avatarData = fs.readFileSync(path.join(process.cwd(), 'public', 'justin.jpg'))
+  const avatarBase64 = `data:image/jpeg;base64,${avatarData.toString('base64')}`
 
   return new ImageResponse(
     (
