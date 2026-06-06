@@ -12,37 +12,23 @@ export function buildOgImage(title: string) {
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #0d1117 0%, #0f1923 50%, #0d1117 100%)',
+          background: '#0d1117',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           fontFamily: 'system-ui, -apple-system, sans-serif',
-          position: 'relative',
-          overflow: 'hidden',
         }}
       >
-        {/* Subtle dot grid */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            backgroundImage:
-              'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-
         {/* Blue accent line on left edge */}
         <div
           style={{
             position: 'absolute',
             left: 0,
-            top: '15%',
-            bottom: '15%',
+            top: 0,
+            bottom: 0,
             width: '4px',
-            background: 'linear-gradient(to bottom, transparent, #3b82f6, transparent)',
-            borderRadius: '0 2px 2px 0',
+            background: '#3b82f6',
           }}
         />
 
@@ -73,7 +59,7 @@ export function buildOgImage(title: string) {
               fontSize: '52px',
               fontWeight: '700',
               color: '#f9fafb',
-              lineHeight: '1.05',
+              lineHeight: 1.05,
               letterSpacing: '-0.02em',
               marginBottom: '12px',
             }}
@@ -87,7 +73,6 @@ export function buildOgImage(title: string) {
               color: '#3b82f6',
               fontWeight: '500',
               marginBottom: '36px',
-              letterSpacing: '-0.01em',
             }}
           >
             {title}
