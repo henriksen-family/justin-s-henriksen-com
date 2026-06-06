@@ -55,7 +55,7 @@ const deliverables = [
 
 const proofPoints = [
   { value: '25yr', label: 'Building technology', detail: 'IC to CEO and back to shipping code' },
-  { value: '30+', label: 'AI initiatives', detail: '$1.5M funding into $5M+ revenue' },
+  { value: '30+', label: 'AI initiatives', detail: '$1.5M funding into $25M+ revenue' },
   { value: '$51M', label: 'P&L led', detail: 'After AI/ML transformation at Crayon' },
   { value: 'Live', label: 'Production AI platform', detail: 'SnappyClaw - real customers today' },
 ]
@@ -122,7 +122,7 @@ const careerTimeline: TimelineItem[] = [
     period: 'Jul 2017 - Oct 2021',
     bullets: [
       'Led AI/ML and advanced analytics partner strategy for the Microsoft ecosystem.',
-      '30+ AI enablement initiatives driving $5M+ partner revenue.',
+      '30+ AI enablement initiatives driving $25M+ partner revenue.',
       '$100M+ in customer growth driven through the partner ecosystem.',
       'Partners scaled 10x, 14x, and 20x within 4 years. 2020 Leadership Spotlight, 2019 Manager of the Year.',
     ],
@@ -329,7 +329,7 @@ export default function AIOfficerrPage() {
               },
               {
                 headline: 'Led 30+ AI enablement initiatives',
-                body: 'At Microsoft, managed $1.5M in AI initiative funding and converted it into $5M+ in sustainable partner revenue.',
+                body: 'At Microsoft, managed $1.5M in AI initiative funding and converted it into $25M+ in sustainable partner revenue.',
               },
               {
                 headline: 'Transformed Crayon US',

@@ -20,7 +20,7 @@ const jobRequirements = [
   {
     icon: BarChart3,
     requirement: 'Establish performance indicators to measure the impact of AI-related initiatives',
-    delivery: 'I\'ve run $1.5M in AI initiative funding and tracked it to $5M+ in measurable outcomes. I can build the measurement framework this program needs - one that will hold up when the legislature or the board asks how it\'s going.',
+    delivery: 'I\'ve run $1.5M in AI initiative funding and tracked it to $25M+ in measurable outcomes. I can build the measurement framework this program needs - one that will hold up when the legislature or the board asks how it\'s going.',
   },
   {
     icon: GraduationCap,
@@ -41,7 +41,7 @@ const jobRequirements = [
 
 const proofPoints = [
   { value: '25yr', label: 'Building with technology', detail: 'IC to CEO and back to shipping code' },
-  { value: '30+', label: 'AI initiatives led', detail: '$1.5M funding into $5M+ revenue' },
+  { value: '30+', label: 'AI initiatives led', detail: '$1.5M funding into $25M+ revenue' },
   { value: '$51M', label: 'P&L transformed', detail: 'After AI/ML shift at Crayon' },
   { value: 'Eccles', label: 'MBA, U of U', detail: 'David Eccles School of Business' },
 ]

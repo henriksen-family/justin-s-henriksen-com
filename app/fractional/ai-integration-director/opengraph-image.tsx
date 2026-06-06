@@ -8,6 +8,6 @@ export default function Image() {
   return buildOgImage('Fractional Director of AI Integration', [
     'Former Microsoft Sr. Director, AI/ML Partner Ecosystem',
     'MBA, David Eccles School of Business',
-    '$1.5M AI initiative funding converted to $5M+ outcomes',
+    '$1.5M AI initiative funding converted to $25M+ outcomes',
   ])
 }

@@ -30,7 +30,7 @@ const investments = [
 const stats = [
   { value: '172%', label: 'MRR increase', detail: '$440K to $1.2M in 8 months' },
   { value: '$100M+', label: 'Customer growth', detail: 'Microsoft partner ecosystem' },
-  { value: '$1.5M - $5M+', label: 'AI initiative funding converted', detail: 'Sustainable partner revenue' },
+  { value: '$1.5M - $25M+', label: 'AI initiative funding converted', detail: 'Sustainable partner revenue' },
   { value: '$51M', label: 'P&L led as GM', detail: 'Crayon US' },
   { value: '200%', label: 'New customer acquisition', detail: 'At Crayon as GM' },
   { value: '95/100', label: 'Manager rating', detail: '5-year average' },
