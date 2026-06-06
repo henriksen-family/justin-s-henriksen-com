@@ -13,20 +13,11 @@ export const metadata: Metadata = {
     siteName: 'Justin S. Henriksen',
     type: 'website',
     locale: 'en_US',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Director of AI Integration - Fractional - Justin S. Henriksen',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Director of AI Integration - Fractional - Justin S. Henriksen',
     description: 'Senior AI integration leadership without the full-time hire. Former Microsoft Sr. Director. MBA, University of Utah.',
-    images: ['/og-image.jpg'],
   },
 }
 
