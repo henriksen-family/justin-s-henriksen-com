@@ -242,7 +242,7 @@ export default function Home() {
       {/* ── TOC (desktop only) ───────────────────────────────── */}
       <nav className="hidden sm:block border-t border-[var(--border)]">
         <Container>
-          <div className="flex flex-wrap items-center justify-center gap-0 py-0 whitespace-nowrap">
+          <div className="flex items-center justify-center gap-0 py-0 whitespace-nowrap">
             {[
               { label: "What I'm building", href: '#building' },
               { label: "What I've accomplished", href: '#accomplished' },
