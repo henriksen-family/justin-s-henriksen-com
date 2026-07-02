@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '@/components/seo/json-ld'
+import { graph, serviceNode, breadcrumbNode, SITE_URL } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Fractional Solutions Architect - Justin S. Henriksen',
@@ -22,5 +24,24 @@ export const metadata: Metadata = {
 }
 
 export default function SolutionsArchitectLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <JsonLd
+        data={graph([
+          serviceNode({
+            name: 'Fractional Solutions Architect',
+            description:
+              'AI system design and Azure/AWS/GCP cloud architecture from 25 years of hands-on technical work - on a fractional basis, without the full-time overhead.',
+            serviceType: 'Fractional solutions architecture',
+            url: `${SITE_URL}/fractional/solutions-architect`,
+          }),
+          breadcrumbNode([
+            { name: 'Home', url: SITE_URL },
+            { name: 'Fractional Solutions Architect', url: `${SITE_URL}/fractional/solutions-architect` },
+          ]),
+        ])}
+      />
+      {children}
+    </>
+  )
 }

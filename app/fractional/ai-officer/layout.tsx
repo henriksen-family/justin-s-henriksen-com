@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '@/components/seo/json-ld'
+import { graph, serviceNode, breadcrumbNode, SITE_URL } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Fractional AI Officer - Justin S. Henriksen',
@@ -22,5 +24,24 @@ export const metadata: Metadata = {
 }
 
 export default function AIOfficeLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <JsonLd
+        data={graph([
+          serviceNode({
+            name: 'Fractional AI Officer',
+            description:
+              'Senior AI strategy, governance, and implementation leadership on a fractional basis - without the full-time overhead.',
+            serviceType: 'Fractional AI leadership',
+            url: `${SITE_URL}/fractional/ai-officer`,
+          }),
+          breadcrumbNode([
+            { name: 'Home', url: SITE_URL },
+            { name: 'Fractional AI Officer', url: `${SITE_URL}/fractional/ai-officer` },
+          ]),
+        ])}
+      />
+      {children}
+    </>
+  )
 }

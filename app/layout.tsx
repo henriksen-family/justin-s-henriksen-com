@@ -4,6 +4,8 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { ThemeSwitcher } from '@/components/theme/theme-switcher'
 import { Nav } from '@/components/ui/nav'
+import { JsonLd } from '@/components/seo/json-ld'
+import { graph, personNode, websiteNode, organizationNode } from '@/lib/seo/schema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -99,6 +101,7 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable} ${specialElite.variable}`}
     >
       <body>
+        <JsonLd data={graph([personNode, websiteNode, organizationNode])} />
         <ThemeProvider>
           <Nav />
           <ThemeSwitcher />

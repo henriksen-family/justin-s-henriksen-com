@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { JsonLd } from '@/components/seo/json-ld'
+import { graph, serviceNode, breadcrumbNode, SITE_URL } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Director of AI Integration - Fractional - Justin S. Henriksen',
@@ -22,5 +24,24 @@ export const metadata: Metadata = {
 }
 
 export default function AIIntegrationDirectorLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return (
+    <>
+      <JsonLd
+        data={graph([
+          serviceNode({
+            name: 'Fractional Director of AI Integration',
+            description:
+              'Senior AI integration leadership on a fractional engagement - the same senior leadership as a full-time hire, faster and without the hiring risk.',
+            serviceType: 'Fractional AI leadership',
+            url: `${SITE_URL}/fractional/ai-integration-director`,
+          }),
+          breadcrumbNode([
+            { name: 'Home', url: SITE_URL },
+            { name: 'Director of AI Integration', url: `${SITE_URL}/fractional/ai-integration-director` },
+          ]),
+        ])}
+      />
+      {children}
+    </>
+  )
 }
