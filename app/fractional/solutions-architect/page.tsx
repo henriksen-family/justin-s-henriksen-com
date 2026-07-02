@@ -166,7 +166,7 @@ export default function SolutionsArchitectPage() {
 
             <h1 className={`text-[var(--text)] leading-tight mb-6 ${
               theme === 'arcade'
-                ? 'font-pixel text-base sm:text-lg leading-loose'
+                ? 'font-pixel text-base sm:text-base leading-loose'
                 : theme === 'terminal' || theme === 'futuristic'
                 ? 'font-mono text-2xl sm:text-3xl lg:text-4xl'
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
@@ -180,7 +180,7 @@ export default function SolutionsArchitectPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed"
+              className="text-[var(--muted)] text-base sm:text-xl max-w-3xl mb-8 leading-relaxed"
             >
               Fractional Solutions Architect for AI integrations, Azure/AWS/GCP cloud systems, M365 agent deployments,
               and the technical decisions that compound over time.
@@ -308,7 +308,7 @@ export default function SolutionsArchitectPage() {
             viewport={{ once: true }}
             className="border border-[var(--primary)] bg-[var(--card)] rounded p-7"
           >
-            <h3 className="font-bold text-[var(--text)] mb-6 text-lg">Decisions made and why they matter</h3>
+            <h3 className="font-bold text-[var(--text)] mb-6 text-base">Decisions made and why they matter</h3>
             <div className="grid sm:grid-cols-2 gap-6">
               {[
                 {
@@ -329,7 +329,7 @@ export default function SolutionsArchitectPage() {
                 },
               ].map((item, i) => (
                 <div key={i} className="flex gap-4">
-                  <div className="text-[var(--primary)] font-bold text-lg shrink-0 mt-0.5">›</div>
+                  <div className="text-[var(--primary)] font-bold text-base shrink-0 mt-0.5">›</div>
                   <div>
                     <h4 className="font-bold text-[var(--text)] mb-1 text-sm">{item.decision}</h4>
                     <p className="text-sm text-[var(--muted)] leading-relaxed">{item.reasoning}</p>

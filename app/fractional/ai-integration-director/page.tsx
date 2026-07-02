@@ -71,7 +71,7 @@ export default function AIIntegrationDirectorPage() {
 
             <h1 className={`text-[var(--text)] leading-tight mb-6 ${
               theme === 'arcade'
-                ? 'font-pixel text-base sm:text-lg leading-loose'
+                ? 'font-pixel text-base sm:text-base leading-loose'
                 : theme === 'terminal' || theme === 'futuristic'
                 ? 'font-mono text-2xl sm:text-3xl lg:text-4xl'
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
@@ -85,7 +85,7 @@ export default function AIIntegrationDirectorPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed"
+              className="text-[var(--muted)] text-base sm:text-xl leading-relaxed"
             >
               People who have actually led AI integration at scale - built the programs, managed the
               vendors, transformed organizations, and shipped systems that worked - command $300K-$500K+
@@ -98,7 +98,7 @@ export default function AIIntegrationDirectorPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-[var(--muted)] text-lg sm:text-xl leading-relaxed mt-4"
+              className="text-[var(--muted)] text-base sm:text-xl leading-relaxed mt-4"
             >
               I graduated from the David Eccles School of Business. I spent nearly a decade at
               Microsoft - as a software engineering manager, principal engineer, and ultimately Sr.

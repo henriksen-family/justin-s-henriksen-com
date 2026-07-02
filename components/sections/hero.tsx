@@ -56,7 +56,7 @@ export function Hero({ headline, sub, ctas, badge, mono }: HeroProps) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className={`text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed ${mono ? 'font-mono text-base' : ''}`}
+              className={`text-[var(--muted)] text-base sm:text-xl max-w-3xl mb-8 leading-relaxed ${mono ? 'font-mono text-base' : ''}`}
             >
               {sub}
             </motion.p>

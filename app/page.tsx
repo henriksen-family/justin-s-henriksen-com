@@ -40,7 +40,6 @@ const gallery = [
   { src: '/images/nascar.jpg', alt: 'NASCAR awards' },
   { src: '/images/trophy.jpeg', alt: 'Trophy' },
   { src: '/images/tom.jpg', alt: 'Friends' },
-  { src: '/images/jd.jpg', alt: 'Friends' },
   { src: '/images/sandler.jpg', alt: 'Friends' },
 ]
 
@@ -135,13 +134,13 @@ export default function Home() {
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   const headlineSize = theme === 'arcade'
-    ? 'font-pixel text-lg sm:text-xl lg:text-2xl leading-loose'
+    ? 'font-pixel text-base sm:text-xl lg:text-2xl leading-loose'
     : 'text-4xl sm:text-5xl lg:text-6xl font-bold'
 
   const sectionHeading = theme === 'arcade'
     ? 'font-pixel text-sm leading-relaxed'
     : theme === 'terminal' || theme === 'futuristic'
-    ? 'font-mono text-lg sm:text-xl'
+    ? 'font-mono text-base sm:text-xl'
     : 'font-bold text-2xl'
 
   return (
@@ -208,7 +207,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-[var(--muted)] text-lg max-w-2xl mb-10 leading-relaxed"
+                className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
               >
                 {'I co-founded '}
                 <a
@@ -252,6 +251,8 @@ export default function Home() {
               { label: "What I've written", href: '#writing' },
               { label: "What I've spoken about", href: '#speaking' },
               { label: "Where I invest", href: '#investing' },
+              { label: "Education", href: '#education' },
+              { label: "Personal & giving", href: '#giving' },
             ].map((item, i) => (
               <a
                 key={i}
@@ -316,7 +317,7 @@ export default function Home() {
             {stats.map((stat, i) => <StatCard key={i} {...stat} index={i} />)}
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-6">
-            <h3 className="text-lg font-bold text-[var(--text)] mb-1">Programs built at scale</h3>
+            <h3 className="text-base font-bold text-[var(--text)] mb-1">Programs built at scale</h3>
             <p className="text-sm text-[var(--muted)]">Named programs from the Microsoft AI partner motion.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-4">
@@ -360,7 +361,7 @@ export default function Home() {
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
               {"Where I invest"}
             </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl mb-10">
+            <p className="text-[var(--muted)] text-base leading-relaxed max-w-3xl mb-10">
               {"I'm the founder of Fenix Venture, my personal investment vehicle. I invest directly and work closely with leadership teams on strategy, structure, and execution when that involvement is useful. The form varies. The goal is measurable progress, not activity."}
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -388,10 +389,10 @@ export default function Home() {
       </section>
 
       {/* ── Education & credentials ──────────────────────────── */}
-      <section className="py-12 border-t border-[var(--border)]">
+      <section id="education" className="py-12 border-t border-[var(--border)]">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-lg font-bold text-[var(--text)] mb-5">Education and credentials</h2>
+            <h2 className="text-base font-bold text-[var(--text)] mb-5">Education and credentials</h2>
             <div className="flex flex-wrap gap-3">
               {[
                 'MBA - University of Utah',
@@ -420,7 +421,7 @@ export default function Home() {
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
               {'Personal & how we give'}
             </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
+            <p className="text-[var(--muted)] text-base leading-relaxed max-w-3xl">
               {'Beyond the companies and the code, there’s family, a foundation, and a long list of places I’ve been lucky enough to see — the part of the story that has nothing to do with a P&L.'}
             </p>
           </motion.div>
@@ -432,7 +433,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-[var(--muted)] text-lg leading-relaxed mb-4">
+              <p className="text-[var(--muted)] text-base leading-relaxed mb-4">
                 {'Outside of business, my wife and I run a private foundation, the '}
                 <a
                   href="https://henriksenfamily.org"
@@ -444,7 +445,7 @@ export default function Home() {
                 </a>
                 {', focused on giving back in ways that are thoughtful, practical, and impactful. We believe success carries responsibility, and that strong communities are built when people invest in one another — not just financially, but with time, care, and attention.'}
               </p>
-              <p className="text-[var(--muted)] text-lg leading-relaxed">
+              <p className="text-[var(--muted)] text-base leading-relaxed">
                 {'At the core of everything I do is a simple belief: people should be encouraged to chase meaningful dreams, and those dreams should pull others forward with them. Build things that matter. Learn constantly. Share success. And leave whatever you touch better than you found it.'}
               </p>
               <div className="mt-8">
@@ -501,7 +502,7 @@ export default function Home() {
       <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
-            <p className="text-[var(--muted)] text-lg mb-8 max-w-xl mx-auto leading-relaxed">
+            <p className="text-[var(--muted)] text-base mb-8 max-w-xl mx-auto leading-relaxed">
               {'I work with people who are fun to be around, passionate about their purpose, and like to build cool things. If there\'s overlap, let\'s talk.'}
             </p>
             <div className="flex flex-wrap justify-center gap-4">

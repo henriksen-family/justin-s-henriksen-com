@@ -155,7 +155,7 @@ export default function AIOfficerrPage() {
 
             <h1 className={`text-[var(--text)] leading-tight mb-6 ${
               theme === 'arcade'
-                ? 'font-pixel text-base sm:text-lg leading-loose'
+                ? 'font-pixel text-base sm:text-base leading-loose'
                 : theme === 'terminal' || theme === 'futuristic'
                 ? 'font-mono text-2xl sm:text-3xl lg:text-4xl'
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
@@ -169,7 +169,7 @@ export default function AIOfficerrPage() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[var(--muted)] text-lg sm:text-xl max-w-3xl mb-8 leading-relaxed"
+              className="text-[var(--muted)] text-base sm:text-xl max-w-3xl mb-8 leading-relaxed"
             >
               Fractional AI Officer. Available to drive your AI roadmap, governance, vendor selection,
               and implementation - without the full-time overhead.

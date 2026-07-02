@@ -51,7 +51,7 @@ export default function JHCardPage() {
             <h1 className="text-3xl sm:text-4xl font-bold text-[var(--text)] mb-1">
               Justin Henriksen
             </h1>
-            <p className="text-[var(--primary)] text-lg font-medium mb-1">
+            <p className="text-[var(--primary)] text-base font-medium mb-1">
               Co-Founder &amp; Chief Everything Officer
             </p>
             <p className="text-[var(--muted)] text-base">GetLatest AI</p>
