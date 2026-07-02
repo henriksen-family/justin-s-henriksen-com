@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Container } from '@/components/ui/container'
@@ -25,6 +26,22 @@ const investments = [
   { role: 'Strategic Advisor', name: 'Black Star Syndicate', url: 'https://blackstarsyndicate.com' },
   { role: 'Investor', name: 'Anchor 3PL', url: 'https://www.anchor3pl.com' },
   { role: 'Investor', name: 'OTP Tequila', url: 'https://www.otptequila.com/en' },
+]
+
+const gallery = [
+  { src: '/images/hike.jpg', alt: 'Hiking' },
+  { src: '/images/fishing.jpg', alt: 'Fishing' },
+  { src: '/images/kayak.jpg', alt: 'Kayaking' },
+  { src: '/images/victoria-falls.jpg', alt: 'Victoria Falls' },
+  { src: '/images/south-africa.jpg', alt: 'South Africa' },
+  { src: '/images/elephant.jpg', alt: 'On safari' },
+  { src: '/images/london-1.jpg', alt: 'London' },
+  { src: '/images/london-2.jpg', alt: 'London' },
+  { src: '/images/nascar.jpg', alt: 'NASCAR awards' },
+  { src: '/images/trophy.jpeg', alt: 'Trophy' },
+  { src: '/images/tom.jpg', alt: 'Friends' },
+  { src: '/images/jd.jpg', alt: 'Friends' },
+  { src: '/images/sandler.jpg', alt: 'Friends' },
 ]
 
 const stats = [
@@ -115,6 +132,7 @@ const careerTimeline: TimelineItem[] = [
 
 export default function Home() {
   const { theme } = useTheme()
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
 
   const headlineSize = theme === 'arcade'
     ? 'font-pixel text-lg sm:text-xl lg:text-2xl leading-loose'
@@ -369,30 +387,6 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── How we give ──────────────────────────────────────── */}
-      <section id="giving" className="py-12 border-t border-[var(--border)]">
-        <Container>
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
-              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
-              How we give
-            </h2>
-            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
-              {'My family and I run the '}
-              <a
-                href="https://henriksenfamily.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--primary)] hover:opacity-80 transition-opacity"
-              >
-                Henriksen Family Giving Fund
-              </a>
-              {', which reflects how we think about responsibility, stewardship, and long-term impact.'}
-            </p>
-          </motion.div>
-        </Container>
-      </section>
-
       {/* ── Education & credentials ──────────────────────────── */}
       <section className="py-12 border-t border-[var(--border)]">
         <Container>
@@ -418,6 +412,91 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* ── Personal & how we give ───────────────────────────── */}
+      <section id="giving" className="py-16 border-t border-[var(--border)]">
+        <Container>
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+            <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
+              {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
+              {'Personal & how we give'}
+            </h2>
+            <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl">
+              {'Beyond the companies and the code, there’s family, a foundation, and a long list of places I’ve been lucky enough to see — the part of the story that has nothing to do with a P&L.'}
+            </p>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center mb-14">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <p className="text-[var(--muted)] text-lg leading-relaxed mb-4">
+                {'Outside of business, my wife and I run a private foundation, the '}
+                <a
+                  href="https://henriksenfamily.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--primary)] hover:opacity-80 transition-opacity"
+                >
+                  Henriksen Family Giving Fund
+                </a>
+                {', focused on giving back in ways that are thoughtful, practical, and impactful. We believe success carries responsibility, and that strong communities are built when people invest in one another — not just financially, but with time, care, and attention.'}
+              </p>
+              <p className="text-[var(--muted)] text-lg leading-relaxed">
+                {'At the core of everything I do is a simple belief: people should be encouraged to chase meaningful dreams, and those dreams should pull others forward with them. Build things that matter. Learn constantly. Share success. And leave whatever you touch better than you found it.'}
+              </p>
+              <div className="mt-8">
+                <Button href="https://henriksenfamily.org" variant="secondary" external>
+                  {'Visit the foundation'}
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.97 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative aspect-[4/3] rounded overflow-hidden border border-[var(--border)]"
+            >
+              <Image
+                src="/images/christmas.jpg"
+                alt="The Henriksen family"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            {gallery.map((photo, i) => (
+              <motion.button
+                key={photo.src}
+                type="button"
+                onClick={() => setLightbox(photo)}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: (i % 4) * 0.06 }}
+                className="relative aspect-square rounded overflow-hidden border border-[var(--border)] hover:border-[var(--primary)] transition-colors duration-300 group cursor-pointer"
+                aria-label={`View photo: ${photo.alt}`}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+              </motion.button>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {/* ── CTA ──────────────────────────────────────────────── */}
       <section className="py-20 border-t border-[var(--border)]">
         <Container narrow>
@@ -436,6 +515,29 @@ export default function Home() {
           </motion.div>
         </Container>
       </section>
+
+      {/* ── Lightbox ─────────────────────────────────────────── */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 cursor-zoom-out"
+          onClick={() => setLightbox(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={lightbox.alt}
+        >
+          <div className="relative w-full max-w-4xl aspect-[4/3]">
+            <Image src={lightbox.src} alt={lightbox.alt} fill className="object-contain" sizes="90vw" />
+          </div>
+          <button
+            type="button"
+            onClick={() => setLightbox(null)}
+            className="absolute top-5 right-5 text-white/80 hover:text-white text-3xl font-mono leading-none"
+            aria-label="Close"
+          >
+            {'×'}
+          </button>
+        </div>
+      )}
     </>
   )
 }

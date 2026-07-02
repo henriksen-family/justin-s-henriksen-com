@@ -100,7 +100,7 @@ body {
 }
 
 [data-theme="professional"] h1 {
-  background: linear-gradient(135deg, #003780 0%, #0078d4 100%);
+  background: linear-gradient(135deg, #001a3d 0%, #003780 50%, #0063b1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

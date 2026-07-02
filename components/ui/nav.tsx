@@ -9,7 +9,6 @@ const links = [
   { href: '/', label: 'Home' },
   { href: '/fractional/ai-officer', label: 'AI Officer' },
   { href: '/fractional/solutions-architect', label: 'Solutions Architect' },
-  { href: '/personal', label: 'Personal' },
 ]
 
 export function Nav() {
