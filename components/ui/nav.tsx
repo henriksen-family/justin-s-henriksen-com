@@ -1,16 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { useTheme } from '@/components/theme/theme-provider'
 import { cn } from '@/lib/utils'
 
-const links = [
-  { href: '/', label: 'Home' },
-]
-
 export function Nav() {
-  const pathname = usePathname()
   const { theme } = useTheme()
 
   return (
@@ -25,23 +19,6 @@ export function Nav() {
         >
           {theme === 'terminal' ? '> JSH' : 'JSH'}
         </Link>
-
-        <div className="flex items-center gap-6 pr-28 sm:pr-32">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-sm font-mono transition-colors hidden sm:block',
-                pathname === link.href
-                  ? 'text-[var(--primary)]'
-                  : 'text-[var(--muted)] hover:text-[var(--text)]'
-              )}
-            >
-              {theme === 'terminal' && pathname !== link.href ? `[${link.label}]` : link.label}
-            </Link>
-          ))}
-        </div>
       </div>
     </nav>
   )

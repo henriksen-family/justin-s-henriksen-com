@@ -178,16 +178,6 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="max-w-2xl flex-1 lg:order-1"
             >
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.15 }}
-                className="inline-flex items-center gap-2 border border-[var(--primary)] px-3 py-1 rounded-full text-xs font-mono text-[var(--primary)] mb-6"
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] animate-pulse" />
-                Accepting new clients - limited availability
-              </motion.div>
-
               <h1 className={`text-[var(--text)] ${headlineSize} leading-tight mb-3`}>
                 {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
                 Justin S. Henriksen
