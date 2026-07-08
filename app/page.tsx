@@ -220,20 +220,6 @@ export default function Home() {
                 </a>
                 {', where we work with leaders who don\'t want to "learn AI" or experiment endlessly. They want to place smarter bets and see measurable outcomes. We help you identify the areas of your business where AI has the most impact and then we build the solution for you.'}
               </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-4"
-              >
-                <Button href="/fractional/ai-officer" variant="primary">
-                  Fractional AI Officer
-                </Button>
-                <Button href="/fractional/solutions-architect" variant="secondary">
-                  Fractional Solutions Architect
-                </Button>
-              </motion.div>
             </motion.div>
           </div>
         </Container>
