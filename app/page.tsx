@@ -15,7 +15,7 @@ const building = [
   { name: 'SnappyClaw', url: 'https://snappyclaw.ai', desc: 'An AI assistant that\'s powerful, private, and dead simple.' },
   { name: 'Ronin', url: 'https://myronin.ai', desc: 'Your AI powered job search agent.' },
   { name: 'FindTime', url: 'https://find-time.ai', desc: 'The scheduling platform built for AI agents.' },
-  { name: 'Helix', url: 'https://helix.getlatest.ai', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
+  { name: 'Helix', url: 'https://helixagency.ai', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
   { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
   { name: 'Shelfer', url: 'https://shelfer.co', desc: 'Growth platform helping CPG brands coordinate ecommerce, retail distribution, affiliate channels, and working capital from launch to shelf.' },
 ]

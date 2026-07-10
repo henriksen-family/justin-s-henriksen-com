@@ -20,7 +20,7 @@ const products: EvidenceItem[] = [
   {
     title: 'Helix - GTM Agent',
     description: 'Go-to-market agent. Monitors hiring signals, funding rounds, job posts, and intent data continuously. Signal detection, prospect research, lead scoring, and personalized outreach - running without human intervention.',
-    link: 'https://helix.getlatest.ai',
+    link: 'https://helixagency.ai',
     tag: 'Live Product',
   },
   {
