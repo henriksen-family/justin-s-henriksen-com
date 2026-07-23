@@ -181,7 +181,7 @@ export default function AIOfficerrPage() {
               transition={{ duration: 0.5, delay: 0.35 }}
               className="flex flex-wrap gap-4"
             >
-              <Button href="https://cal.com/justinh-cal" variant="primary">
+              <Button href="https://getlatest.ai/meet/justin" variant="primary">
                 Book a strategy conversation
               </Button>
               <Button href="https://www.linkedin.com/in/henriksenjustin" variant="secondary" external>
@@ -463,7 +463,7 @@ export default function AIOfficerrPage() {
               A 30-minute conversation to understand your AI challenges.
               No pitch deck. No obligation.
             </p>
-            <Button href="https://cal.com/justinh-cal" variant="primary">
+            <Button href="https://getlatest.ai/meet/justin" variant="primary">
               Book a strategy conversation
             </Button>
           </motion.div>

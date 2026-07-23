@@ -482,7 +482,7 @@ export default function Home() {
               {'I work with people who are fun to be around, passionate about their purpose, and like to build cool things. If there\'s overlap, let\'s talk.'}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button href="https://cal.com/justinh-cal" external variant="primary">
+              <Button href="https://getlatest.ai/meet/justin" external variant="primary">
                 Book a conversation
               </Button>
               <Button href="mailto:justin@getlatest.ai" variant="secondary">

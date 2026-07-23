@@ -89,7 +89,7 @@ export default function FractionalPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.35 }}
             >
-              <Button href="https://cal.com/justinh-cal" variant="primary">
+              <Button href="https://getlatest.ai/meet/justin" variant="primary">
                 Book a strategy conversation
               </Button>
             </motion.div>
@@ -229,7 +229,7 @@ export default function FractionalPage() {
               A 30-minute conversation to understand your technology challenges.
               No pitch deck. No obligation.
             </p>
-            <Button href="https://cal.com/justinh-cal" variant="primary">
+            <Button href="https://getlatest.ai/meet/justin" variant="primary">
               Book a strategy conversation
             </Button>
           </motion.div>

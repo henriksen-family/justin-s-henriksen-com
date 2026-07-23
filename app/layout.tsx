@@ -113,7 +113,7 @@ export default function RootLayout({
               </p>
               <div className="flex gap-6">
                 <a
-                  href="https://cal.com/justinh-cal"
+                  href="https://getlatest.ai/meet/justin"
                   className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
                 >
                   justin.henriksen@gmail.com

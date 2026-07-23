@@ -183,7 +183,7 @@ export default function CTOPage() {
               transition={{ duration: 0.5, delay: 0.35 }}
               className="flex flex-wrap gap-4"
             >
-              <Button href="https://cal.com/justinh-cal" variant="primary">
+              <Button href="https://getlatest.ai/meet/justin" variant="primary">
                 Book a strategy conversation
               </Button>
               <Button href="https://www.linkedin.com/in/henriksenjustin" variant="secondary" external>
@@ -479,7 +479,7 @@ export default function CTOPage() {
               30 minutes to understand your technology challenges and current state.
               No pitch. No obligation.
             </p>
-            <Button href="https://cal.com/justinh-cal" variant="primary">
+            <Button href="https://getlatest.ai/meet/justin" variant="primary">
               Book a strategy conversation
             </Button>
           </motion.div>
