@@ -14,7 +14,7 @@ const products: EvidenceItem[] = [
   {
     title: 'Snappy Agents',
     description: 'Multi-tenant AI agent platform. Three-layer architecture: Next.js application layer, Python worker services, Docker-based tenant isolation with fleet ops. Human-in-the-loop approval boundaries by design. Live customers.',
-    link: 'https://snappyclaw.ai',
+    link: 'https://snappyagents.ai',
     tag: 'Live Product',
   },
   {
