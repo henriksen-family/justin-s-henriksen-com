@@ -12,7 +12,7 @@ interface EvidenceItem {
 
 const products: EvidenceItem[] = [
   {
-    title: 'SnappyClaw',
+    title: 'Snappy Agents',
     description: 'Multi-tenant AI agent platform. Three-layer architecture: Next.js application layer, Python worker services, Docker-based tenant isolation with fleet ops. Human-in-the-loop approval boundaries by design. Live customers.',
     link: 'https://snappyclaw.ai',
     tag: 'Live Product',
@@ -74,7 +74,7 @@ const industries = [
 const writing: EvidenceItem[] = [
   {
     title: 'The Platform the Taxonomy Demands',
-    description: 'Why most "agent" products aren\'t actually agentic - and how SnappyClaw\'s three-layer architecture (persistent per-person memory, shared business knowledge, agent-to-agent coordination) solves the problem that model capability improvements alone cannot.',
+    description: 'Why most "agent" products aren\'t actually agentic - and how Snappy Agents\'s three-layer architecture (persistent per-person memory, shared business knowledge, agent-to-agent coordination) solves the problem that model capability improvements alone cannot.',
     link: 'https://getlatest.ai/blog/snappyclaw-platform-truly-agentic-architecture',
     tag: 'Writing',
   },

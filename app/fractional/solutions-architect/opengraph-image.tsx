@@ -8,6 +8,6 @@ export default function Image() {
   return buildOgImage('Fractional Solutions Architect', [
     '25 years IC to CEO and back to shipping code daily',
     'Azure MCSE, AWS since 2008, GCP Vertex AI',
-    'Architecting SnappyClaw - live multi-agent AI platform',
+    'Architecting Snappy Agents - live multi-agent AI platform',
   ])
 }

@@ -189,7 +189,7 @@ export default function AIIntegrationDirectorPage() {
               },
               {
                 headline: 'Shipping production AI in Salt Lake City today',
-                body: 'SnappyClaw is a live, multi-tenant AI agent platform with enterprise customers. When I advise on AI tools, implementation risk, or what a curriculum should prepare students to work with, it is grounded in what is actually working in production systems in 2026 - not white papers or vendor roadmaps.',
+                body: 'Snappy Agents is a live, multi-tenant AI agent platform with enterprise customers. When I advise on AI tools, implementation risk, or what a curriculum should prepare students to work with, it is grounded in what is actually working in production systems in 2026 - not white papers or vendor roadmaps.',
               },
             ].map((item, i) => (
               <motion.div

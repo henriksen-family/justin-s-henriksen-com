@@ -46,7 +46,7 @@ const proofPoints = [
   { value: '25yr', label: 'From IC to CEO', detail: 'And back to shipping code today' },
   { value: '200', label: 'Person org led', detail: 'As GM at Crayon US' },
   { value: '$51M', label: 'P&L responsibility', detail: 'While staying close to the architecture' },
-  { value: 'Live', label: 'Production AI platform', detail: 'SnappyClaw - daily commits' },
+  { value: 'Live', label: 'Production AI platform', detail: 'Snappy Agents - daily commits' },
 ]
 
 const fteVsFractional = [
@@ -84,7 +84,7 @@ const careerTimeline: TimelineItem[] = [
     period: 'Jun 2024 - Present',
     current: true,
     bullets: [
-      'Architecting and shipping SnappyClaw: production multi-agent AI platform with paying enterprise customers.',
+      'Architecting and shipping Snappy Agents: production multi-agent AI platform with paying enterprise customers.',
       'Full-stack technical leadership - product vision, system design, daily coding, and go-to-market.',
       'GetLatest AI consulting: fractional technology leadership for companies navigating AI adoption.',
     ],
@@ -342,7 +342,7 @@ export default function CTOPage() {
               },
               {
                 headline: 'Shipping AI in production today - not advising from theory',
-                body: 'SnappyClaw is a live, multi-tenant AI agent platform with paying enterprise customers. Multi-agent coordination, MCP integrations, Docker-based tenant isolation, centralized OAuth, human-in-the-loop approval architecture. Every CTO recommendation comes from what is actually working in production right now.',
+                body: 'Snappy Agents is a live, multi-tenant AI agent platform with paying enterprise customers. Multi-agent coordination, MCP integrations, Docker-based tenant isolation, centralized OAuth, human-in-the-loop approval architecture. Every CTO recommendation comes from what is actually working in production right now.',
               },
               {
                 headline: 'Technical depth across the full Microsoft and cloud stack',

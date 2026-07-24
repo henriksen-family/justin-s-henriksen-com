@@ -7,7 +7,7 @@ import { buildOgImage } from '@/lib/og-image'
 export default function Image() {
   return buildOgImage('Founder. Builder. Investor.', [
     'Co-Founder & CEO, GetLatest AI',
-    'Building SnappyClaw and 5 other AI products',
+    'Building Snappy Agents and 5 other AI products',
     'Investor and board member via Fenix Venture',
   ])
 }

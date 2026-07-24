@@ -35,7 +35,7 @@ const specialElite = Special_Elite({
 
 export const metadata: Metadata = {
   title: 'Justin S. Henriksen',
-  description: 'Founder of GetLatest AI. Building SnappyClaw and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
+  description: 'Founder of GetLatest AI. Building Snappy Agents and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
   metadataBase: new URL('https://justinshenriksen.com'),
   alternates: {
     canonical: 'https://justinshenriksen.com',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Justin S. Henriksen',
-    description: 'Founder of GetLatest AI. Building SnappyClaw and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
+    description: 'Founder of GetLatest AI. Building Snappy Agents and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
     url: 'https://justinshenriksen.com',
     siteName: 'Justin S. Henriksen',
     type: 'profile',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Justin S. Henriksen',
-    description: 'Founder of GetLatest AI. Building SnappyClaw and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
+    description: 'Founder of GetLatest AI. Building Snappy Agents and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
   },
   robots: {
     index: true,

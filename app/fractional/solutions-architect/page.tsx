@@ -45,7 +45,7 @@ const engagementTypes = [
 const domains = [
   {
     title: 'AI and Agent Systems',
-    items: ['SnappyClaw multi-agent platform (live, paying customers)', 'MCP (Model Context Protocol) integrations', 'RAG system design and implementation', 'Multi-agent coordination and orchestration', 'LLM API integration and optimization'],
+    items: ['Snappy Agents multi-agent platform (live, paying customers)', 'MCP (Model Context Protocol) integrations', 'RAG system design and implementation', 'Multi-agent coordination and orchestration', 'LLM API integration and optimization'],
   },
   {
     title: 'Cloud and Infrastructure',
@@ -73,7 +73,7 @@ const proofPoints = [
   { value: '25yr', label: 'Technical experience', detail: 'IC to CEO and back to building' },
   { value: '3', label: 'Cloud platforms', detail: 'Azure MCSE / AWS since 2008 / GCP Vertex AI' },
   { value: '$51M', label: 'P&L led as GM', detail: 'While staying close to the architecture' },
-  { value: 'Live', label: 'Shipping code today', detail: 'SnappyClaw platform, daily commits' },
+  { value: 'Live', label: 'Shipping code today', detail: 'Snappy Agents platform, daily commits' },
 ]
 
 const careerTimeline: TimelineItem[] = [
@@ -83,7 +83,7 @@ const careerTimeline: TimelineItem[] = [
     period: 'Jun 2024 - Present',
     current: true,
     bullets: [
-      'Architecting and shipping SnappyClaw: production AI agent platform with multi-agent coordination, MCP integrations, and enterprise customer deployments.',
+      'Architecting and shipping Snappy Agents: production AI agent platform with multi-agent coordination, MCP integrations, and enterprise customer deployments.',
       'Daily coding in TypeScript/Next.js. Hands-on system design for every feature.',
       'GetLatest AI consulting: technical architecture reviews and AI system design for enterprise clients.',
     ],

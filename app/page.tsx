@@ -12,7 +12,7 @@ import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
 
 const building = [
-  { name: 'SnappyClaw', url: 'https://snappyclaw.ai', desc: 'An AI assistant that\'s powerful, private, and dead simple.' },
+  { name: 'Snappy Agents', url: 'https://snappyclaw.ai', desc: 'An AI assistant that\'s powerful, private, and dead simple.' },
   { name: 'Ronin', url: 'https://myronin.ai', desc: 'Your AI powered job search agent.' },
   { name: 'FindTime', url: 'https://find-time.ai', desc: 'The scheduling platform built for AI agents.' },
   { name: 'Helix', url: 'https://helixagency.ai', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
@@ -66,7 +66,7 @@ const careerTimeline: TimelineItem[] = [
     period: 'Jun 2024 - Present',
     current: true,
     bullets: [
-      'Building SnappyClaw, a production AI agent platform with real customers.',
+      'Building Snappy Agents, a production AI agent platform with real customers.',
       'GetLatest AI consulting practice focused on enterprise AI strategy and implementation.',
     ],
   },

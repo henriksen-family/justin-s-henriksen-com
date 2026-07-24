@@ -57,7 +57,7 @@ const proofPoints = [
   { value: '25yr', label: 'Building technology', detail: 'IC to CEO and back to shipping code' },
   { value: '30+', label: 'AI initiatives', detail: '$1.5M funding into $25M+ revenue' },
   { value: '$51M', label: 'P&L led', detail: 'After AI/ML transformation at Crayon' },
-  { value: 'Live', label: 'Production AI platform', detail: 'SnappyClaw - real customers today' },
+  { value: 'Live', label: 'Production AI platform', detail: 'Snappy Agents - real customers today' },
 ]
 
 const fteVsFractional = [
@@ -100,7 +100,7 @@ const careerTimeline: TimelineItem[] = [
     period: 'Jun 2024 - Present',
     current: true,
     bullets: [
-      'Building SnappyClaw: a production multi-agent AI platform with real enterprise customers.',
+      'Building Snappy Agents: a production multi-agent AI platform with real enterprise customers.',
       'GetLatest AI consulting: AI strategy and implementation for businesses making the transition.',
       'Writing actively on AI agent architecture at getlatest.ai/blog.',
     ],
@@ -337,7 +337,7 @@ export default function AIOfficerrPage() {
               },
               {
                 headline: 'Shipping production AI today - not theorizing about it',
-                body: 'SnappyClaw is a live, multi-tenant AI agent platform built on a three-layer architecture: a Next.js application layer, Python worker services for agent execution, and a platform layer handling OAuth, Docker-based tenant isolation, and fleet operations. Human-in-the-loop approval boundaries are built into the architecture by design. This is what current AI Officer thinking actually looks like in practice.',
+                body: 'Snappy Agents is a live, multi-tenant AI agent platform built on a three-layer architecture: a Next.js application layer, Python worker services for agent execution, and a platform layer handling OAuth, Docker-based tenant isolation, and fleet operations. Human-in-the-loop approval boundaries are built into the architecture by design. This is what current AI Officer thinking actually looks like in practice.',
               },
             ].map((item, i) => (
               <motion.div
