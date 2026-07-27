@@ -6,11 +6,6 @@
    THEME VARIABLES
    ============================================= */
 
-/* --logo-* is the product-card canvas. Every theme uses its own --card value so
-   the cards match the rest of the page. Professional is the exception: a deep
-   navy, deliberately, so the cards stand out against a light page. Themes with
-   a light canvas get the ink wordmarks instead of the white ones. */
-
 [data-theme="professional"] {
   --bg: #f5f8fc;
   --primary: #0067c0;
@@ -22,9 +17,6 @@
   --border: #dde4ee;
   --gradient-start: #003780;
   --gradient-end: #0078d4;
-  --logo-card: #0f1b2d;
-  --logo-border: #27394f;
-  --logo-muted: #9fb3c8;
   color-scheme: light;
 }
 
@@ -37,9 +29,6 @@
   --muted: #aaaaaa;
   --card: #100028;
   --border: #ffe600;
-  --logo-card: #100028;
-  --logo-border: #ffe600;
-  --logo-muted: #aaaaaa;
 }
 
 [data-theme="futuristic"] {
@@ -51,9 +40,6 @@
   --muted: #5080a0;
   --card: #050f20;
   --border: #004a7a;
-  --logo-card: #050f20;
-  --logo-border: #004a7a;
-  --logo-muted: #5080a0;
 }
 
 [data-theme="typewriter"] {
@@ -67,9 +53,6 @@
   --border: #c4b49a;
   --gradient-start: #b91c1c;
   --gradient-end: #1e3a5f;
-  --logo-card: #f5edd6;
-  --logo-border: #c4b49a;
-  --logo-muted: #6b5040;
 }
 
 [data-theme="terminal"] {
@@ -81,9 +64,6 @@
   --muted: #1a8033;
   --card: #001400;
   --border: #33ff66;
-  --logo-card: #001400;
-  --logo-border: #33ff66;
-  --logo-muted: #1a8033;
 }
 
 /* =============================================
@@ -92,10 +72,6 @@
 
 :root {
   color-scheme: dark;
-  /* Fallbacks so the product cards render if a theme forgets to set these. */
-  --logo-card: #0f1b2d;
-  --logo-border: #27394f;
-  --logo-muted: #9fb3c8;
 }
 
 * {
@@ -163,16 +139,14 @@ body {
   background-clip: text;
 }
 
-[data-theme="professional"] [class*="bg-[var(--card)]"],
-[data-theme="professional"] [class*="bg-[var(--logo-card)]"] {
+[data-theme="professional"] [class*="bg-[var(--card)]"] {
   box-shadow:
     0 1px 2px rgba(16, 24, 40, 0.04),
     0 10px 24px -14px rgba(16, 24, 40, 0.20);
   transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
 
-[data-theme="professional"] [class*="bg-[var(--card)]"]:hover,
-[data-theme="professional"] [class*="bg-[var(--logo-card)]"]:hover {
+[data-theme="professional"] [class*="bg-[var(--card)]"]:hover {
   box-shadow:
     0 2px 4px rgba(16, 24, 40, 0.05),
     0 20px 34px -16px rgba(16, 24, 40, 0.30);
@@ -181,12 +155,27 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   [data-theme="professional"] [class*="bg-[var(--card)]"],
-  [data-theme="professional"] [class*="bg-[var(--card)]"]:hover,
-  [data-theme="professional"] [class*="bg-[var(--logo-card)]"],
-  [data-theme="professional"] [class*="bg-[var(--logo-card)]"]:hover {
+  [data-theme="professional"] [class*="bg-[var(--card)]"]:hover {
     transform: none;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
+}
+
+/* Product cards are the one place professional goes dark, so the wordmarks read
+   against a light page. Every other theme leaves them as ordinary cards. */
+[data-theme="professional"] .product-card {
+  background-color: #0f1b2d;
+  border-color: #27394f;
+}
+
+[data-theme="professional"] .product-card p,
+[data-theme="professional"] .product-card span[aria-hidden="true"] {
+  color: #9fb3c8;
+}
+
+/* --primary is too dark to hover against the navy, so brighten instead. */
+[data-theme="professional"] .product-card:hover span[aria-hidden="true"] {
+  color: #6cb6f0;
 }
 
 /* =============================================
