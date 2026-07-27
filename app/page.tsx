@@ -255,7 +255,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
               >
-                {'Before GetLatest I ran two companies. At Blue Eye I took a $5M P&L to $11M and moved EBITDA from a $250K monthly loss to a $125K monthly profit in six months. At Crayon US I grew a $43M P&L to $51M and turned a licensing reseller into an AI, data, and managed services business. Before that, nine years at Microsoft, most recently as a Sr. Director setting AI/ML strategy across a US partner ecosystem of thousands of independent companies, none of whom reported to me. Getting an organization to actually work differently is a harder problem than picking the right model, and it\'s the one I\'ve spent the most time on.'}
+                {'Before GetLatest I ran two companies: Blue Eye ($5M to $11M) and Crayon US ($43M to $51M, from licensing reseller to AI and managed services). Before that, nine years at Microsoft, most recently as a Sr. Director setting AI/ML strategy across thousands of partner companies, none of whom reported to me. Getting an organization to work differently is harder than picking the right model, and it\'s what I\'ve spent the most time on.'}
               </motion.p>
             </motion.div>
           </div>
