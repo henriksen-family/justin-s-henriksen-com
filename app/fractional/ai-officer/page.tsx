@@ -54,7 +54,7 @@ const deliverables = [
 ]
 
 const proofPoints = [
-  { value: '25yr', label: 'Building technology', detail: 'IC to CEO and back to shipping code' },
+  { value: 'Since 2004', label: 'Building technology', detail: 'IC to CEO and back to shipping code' },
   { value: '30+', label: 'AI initiatives', detail: '$1.5M funding into $25M+ revenue' },
   { value: '$51M', label: 'P&L led', detail: 'After AI/ML transformation at Crayon' },
   { value: 'Live', label: 'Production AI platform', detail: 'Snappy Agents - real customers today' },
@@ -106,12 +106,23 @@ const careerTimeline: TimelineItem[] = [
     ],
   },
   {
+    title: 'CEO / President',
+    company: 'Blue Eye',
+    period: 'Apr 2023 - Jun 2024',
+    bullets: [
+      'Grew P&L from $5M to $11M. Led a team of 150 across two domestic and one international office.',
+      'MRR from $440K to $1.2M (172%) in 8 months while lifting gross margin from 40% to 62%.',
+      'EBITDA turnaround: -$250K/month to +$125K/month in 6 months.',
+    ],
+  },
+  {
     title: 'CEO / General Manager',
     company: 'Crayon US',
     period: 'Oct 2021 - Jan 2023',
     bullets: [
       'Transformed Crayon US from licensing/cloud reseller to AI/ML/Analytics/M365 managed services provider.',
-      '$43M to $51M P&L. 200% increase in new customer acquisition. 200-person org. Awards: 2024 Utah Fast 50, 2023 Utah 100.',
+      '$43M to $51M P&L. 200% increase in new customer acquisition. 200-person org.',
+      'Ran the executive operating cadence: recurring business reviews and cross-functional forums holding departments to a shared plan. Lifted services margin from -28% to +64%.',
       'Stood up the AI/ML, Data, and M365 managed services practices end-to-end: hiring, partner certifications, service catalog, pricing, delivery playbooks, go-to-market motion.',
       'Led cross-Group collaboration with Crayon regions worldwide on product offerings, strategy, pricing, execution, and delivery. Drove multiple AI initiatives including the Crayon AI Center of Excellence.',
     ],
@@ -121,10 +132,10 @@ const careerTimeline: TimelineItem[] = [
     company: 'Microsoft',
     period: 'Jul 2017 - Oct 2021',
     bullets: [
-      'Led AI/ML and advanced analytics partner strategy for the Microsoft ecosystem.',
-      '30+ AI enablement initiatives driving $25M+ partner revenue.',
+      'Set AI/ML and data strategy and drove its adoption across Microsoft\'s US partner ecosystem: thousands of independent companies, none of whom reported to me.',
+      '30+ AI enablement initiatives on $1.5M of funding, driving $25M+ partner revenue. Accelerated technical adoption 15x and platform adoption velocity 63%.',
       '$100M+ in customer growth driven through the partner ecosystem.',
-      'Partners scaled 10x, 14x, and 20x within 4 years. 2020 Leadership Spotlight, 2019 Manager of the Year.',
+      'Grew data, analytics, and AI/ML partners, solutions, and expertise 10-20x over four years.',
     ],
   },
 ]
@@ -325,7 +336,7 @@ export default function AIOfficerrPage() {
             {[
               {
                 headline: 'Built the Microsoft AI/ML ecosystem from scratch',
-                body: 'Sr. Director of Partner Ecosystem for AI/ML and analytics. Led the team that designed and scaled the Microsoft AI partner motion. Named programs: AI Accelerate (partner enablement scaled across multiple countries and hundreds of partners), Data Science Partner Program (curriculum and maturity pathway across the US partner ecosystem), AI Country Plans (country-level AI adoption playbooks across multiple geographies), Cloud Center of Excellence (architecture reference patterns). Partners scaled 10x, 14x, and 20x within four years.',
+                body: 'Sr. Director of Partner Ecosystem for AI/ML and analytics. Led the team that designed and scaled the Microsoft AI partner motion. Named programs: AI Accelerate (partner enablement scaled across multiple countries and hundreds of partners), Data Science Partner Program (curriculum and maturity pathway across the US partner ecosystem), AI Country Plans (country-level AI adoption playbooks across multiple geographies), Cloud Center of Excellence (architecture reference patterns), Global Partner Index (the framework that measured whether any of it was working). Partners, solutions, and expertise grew 10-20x over four years.',
               },
               {
                 headline: 'Led 30+ AI enablement initiatives',

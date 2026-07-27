@@ -44,6 +44,8 @@ const gallery = [
 ]
 
 const stats = [
+  { value: '15x', label: 'Technical adoption', detail: 'Across the Microsoft US partner ecosystem' },
+  { value: '63%', label: 'Platform adoption velocity', detail: 'Same ecosystem, four years' },
   { value: '172%', label: 'MRR increase', detail: '$440K to $1.2M in 8 months' },
   { value: '$100M+', label: 'Customer growth', detail: 'Microsoft partner ecosystem' },
   { value: '$1.5M - $25M+', label: 'AI initiative funding converted', detail: 'Sustainable partner revenue' },
@@ -52,11 +54,21 @@ const stats = [
   { value: '95/100', label: 'Manager rating', detail: '5-year average' },
 ]
 
+const recognition = [
+  '2024 Utah Fast 50',
+  '2023 Utah 100',
+  '2020 Leadership Spotlight',
+  '2019 Manager of the Year',
+  '2015 Circle of Excellence',
+]
+
 const programs = [
   { title: 'AI Accelerate', desc: "Microsoft's partner enablement program for AI: strategy briefings, envisioning sessions, solution acceleration. Scaled across multiple countries and hundreds of partners." },
-  { title: 'Data Science Partner Program', desc: 'Curriculum, maturity assessments, and graduation criteria for Microsoft partners building data science practices. Deployed across the US partner ecosystem.' },
+  { title: 'Data Science Partner Program', desc: 'Upskilling curriculum, maturity assessments, and graduation criteria for Microsoft partners building data science practices. Deployed across the US partner ecosystem.' },
   { title: 'AI Country Plans', desc: 'Country-level AI adoption playbooks. Strategic plans for AI readiness implemented across multiple geographies.' },
+  { title: 'Global Partner Index', desc: 'A measurement framework tracking solution and capability adoption across industries, later mirrored by other teams. It answered the question every exec sponsor eventually asks: is this investment actually working?' },
   { title: 'Cloud Center of Excellence', desc: 'Cloud architecture frameworks and best practices for enterprise adoption. Reference patterns the partner ecosystem built against.' },
+  { title: 'Technical Evangelist Upskilling', desc: 'The framework Microsoft used to upskill its own technical field, plus the single and multi-partner hackathons that turned that training into shipped Azure workloads.' },
 ]
 
 const careerTimeline: TimelineItem[] = [
@@ -67,6 +79,8 @@ const careerTimeline: TimelineItem[] = [
     current: true,
     bullets: [
       'Building Snappy Agents, a production AI agent platform with real customers.',
+      'Architect multi-agent systems with long-term memory that hold up in daily business use, where a failed step costs someone money.',
+      'Help law firms, clinics, contractors, and financial services firms put AI into their actual operations: customer inquiries, scheduling, follow-up.',
       'GetLatest AI consulting practice focused on enterprise AI strategy and implementation.',
     ],
   },
@@ -75,7 +89,8 @@ const careerTimeline: TimelineItem[] = [
     company: 'Blue Eye',
     period: 'Apr 2023 - Jun 2024',
     bullets: [
-      'Grew P&L from $5M to $11M. Led team of 150.',
+      'Grew P&L from $5M to $11M. Led team of 150 across two domestic and one international office.',
+      'MRR from $440K to $1.2M (172%) in 8 months while lifting gross margin from 40% to 62%.',
       'EBITDA turnaround: -$250K/month to +$125K/month in 6 months.',
     ],
   },
@@ -86,7 +101,8 @@ const careerTimeline: TimelineItem[] = [
     bullets: [
       'Grew revenue from $43M to $51M. 200-person org.',
       'Transformed Crayon US from licensing/cloud to AI/ML/Analytics/M365 managed services.',
-      '200% increase in new customer acquisition. Awards: 2024 Utah Fast 50, 2023 Utah 100.',
+      'Ran the executive operating cadence - recurring business reviews and cross-functional forums holding departments to a shared plan. Lifted services margin from -28% to +64%.',
+      '200% increase in new customer acquisition. Grew headcount 121 to 176 while cutting undesired attrition from 40% to 6%. Employee survey rating 92/100.',
     ],
   },
   {
@@ -94,8 +110,10 @@ const careerTimeline: TimelineItem[] = [
     company: 'Microsoft',
     period: 'Jul 2017 - Oct 2021',
     bullets: [
-      'Sr. Director - Partner Ecosystem (AI/ML, Data, Advanced Analytics). Led AI Accelerate, AI Country Plans, and the Data Science Partner Program. Partners scaled 10x, 14x, and 20x within four years. $100M+ in customer growth driven.',
-      '2020 Leadership Spotlight, 2019 Manager of the Year.',
+      'Set AI/ML and data strategy and drove its adoption across Microsoft\'s US partner ecosystem: thousands of independent companies, none of whom reported to me.',
+      'Ran 30+ AI enablement initiatives ($1.5M funding), building upskilling frameworks, reference architectures, and the Global Partner Index. Accelerated technical adoption 15x and platform adoption velocity 63%.',
+      'Grew data, analytics, and AI/ML partners, solutions, and expertise 10-20x over four years, contributing to $100M+ in customer growth.',
+      'Partnered across product engineering, marketing, and sales to sequence initiatives and keep teams on a shared roadmap.',
     ],
   },
   {
@@ -104,6 +122,7 @@ const careerTimeline: TimelineItem[] = [
     period: 'Sept 2013 - Jun 2017',
     bullets: [
       'Azure adoption architecture for enterprise customers and partners. Architected Cloud Center of Excellence reference patterns. Built the Azure SQL DTU Calculator early in the Azure SQL migration era.',
+      'Selected to lead Microsoft\'s college-new-hire onboarding program, mentoring 30+ new hires over multiple years.',
     ],
   },
   {
@@ -210,6 +229,15 @@ export default function Home() {
                 </a>
                 {', where we work with leaders who don\'t want to "learn AI" or experiment endlessly. They want to place smarter bets and see measurable outcomes. We help you identify the areas of your business where AI has the most impact and then we build the solution for you.'}
               </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
+              >
+                {'Before that I spent nine years at Microsoft, most recently as a Sr. Director setting AI/ML strategy across a US partner ecosystem of thousands of independent companies, none of whom reported to me. Getting an organization to actually work differently is a harder problem than picking the right model, and it\'s the one I\'ve spent the most time on.'}
+              </motion.p>
             </motion.div>
           </div>
         </Container>
@@ -293,8 +321,8 @@ export default function Home() {
             {stats.map((stat, i) => <StatCard key={i} {...stat} index={i} />)}
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-6">
-            <h3 className="text-base font-bold text-[var(--text)] mb-1">Programs built at scale</h3>
-            <p className="text-sm text-[var(--muted)]">Named programs from the Microsoft AI partner motion.</p>
+            <h3 className="text-base font-bold text-[var(--text)] mb-1">Adoption and upskilling programs I built</h3>
+            <p className="text-sm text-[var(--muted)]">30+ AI enablement initiatives on $1.5M of funding. These are the named ones.</p>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-4">
             {programs.map((p, i) => (
@@ -304,6 +332,18 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-12">
+            <h3 className="text-base font-bold text-[var(--text)] mb-1">Recognition</h3>
+            <p className="text-sm text-[var(--muted)] mb-5">Company and leadership awards.</p>
+            <div className="flex flex-wrap gap-3">
+              {recognition.map((award, i) => (
+                <span key={i} className="text-sm text-[var(--muted)] border border-[var(--border)] bg-[var(--card)] rounded px-3 py-1.5 font-mono">
+                  {award}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </Container>
       </section>
 
@@ -315,9 +355,9 @@ export default function Home() {
               {theme === 'terminal' && <span className="text-[var(--primary)]">{'// '}</span>}
               {"Where I've been"}
             </h2>
-            <p className="text-[var(--muted)]">25 years from developer to CEO - and now fractional.</p>
+            <p className="text-[var(--muted)]">Developer to CEO since 2004. Engineer, architect, Sr. Director, GM, founder.</p>
           </motion.div>
-          <Timeline items={careerTimeline} condensed />
+          <Timeline items={careerTimeline} />
         </Container>
       </section>
 
@@ -398,7 +438,7 @@ export default function Home() {
               {'Personal & how we give'}
             </h2>
             <p className="text-[var(--muted)] text-base leading-relaxed max-w-3xl">
-              {'Beyond the companies and the code, there’s family, a foundation, and a long list of places I’ve been lucky enough to see — the part of the story that has nothing to do with a P&L.'}
+              {'Beyond the companies and the code, there’s family, a foundation, and a long list of places I’ve been lucky enough to see. The part of the story that has nothing to do with a P&L.'}
             </p>
           </motion.div>
 
@@ -419,7 +459,7 @@ export default function Home() {
                 >
                   Henriksen Family Giving Fund
                 </a>
-                {', focused on giving back in ways that are thoughtful, practical, and impactful. We believe success carries responsibility, and that strong communities are built when people invest in one another — not just financially, but with time, care, and attention.'}
+                {', focused on giving back in ways that are thoughtful, practical, and impactful. We believe success carries responsibility, and that strong communities are built when people invest in one another, not just financially, but with time, care, and attention.'}
               </p>
               <p className="text-[var(--muted)] text-base leading-relaxed">
                 {'At the core of everything I do is a simple belief: people should be encouraged to chase meaningful dreams, and those dreams should pull others forward with them. Build things that matter. Learn constantly. Share success. And leave whatever you touch better than you found it.'}

@@ -15,7 +15,7 @@ export const personNode = {
   image: `${SITE_URL}/justin.jpg`,
   jobTitle: 'Founder & CEO',
   description:
-    'Founder and CEO of GetLatest AI and Fenix Venture. Former Microsoft Sr. Director of the Partner Ecosystem. Builds AI products, invests, and serves as a fractional AI leader for companies adopting AI.',
+    'Founder and CEO of GetLatest AI and Fenix Venture. Former Microsoft Sr. Director of the Partner Ecosystem, where he set AI/ML strategy and drove its adoption across thousands of independent companies that did not report to him. Builds production multi-agent AI systems, invests, and leads AI adoption and enablement programs for companies making the transition.',
   worksFor: { '@id': ORG_ID },
   alumniOf: [
     { '@type': 'CollegeOrUniversity', name: 'University of Utah' },
@@ -24,6 +24,9 @@ export const personNode = {
   knowsAbout: [
     'Artificial Intelligence',
     'Enterprise AI strategy',
+    'AI adoption and transformation',
+    'AI enablement and upskilling programs',
+    'Multi-agent systems',
     'AI governance',
     'Azure architecture',
     'Fractional AI leadership',

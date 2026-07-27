@@ -70,7 +70,7 @@ const domains = [
 ]
 
 const proofPoints = [
-  { value: '25yr', label: 'Technical experience', detail: 'IC to CEO and back to building' },
+  { value: 'Since 2004', label: 'Technical experience', detail: 'IC to CEO and back to building' },
   { value: '3', label: 'Cloud platforms', detail: 'Azure MCSE / AWS since 2008 / GCP Vertex AI' },
   { value: '$51M', label: 'P&L led as GM', detail: 'While staying close to the architecture' },
   { value: 'Live', label: 'Shipping code today', detail: 'Snappy Agents platform, daily commits' },

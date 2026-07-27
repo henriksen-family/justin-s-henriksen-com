@@ -40,7 +40,7 @@ const jobRequirements = [
 ]
 
 const proofPoints = [
-  { value: '25yr', label: 'Building with technology', detail: 'IC to CEO and back to shipping code' },
+  { value: 'Since 2004', label: 'Building with technology', detail: 'IC to CEO and back to shipping code' },
   { value: '30+', label: 'AI initiatives led', detail: '$1.5M funding into $25M+ revenue' },
   { value: '$51M', label: 'P&L transformed', detail: 'After AI/ML shift at Crayon' },
   { value: 'Eccles', label: 'MBA, U of U', detail: 'David Eccles School of Business' },

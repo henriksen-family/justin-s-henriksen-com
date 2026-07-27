@@ -35,7 +35,7 @@ const specialElite = Special_Elite({
 
 export const metadata: Metadata = {
   title: 'Justin S. Henriksen',
-  description: 'Founder of GetLatest AI. Building Snappy Agents and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
+  description: 'Founder of GetLatest AI and former Microsoft Sr. Director. I drive AI adoption across organizations that don\'t report to me, and build production multi-agent systems. CEO, investor, builder.',
   metadataBase: new URL('https://justinshenriksen.com'),
   alternates: {
     canonical: 'https://justinshenriksen.com',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Justin S. Henriksen',
-    description: 'Founder of GetLatest AI. Building Snappy Agents and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
+    description: 'Founder of GetLatest AI and former Microsoft Sr. Director. I drive AI adoption across organizations that don\'t report to me, and build production multi-agent systems. CEO, investor, builder.',
     url: 'https://justinshenriksen.com',
     siteName: 'Justin S. Henriksen',
     type: 'profile',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Justin S. Henriksen',
-    description: 'Founder of GetLatest AI. Building Snappy Agents and other AI products. Former Microsoft Sr. Director. CEO, investor, builder.',
+    description: 'Founder of GetLatest AI and former Microsoft Sr. Director. I drive AI adoption across organizations that don\'t report to me, and build production multi-agent systems. CEO, investor, builder.',
   },
   robots: {
     index: true,
@@ -77,13 +77,17 @@ export const metadata: Metadata = {
   authors: [{ name: 'Justin S. Henriksen', url: 'https://justinshenriksen.com' }],
   creator: 'Justin S. Henriksen',
   keywords: [
-    'Fractional AI Officer',
-    'Fractional Solutions Architect',
+    'AI adoption',
+    'AI transformation',
+    'AI enablement and upskilling',
     'AI strategy',
     'enterprise AI',
+    'multi-agent systems',
     'Microsoft AI partner',
     'AI governance',
     'Azure architect',
+    'Fractional AI Officer',
+    'Fractional Solutions Architect',
     'Justin Henriksen',
   ],
   manifest: '/site.webmanifest',
@@ -113,10 +117,18 @@ export default function RootLayout({
               </p>
               <div className="flex gap-6">
                 <a
-                  href="https://getlatest.ai/meet/justin"
+                  href="mailto:justin.henriksen@gmail.com"
                   className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
                 >
                   justin.henriksen@gmail.com
+                </a>
+                <a
+                  href="https://getlatest.ai/meet/justin"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
+                >
+                  Book time ↗
                 </a>
                 <a
                   href="https://www.linkedin.com/in/henriksenjustin"
