@@ -20,6 +20,10 @@ const building = [
   { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', logo: 'heimdall', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
 ]
 
+// Themes whose product card sits on a light canvas, so the wordmark has to be
+// ink rather than white. Professional keeps a dark card by design.
+const inkWordmarkThemes = ['typewriter']
+
 const investments = [
   { role: 'Investor and Board Member', name: 'AromaTherapist', url: 'https://aromatherapist.com' },
   { role: 'Investor and Board Member', name: 'Boss Strategy Global', url: 'https://www.bosstrategy.com' },
@@ -166,6 +170,7 @@ const careerTimeline: TimelineItem[] = [
 export default function Home() {
   const { theme } = useTheme()
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+  const wordmarkPrefix = inkWordmarkThemes.includes(theme) ? 'wmd' : 'wm'
 
   const headlineSize = theme === 'arcade'
     ? 'font-pixel text-base sm:text-xl lg:text-2xl leading-loose'
@@ -315,7 +320,7 @@ export default function Home() {
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <span className="relative block h-7 w-full max-w-[170px]">
                     <Image
-                      src={`/logos/wm-${item.logo}.svg`}
+                      src={`/logos/${wordmarkPrefix}-${item.logo}.svg`}
                       alt={item.name}
                       fill
                       className="object-contain object-left"

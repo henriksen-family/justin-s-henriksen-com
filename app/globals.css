@@ -6,9 +6,10 @@
    THEME VARIABLES
    ============================================= */
 
-/* The product cards carry light-on-dark wordmarks, so their canvas is always
-   dark. --logo-* keeps that canvas in each theme's own palette instead of one
-   navy that only suits the professional theme. */
+/* --logo-* is the product-card canvas. Every theme uses its own --card value so
+   the cards match the rest of the page. Professional is the exception: a deep
+   navy, deliberately, so the cards stand out against a light page. Themes with
+   a light canvas get the ink wordmarks instead of the white ones. */
 
 [data-theme="professional"] {
   --bg: #f5f8fc;
@@ -36,9 +37,9 @@
   --muted: #aaaaaa;
   --card: #100028;
   --border: #ffe600;
-  --logo-card: #16003a;
+  --logo-card: #100028;
   --logo-border: #ffe600;
-  --logo-muted: #b9a8e0;
+  --logo-muted: #aaaaaa;
 }
 
 [data-theme="futuristic"] {
@@ -50,9 +51,9 @@
   --muted: #5080a0;
   --card: #050f20;
   --border: #004a7a;
-  --logo-card: #061627;
+  --logo-card: #050f20;
   --logo-border: #004a7a;
-  --logo-muted: #7fb2cc;
+  --logo-muted: #5080a0;
 }
 
 [data-theme="typewriter"] {
@@ -66,9 +67,9 @@
   --border: #c4b49a;
   --gradient-start: #b91c1c;
   --gradient-end: #1e3a5f;
-  --logo-card: #2a201a;
-  --logo-border: #4c3b2c;
-  --logo-muted: #cbb9a3;
+  --logo-card: #f5edd6;
+  --logo-border: #c4b49a;
+  --logo-muted: #6b5040;
 }
 
 [data-theme="terminal"] {
@@ -80,9 +81,9 @@
   --muted: #1a8033;
   --card: #001400;
   --border: #33ff66;
-  --logo-card: #001f00;
-  --logo-border: #1a8033;
-  --logo-muted: #33ff66;
+  --logo-card: #001400;
+  --logo-border: #33ff66;
+  --logo-muted: #1a8033;
 }
 
 /* =============================================
