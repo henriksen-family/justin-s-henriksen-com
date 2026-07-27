@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 506 140" fill="none" role="img" aria-label="Helix wordmark">
+  <defs>
+    <linearGradient id="helix-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#a3e635"/>
+    </linearGradient>
+  </defs>
+  <!-- Logo mark: 120x120, centered vertically in 140px height, offset 10px top -->
+  <g transform="translate(0,10)">
+    <path d="M 60 7.5 Q 105 33.75 60 60 Q 15 86.25 60 112.5"
+      stroke="url(#helix-gradient)" stroke-width="9.375" stroke-linecap="round" fill="none"/>
+    <path d="M 60 7.5 Q 15 33.75 60 60 Q 105 86.25 60 112.5"
+      stroke="url(#helix-gradient)" stroke-width="9.375" stroke-linecap="round" fill="none" opacity="0.55"/>
+    <circle cx="60" cy="7.5" r="6" fill="#10b981"/>
+    <circle cx="60" cy="60" r="7.125" fill="#34d399"/>
+    <circle cx="60" cy="112.5" r="6" fill="#a3e635"/>
+  </g>
+  <!-- HELIX text path: baseline at y=99.2 (10px offset + 89.2), x at 120 -->
+  <!-- Path bbox: x1=14.4 y1=-78.4 x2=366.4 y2=0; translate x=120, y=99.2 -->
+  <path transform="translate(120,109.2)"
+    d="M81.60-78.40L81.60 0L68.80 0L68.80-33.60L27.20-33.60L27.20 0L14.40 0L14.40-78.40L27.20-78.40L27.20-35.20L36.80-44.80L68.80-44.80L68.80-78.40L81.60-78.40ZM166.40-11.20L166.40 0L110.40 0L110.40-56L121.60-67.20L110.40-67.20L110.40-78.40L166.40-78.40L166.40-67.20L123.20-67.20L123.20-35.20L132.80-44.80L166.40-44.80L166.40-33.60L123.20-33.60L123.20-11.20L166.40-11.20ZM246.40-22.40L246.40 0L190.40 0L190.40-78.40L203.20-78.40L203.20-11.20L233.60-11.20L233.60-22.40L246.40-22.40ZM275.20-78.40L275.20 0L262.40 0L262.40-78.40L275.20-78.40ZM337.76-40.80L366.40 0L351.36 0L329.12-32L327.52-32L306.56 0L291.20 0L320.16-40.80L292.80-78.40L308.16-78.40L328.64-48.16L330.24-48.16L349.76-78.40L364.80-78.40L337.76-40.80Z"
+    fill="#fafafa"/>
+</svg>

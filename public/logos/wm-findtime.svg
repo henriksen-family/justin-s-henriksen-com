@@ -1,0 +1,28 @@
+<svg width="312" height="48" viewBox="0 0 312 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="252" y1="2" x2="300" y2="46" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#34d399"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon (48x48, vertically centered at y=24) -->
+  <g transform="scale(1.2)">
+    <path d="M20 4C11.163 4 4 11.163 4 20s7.163 16 16 16c5.2 0 9.8-2.5 12.7-6.3" stroke="url(#cg)" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="20" y1="20" x2="28" y2="20" stroke="#10b981" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="20" cy="20" r="1.8" fill="#38bdf8"/>
+    <path d="M30 11.5c2.3 2.3 3.7 5.5 3.7 8.8s-1.4 6.5-3.7 8.8" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+    <path d="M34 8c3 3 4.8 7.2 4.8 11.8s-1.8 8.8-4.8 11.8" stroke="#38bdf8" stroke-width="1.2" stroke-linecap="round" opacity="0.25"/>
+  </g>
+
+  <!-- "findtime" wordmark (baseline placed to visually center at y=24) -->
+  <text x="56" y="40" font-family="Geist, 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="44" font-weight="800" letter-spacing="-1.0" fill="#ffffff" textLength="184" lengthAdjust="spacingAndGlyphs">findtime</text>
+
+  <!-- AI badge (44 tall, centered at y=24) -->
+  <rect x="252" y="5" width="48" height="42" rx="4" fill="url(#bg)"/>
+  <text x="256" y="38" font-family="Geist, 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="32" font-weight="800" letter-spacing="1.6" fill="#ffffff" textLength="40" lengthAdjust="spacingAndGlyphs">AI</text>
+</svg>

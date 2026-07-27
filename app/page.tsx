@@ -20,9 +20,6 @@ const building = [
   { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', logo: 'heimdall', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
 ]
 
-// Themes with a dark canvas need the light-on-dark logo variants.
-const darkThemes = ['arcade', 'futuristic', 'terminal']
-
 const investments = [
   { role: 'Investor and Board Member', name: 'AromaTherapist', url: 'https://aromatherapist.com' },
   { role: 'Investor and Board Member', name: 'Boss Strategy Global', url: 'https://www.bosstrategy.com' },
@@ -169,7 +166,6 @@ const careerTimeline: TimelineItem[] = [
 export default function Home() {
   const { theme } = useTheme()
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
-  const logoVariant = darkThemes.includes(theme) ? 'dark' : 'light'
 
   const headlineSize = theme === 'arcade'
     ? 'font-pixel text-base sm:text-xl lg:text-2xl leading-loose'
@@ -255,7 +251,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
               >
-                {'Before that I spent nine years at Microsoft, most recently as a Sr. Director setting AI/ML strategy across a US partner ecosystem of thousands of independent companies, none of whom reported to me. Getting an organization to actually work differently is a harder problem than picking the right model, and it\'s the one I\'ve spent the most time on.'}
+                {'Before GetLatest I ran two companies. At Blue Eye I took a $5M P&L to $11M and moved EBITDA from a $250K monthly loss to a $125K monthly profit in six months. At Crayon US I grew a $43M P&L to $51M and turned a licensing reseller into an AI, data, and managed services business. Before that, nine years at Microsoft, most recently as a Sr. Director setting AI/ML strategy across a US partner ecosystem of thousands of independent companies, none of whom reported to me. Getting an organization to actually work differently is a harder problem than picking the right model, and it\'s the one I\'ve spent the most time on.'}
               </motion.p>
             </motion.div>
           </div>
@@ -314,23 +310,23 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
+                className="border border-[#1e293b] bg-[#0b1220] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
               >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="relative w-8 h-8 shrink-0">
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <span className="relative block h-7 w-full max-w-[170px]">
                     <Image
-                      src={`/logos/${item.logo}-${logoVariant}.svg`}
-                      alt=""
+                      src={`/logos/wm-${item.logo}.svg`}
+                      alt={item.name}
                       fill
-                      className="object-contain"
-                      sizes="32px"
+                      className="object-contain object-left"
+                      sizes="170px"
                     />
                   </span>
-                  <span className="font-mono text-sm font-semibold text-[var(--primary)] group-hover:opacity-80 transition-opacity uppercase tracking-wide">
-                    {item.name} ↗
+                  <span className="text-[#64748b] group-hover:text-[var(--primary)] transition-colors text-sm shrink-0" aria-hidden="true">
+                    ↗
                   </span>
                 </div>
-                <p className="text-[var(--muted)] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">{item.desc}</p>
               </motion.a>
             ))}
           </div>

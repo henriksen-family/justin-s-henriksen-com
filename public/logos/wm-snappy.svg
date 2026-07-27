@@ -1,0 +1,13 @@
+<!-- Snappy Agents lockup, all white, for dark and coral surfaces. Text uses the brand grotesk with a sans-serif fallback; outline the type in a design tool for a fully portable asset. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 40" width="165" height="40">
+  <g transform="translate(0 2.5) scale(0.547)">
+    <g stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"><line x1="25" y1="10" x2="23.5" y2="16"/><line x1="39" y1="10" x2="40.5" y2="16"/></g>
+    <circle cx="23" cy="9" r="3" fill="#FFFFFF"/><circle cx="41" cy="9" r="3" fill="#FFFFFF"/>
+    <rect x="10.5" y="27" width="4.5" height="11" rx="2.2" fill="#FFFFFF"/>
+    <rect x="49" y="27" width="4.5" height="11" rx="2.2" fill="#FFFFFF"/>
+    <rect x="15" y="16" width="34" height="31" rx="11" fill="none" stroke="#FFFFFF" stroke-width="3.5"/>
+    <circle cx="26" cy="30" r="3" fill="#FFFFFF"/><circle cx="38" cy="30" r="3" fill="#FFFFFF"/>
+    <path d="M25 37 Q32 43 39 37" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+  </g>
+  <text x="30" y="27" font-family="'Bricolage Grotesque','Segoe UI',system-ui,sans-serif" font-size="19" font-weight="600" letter-spacing="-0.6" style="word-spacing:-3px" fill="#FFFFFF">Snappy Agents</text>
+</svg>
