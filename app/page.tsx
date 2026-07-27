@@ -228,7 +228,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-[var(--primary)] text-xl sm:text-2xl font-semibold mb-4"
               >
-                {'I build AI solutions and tinker with other things.'}
+                {'I build solutions and tinker with things.'}
               </motion.p>
 
               <motion.p
@@ -246,7 +246,7 @@ export default function Home() {
                 >
                   GetLatest AI
                 </a>
-                {', where we work with leaders who don\'t want to "learn AI" or experiment endlessly. They want to place smarter bets and see measurable outcomes. We help you identify the areas of your business where AI has the most impact and then we build the solution for you.'}
+                {', where we help businesses grow. That usually means getting the systems, processes, and tools right. AI is often part of the answer and rarely where we start. We start with what\'s costing you customers: calls that go to voicemail, quotes that sit for days, follow-up nobody owns.'}
               </motion.p>
 
               <motion.p
