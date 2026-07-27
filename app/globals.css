@@ -161,22 +161,6 @@ body {
   }
 }
 
-/* Product cards are the one place professional goes dark, so the wordmarks read
-   against a light page. Every other theme leaves them as ordinary cards. */
-[data-theme="professional"] .product-card {
-  background-color: #0f1b2d;
-  border-color: #27394f;
-}
-
-[data-theme="professional"] .product-card p,
-[data-theme="professional"] .product-card span[aria-hidden="true"] {
-  color: #9fb3c8;
-}
-
-/* --primary is too dark to hover against the navy, so brighten instead. */
-[data-theme="professional"] .product-card:hover span[aria-hidden="true"] {
-  color: #6cb6f0;
-}
 
 /* =============================================
    ARCADE THEME - FULL RETRO CABINET

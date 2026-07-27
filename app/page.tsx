@@ -20,9 +20,8 @@ const building = [
   { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', logo: 'heimdall', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
 ]
 
-// Themes whose product card sits on a light canvas, so the wordmark has to be
-// ink rather than white. Professional keeps a dark card by design.
-const inkWordmarkThemes = ['typewriter']
+// Themes with a dark canvas need the light-on-dark logo variants.
+const darkThemes = ['arcade', 'futuristic', 'terminal']
 
 const investments = [
   { role: 'Investor and Board Member', name: 'AromaTherapist', url: 'https://aromatherapist.com' },
@@ -170,7 +169,7 @@ const careerTimeline: TimelineItem[] = [
 export default function Home() {
   const { theme } = useTheme()
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
-  const wordmarkPrefix = inkWordmarkThemes.includes(theme) ? 'wmd' : 'wm'
+  const logoVariant = darkThemes.includes(theme) ? 'dark' : 'light'
 
   const headlineSize = theme === 'arcade'
     ? 'font-pixel text-base sm:text-xl lg:text-2xl leading-loose'
@@ -315,23 +314,23 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="product-card border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
+                className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
               >
-                <div className="flex items-start justify-between gap-3 mb-4">
-                  <span className="relative block h-7 w-full max-w-[170px]">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="relative w-8 h-8 shrink-0">
                     <Image
-                      src={`/logos/${wordmarkPrefix}-${item.logo}.svg`}
-                      alt={item.name}
+                      src={`/logos/${item.logo}-${logoVariant}.svg`}
+                      alt=""
                       fill
-                      className="object-contain object-left"
-                      sizes="170px"
+                      className="object-contain"
+                      sizes="32px"
                     />
                   </span>
-                  <span className="text-[var(--muted)] group-hover:text-[var(--primary)] transition-colors text-sm shrink-0" aria-hidden="true">
-                    ↗
+                  <span className="font-mono text-sm font-semibold text-[var(--primary)] group-hover:opacity-80 transition-opacity uppercase tracking-wide">
+                    {item.name} ↗
                   </span>
                 </div>
-                <p className="text-sm text-[var(--muted)] leading-relaxed">{item.desc}</p>
+                <p className="text-[var(--muted)] text-sm leading-relaxed">{item.desc}</p>
               </motion.a>
             ))}
           </div>

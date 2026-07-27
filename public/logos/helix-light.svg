@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="Helix mark">
+  <defs>
+    <linearGradient id="helix-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#a3e635"/>
+    </linearGradient>
+  </defs>
+  <path d="M 60 7.5 Q 105 33.75 60 60 Q 15 86.25 60 112.5"
+    stroke="url(#helix-gradient)" stroke-width="9.375" stroke-linecap="round" fill="none"/>
+  <path d="M 60 7.5 Q 15 33.75 60 60 Q 105 86.25 60 112.5"
+    stroke="url(#helix-gradient)" stroke-width="9.375" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <circle cx="60" cy="7.5" r="6" fill="#10b981"/>
+  <circle cx="60" cy="60" r="7.125" fill="#34d399"/>
+  <circle cx="60" cy="112.5" r="6" fill="#a3e635"/>
+</svg>
