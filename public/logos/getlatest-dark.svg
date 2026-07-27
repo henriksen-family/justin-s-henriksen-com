@@ -1,4 +1,5 @@
 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- GetLatest AI bolt mark - solid coral -->
-<path d="M25.311 5.20001L10.5908 30.16H23.3483L22.367 46.8L36.1058 21.84H23.3483L25.311 6.58668" transform="translate(2.65,0)" stroke="#f23a18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- GetLatest AI bolt mark, white for dark cards. Same path as the official
+     transparent bolt, stroke recolored to match the other white marks. -->
+<path d="M25.311 5.20001L10.5908 30.16H23.3483L22.367 46.8L36.1058 21.84H23.3483L25.311 6.58668" transform="translate(2.65,0)" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
