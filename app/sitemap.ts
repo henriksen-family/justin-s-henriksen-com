@@ -6,9 +6,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes: { path: string; priority: number }[] = [
     { path: '', priority: 1 },
-    { path: '/fractional/ai-officer', priority: 0.9 },
-    { path: '/fractional/solutions-architect', priority: 0.9 },
-    { path: '/fractional/ai-integration-director', priority: 0.9 },
+    { path: '/fractional', priority: 0.9 },
+    { path: '/fractional/ai-officer', priority: 0.8 },
+    { path: '/fractional/chief-technology-officer', priority: 0.8 },
+    { path: '/fractional/solutions-architect', priority: 0.8 },
+    { path: '/fractional/ai-integration-director', priority: 0.8 },
     { path: '/jh-card', priority: 0.6 },
   ]
 

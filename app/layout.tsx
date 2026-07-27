@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { Inter, JetBrains_Mono, Press_Start_2P, Special_Elite } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme/theme-provider'
 import { ThemeSwitcher } from '@/components/theme/theme-switcher'
 import { Nav } from '@/components/ui/nav'
 import { JsonLd } from '@/components/seo/json-ld'
-import { graph, personNode, websiteNode, organizationNode } from '@/lib/seo/schema'
+import { graph, personNode, websiteNode, organizationNode, fenixNode, profilePageNode } from '@/lib/seo/schema'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,7 +35,9 @@ const specialElite = Special_Elite({
 })
 
 export const metadata: Metadata = {
-  title: 'Justin S. Henriksen',
+  // Plain string, not a template: the child layouts already set full titles
+  // ending in the name, and a template would repeat it.
+  title: 'Justin S. Henriksen | AI Adoption and Transformation Executive',
   description: 'Founder of GetLatest AI and former Microsoft Sr. Director. I drive AI adoption across organizations that don\'t report to me, and build production multi-agent systems. CEO, investor, builder.',
   metadataBase: new URL('https://justinshenriksen.com'),
   alternates: {
@@ -105,12 +108,33 @@ export default function RootLayout({
       className={`${inter.variable} ${jetbrainsMono.variable} ${pressStart2P.variable} ${specialElite.variable}`}
     >
       <body>
-        <JsonLd data={graph([personNode, websiteNode, organizationNode])} />
+        <JsonLd data={graph([personNode, websiteNode, profilePageNode, organizationNode, fenixNode])} />
         <ThemeProvider>
           <Nav />
           <ThemeSwitcher />
           <main>{children}</main>
           <footer className="border-t border-[var(--border)] py-8 mt-20">
+            {/* Internal links. Without these the fractional pages are only
+                reachable from the sitemap, which is bad for crawl and ranking. */}
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 pb-6 mb-6 border-b border-[var(--border)]">
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/fractional', label: 'Fractional roles' },
+                { href: '/fractional/ai-officer', label: 'AI Officer' },
+                { href: '/fractional/chief-technology-officer', label: 'CTO' },
+                { href: '/fractional/solutions-architect', label: 'Solutions Architect' },
+                { href: '/fractional/ai-integration-director', label: 'AI Integration Director' },
+                { href: '/jh-card', label: 'Contact card' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-[var(--muted)] hover:text-[var(--primary)] transition-colors font-mono"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
               <p className="text-sm text-[var(--muted)] font-mono">
                 Justin S. Henriksen &copy; {new Date().getFullYear()}
