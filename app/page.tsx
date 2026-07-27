@@ -12,13 +12,16 @@ import { TestimonialsSection } from '@/components/sections/testimonials-section'
 import { useTheme } from '@/components/theme/theme-provider'
 
 const building = [
-  { name: 'Snappy Agents', url: 'https://snappyagents.ai', desc: 'An AI assistant that\'s powerful, private, and dead simple.' },
-  { name: 'Ronin', url: 'https://myronin.ai', desc: 'Your AI powered job search agent.' },
-  { name: 'FindTime', url: 'https://find-time.ai', desc: 'The scheduling platform built for AI agents.' },
-  { name: 'Helix', url: 'https://helixagency.ai', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
-  { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
-  { name: 'Shelfer', url: 'https://shelfer.co', desc: 'Growth platform helping CPG brands coordinate ecommerce, retail distribution, affiliate channels, and working capital from launch to shelf.' },
+  { name: 'GetLatest AI', url: 'https://getlatest.ai', logo: 'getlatest', desc: 'AI teams that embed into your operations and handle customer inquiries, scheduling, and follow-up. Plus the marketing that brings new customers in.' },
+  { name: 'Snappy Agents', url: 'https://snappyagents.ai', logo: 'snappy', desc: 'An AI assistant that\'s powerful, private, and dead simple.' },
+  { name: 'Ronin', url: 'https://myronin.ai', logo: 'ronin', desc: 'Your AI powered job search agent.' },
+  { name: 'FindTime', url: 'https://find-time.ai', logo: 'findtime', desc: 'The scheduling platform built for AI agents.' },
+  { name: 'Helix', url: 'https://helixagency.ai', logo: 'helix', desc: 'Automated GTM - buying signals, personalized outreach, SEO, and more.' },
+  { name: 'Heimdall', url: 'https://heimdall.getlatest.ai', logo: 'heimdall', desc: 'Automated intelligence - customer voice, competitor strategy, positioning map, and more.' },
 ]
+
+// Themes with a dark canvas need the light-on-dark logo variants.
+const darkThemes = ['arcade', 'futuristic', 'terminal']
 
 const investments = [
   { role: 'Investor and Board Member', name: 'AromaTherapist', url: 'https://aromatherapist.com' },
@@ -166,6 +169,7 @@ const careerTimeline: TimelineItem[] = [
 export default function Home() {
   const { theme } = useTheme()
   const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(null)
+  const logoVariant = darkThemes.includes(theme) ? 'dark' : 'light'
 
   const headlineSize = theme === 'arcade'
     ? 'font-pixel text-base sm:text-xl lg:text-2xl leading-loose'
@@ -260,8 +264,8 @@ export default function Home() {
 
       {/* ── TOC (desktop only) ───────────────────────────────── */}
       <nav className="hidden sm:block border-t border-[var(--border)]">
-        <Container>
-          <div className="flex items-center justify-center gap-0 py-0 whitespace-nowrap overflow-x-auto">
+        <div className="px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center gap-0 py-0 whitespace-nowrap">
             {[
               { label: "What I'm building", href: '#building' },
               { label: "What I've accomplished", href: '#accomplished' },
@@ -284,7 +288,7 @@ export default function Home() {
               </a>
             ))}
           </div>
-        </Container>
+        </div>
       </nav>
 
       {/* ── What I'm building ────────────────────────────────── */}
@@ -312,8 +316,19 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: i * 0.07 }}
                 className="border border-[var(--border)] bg-[var(--card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
               >
-                <div className="font-mono text-sm font-semibold text-[var(--primary)] group-hover:opacity-80 transition-opacity uppercase tracking-wide mb-2">
-                  {item.name} ↗
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="relative w-8 h-8 shrink-0">
+                    <Image
+                      src={`/logos/${item.logo}-${logoVariant}.svg`}
+                      alt=""
+                      fill
+                      className="object-contain"
+                      sizes="32px"
+                    />
+                  </span>
+                  <span className="font-mono text-sm font-semibold text-[var(--primary)] group-hover:opacity-80 transition-opacity uppercase tracking-wide">
+                    {item.name} ↗
+                  </span>
                 </div>
                 <p className="text-[var(--muted)] text-sm leading-relaxed">{item.desc}</p>
               </motion.a>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" role="img" aria-label="Helix mark white">
+  <path d="M 60 7.5 Q 105 33.75 60 60 Q 15 86.25 60 112.5"
+    stroke="#fafafa" stroke-width="9.375" stroke-linecap="round" fill="none"/>
+  <path d="M 60 7.5 Q 15 33.75 60 60 Q 105 86.25 60 112.5"
+    stroke="#fafafa" stroke-width="9.375" stroke-linecap="round" fill="none" opacity="0.55"/>
+  <circle cx="60" cy="7.5" r="6" fill="#fafafa"/>
+  <circle cx="60" cy="60" r="7.125" fill="#fafafa"/>
+  <circle cx="60" cy="112.5" r="6" fill="#fafafa"/>
+</svg>

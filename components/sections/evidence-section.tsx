@@ -232,6 +232,16 @@ export function EvidenceSection({
           <div className="grid sm:grid-cols-2 gap-4">
             {writing.map((item, i) => <EvidenceCard key={i} item={item} index={i} />)}
           </div>
+          <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-6">
+            <a
+              href="https://getlatest.ai/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-mono text-[var(--primary)] hover:opacity-80 transition-opacity"
+            >
+              Read the rest at getlatest.ai/blog ↗
+            </a>
+          </motion.div>
         </Container>
       </section>
 
