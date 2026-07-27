@@ -43,7 +43,7 @@ const responsibilities = [
 ]
 
 const proofPoints = [
-  { value: '25yr', label: 'From IC to CEO', detail: 'And back to shipping code today' },
+  { value: 'Since 2004', label: 'From IC to CEO', detail: 'And back to shipping code today' },
   { value: '200', label: 'Person org led', detail: 'As GM at Crayon US' },
   { value: '$51M', label: 'P&L responsibility', detail: 'While staying close to the architecture' },
   { value: 'Live', label: 'Production AI platform', detail: 'Snappy Agents - daily commits' },
@@ -96,7 +96,7 @@ const careerTimeline: TimelineItem[] = [
     bullets: [
       'Led a 200-person technology org through a full business model transformation.',
       'Built AI/ML, Data, and M365 managed services practices from scratch: hiring, partner certifications, service catalog, pricing, and delivery playbooks.',
-      '$43M to $51M P&L. 200% increase in new customer acquisition. Utah Fast 50, Utah 100.',
+      '$43M to $51M P&L. 200% increase in new customer acquisition. Lifted services margin from -28% to +64%.',
     ],
   },
   {
@@ -104,9 +104,9 @@ const careerTimeline: TimelineItem[] = [
     company: 'Microsoft',
     period: 'Jul 2017 - Oct 2021',
     bullets: [
-      'Led AI/ML and advanced analytics partner strategy for the Microsoft ecosystem.',
-      '30+ AI enablement initiatives. $1.5M in initiative funding converted to $25M+ in partner revenue.',
-      'Partners scaled 10x, 14x, and 20x within four years.',
+      'Set AI/ML and data strategy across Microsoft\'s US partner ecosystem: thousands of independent companies, none of whom reported to me.',
+      '30+ AI enablement initiatives. $1.5M in initiative funding converted to $25M+ in partner revenue. Accelerated technical adoption 15x and platform adoption velocity 63%.',
+      'Partners, solutions, and expertise grew 10-20x over four years.',
     ],
   },
   {
@@ -346,7 +346,7 @@ export default function CTOPage() {
               },
               {
                 headline: 'Technical depth across the full Microsoft and cloud stack',
-                body: 'Azure MCSE certified. AWS hands-on since 2008. GCP Vertex AI. 25 years of language depth across C#/.NET, Python, TypeScript, and Java. That breadth means vendor-agnostic recommendations - not attachment to whatever I last sold.',
+                body: 'Azure MCSE certified. AWS hands-on since 2008. GCP Vertex AI. Two decades of language depth across C#/.NET, Python, TypeScript, and Java. That breadth means vendor-agnostic recommendations - not attachment to whatever I last sold.',
               },
             ].map((item, i) => (
               <motion.div

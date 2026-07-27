@@ -4,7 +4,7 @@ import { graph, breadcrumbNode, SITE_URL } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Fractional Leadership - Justin S. Henriksen',
-  description: 'Fractional AI Officer, CTO, and Solutions Architect. Senior technology leadership without the full-time overhead. Former Microsoft Sr. Director. 25 years from IC to CEO.',
+  description: 'Fractional AI Officer, CTO, and Solutions Architect. Senior technology leadership without the full-time overhead. Former Microsoft Sr. Director. IC to CEO since 2004.',
   alternates: {
     canonical: 'https://justinshenriksen.com/fractional',
   },

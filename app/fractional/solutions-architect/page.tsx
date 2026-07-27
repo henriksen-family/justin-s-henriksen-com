@@ -23,7 +23,7 @@ const engagementTypes = [
   {
     icon: Cloud,
     title: 'Cloud architecture - Azure, AWS, GCP',
-    desc: 'Hands-on with all three clouds across 25 years - MCSE certified on Azure, AWS since 2008, GCP/Vertex AI for AI-native workloads. Platform-agnostic recommendation, not vendor loyalty.',
+    desc: 'Hands-on with all three clouds since 2004 - MCSE certified on Azure, AWS since 2008, GCP/Vertex AI for AI-native workloads. Platform-agnostic recommendation, not vendor loyalty.',
   },
   {
     icon: Plug,
@@ -53,7 +53,7 @@ const domains = [
   },
   {
     title: 'Software Engineering',
-    items: ['25 years hands-on: C#/.NET, Python, TypeScript/JavaScript, Java', 'Distributed systems at global data center scale', 'Enterprise application architecture from ground up', 'Full product lifecycle - from first commit to production', 'Engineering management and technical mentorship'],
+    items: ['Hands-on since 2004: C#/.NET, Python, TypeScript/JavaScript, Java', 'Distributed systems at global data center scale', 'Enterprise application architecture from ground up', 'Full product lifecycle - from first commit to production', 'Engineering management and technical mentorship'],
   },
   {
     title: 'Data and Analytics',
@@ -172,7 +172,7 @@ export default function SolutionsArchitectPage() {
                 : 'text-3xl sm:text-4xl lg:text-5xl font-bold'
             }`}>
               {theme === 'terminal' && <span className="text-[var(--primary)]">$ </span>}
-              25 years of hands-on technical work. None of the full-time overhead.
+              Hands-on technical work since 2004. None of the full-time overhead.
               {theme === 'terminal' && <span className="animate-blink ml-1">_</span>}
             </h1>
 

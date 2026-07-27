@@ -30,7 +30,7 @@ const roles = [
     href: '/fractional/solutions-architect',
     icon: Map,
     badge: 'Fractional Solutions Architect',
-    headline: '25 years of hands-on technical work. None of the overhead.',
+    headline: 'Hands-on technical work since 2004. None of the overhead.',
     description:
       'Architecture reviews, AI system design, cloud architecture across Azure/AWS/GCP, API and integration design, and technical due diligence. Scoped to what you actually need.',
     tags: ['AI systems', 'Cloud architecture', 'Due diligence', 'API design'],
@@ -79,7 +79,7 @@ export default function FractionalPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-[var(--muted)] text-base sm:text-xl max-w-3xl mb-8 leading-relaxed"
             >
-              25 years from individual contributor to CEO and back to shipping code.
+              From individual contributor to CEO and back to shipping code, since 2004.
               Former Microsoft Sr. Director. Production AI platform today.
               Available fractionally as the role your company actually needs right now.
             </motion.p>

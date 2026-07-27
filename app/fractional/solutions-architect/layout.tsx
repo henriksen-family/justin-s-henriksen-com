@@ -4,13 +4,13 @@ import { graph, serviceNode, breadcrumbNode, SITE_URL } from '@/lib/seo/schema'
 
 export const metadata: Metadata = {
   title: 'Fractional Solutions Architect - Justin S. Henriksen',
-  description: '25 years of hands-on technical work. AI system design, Azure/AWS/GCP cloud architecture, and the technical decisions that compound over time - without the full-time overhead.',
+  description: 'Hands-on technical work since 2004. AI system design, Azure/AWS/GCP cloud architecture, and the technical decisions that compound over time - without the full-time overhead.',
   alternates: {
     canonical: 'https://justinshenriksen.com/fractional/solutions-architect',
   },
   openGraph: {
     title: 'Fractional Solutions Architect - Justin S. Henriksen',
-    description: '25 years of hands-on technical work. AI system design, cloud architecture, and the technical decisions that compound over time.',
+    description: 'Hands-on technical work since 2004. AI system design, cloud architecture, and the technical decisions that compound over time.',
     url: 'https://justinshenriksen.com/fractional/solutions-architect',
     siteName: 'Justin S. Henriksen',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional Solutions Architect - Justin S. Henriksen',
-    description: '25 years of hands-on technical work. AI system design, cloud architecture, daily commits on a live production platform.',
+    description: 'Hands-on technical work since 2004. AI system design, cloud architecture, daily commits on a live production platform.',
   },
 }
 
@@ -31,7 +31,7 @@ export default function SolutionsArchitectLayout({ children }: { children: React
           serviceNode({
             name: 'Fractional Solutions Architect',
             description:
-              'AI system design and Azure/AWS/GCP cloud architecture from 25 years of hands-on technical work - on a fractional basis, without the full-time overhead.',
+              'AI system design and Azure/AWS/GCP cloud architecture from Hands-on technical work since 2004 - on a fractional basis, without the full-time overhead.',
             serviceType: 'Fractional solutions architecture',
             url: `${SITE_URL}/fractional/solutions-architect`,
           }),

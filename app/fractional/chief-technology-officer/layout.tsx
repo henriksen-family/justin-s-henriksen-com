@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Fractional CTO - Justin S. Henriksen',
-    description: 'Technology leadership that scales with your company. 25 years from IC to CEO. Former Microsoft Sr. Director. Production AI platform today.',
+    description: 'Technology leadership that scales with your company. IC to CEO since 2004. Former Microsoft Sr. Director. Production AI platform today.',
     url: 'https://justinshenriksen.com/fractional/chief-technology-officer',
     siteName: 'Justin S. Henriksen',
     type: 'website',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Fractional CTO - Justin S. Henriksen',
-    description: 'Technology leadership that scales with your company. 25 years from IC to CEO. Production AI platform today.',
+    description: 'Technology leadership that scales with your company. IC to CEO since 2004. Production AI platform today.',
   },
 }
 
