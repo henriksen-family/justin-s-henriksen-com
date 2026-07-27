@@ -54,6 +54,14 @@ const stats = [
   { value: '95/100', label: 'Manager rating', detail: '5-year average' },
 ]
 
+const stack = [
+  { group: 'Languages', items: 'C#, .NET, Python, TypeScript, JavaScript, SQL, Java' },
+  { group: 'AI', items: 'Multi-agent orchestration, LLM application design, agent memory, Azure Machine Learning, Vertex AI' },
+  { group: 'Cloud', items: 'Azure (MCSE), AWS since 2008, GCP' },
+  { group: 'Data', items: 'SQL Server, Oracle, SQL/NoSQL, Apache Spark, Azure Data Factory' },
+  { group: 'Practice', items: 'Distributed systems, API and integration design, CI/CD and automated testing, DevOps' },
+]
+
 const recognition = [
   '2024 Utah Fast 50',
   '2023 Utah 100',
@@ -80,7 +88,7 @@ const careerTimeline: TimelineItem[] = [
     bullets: [
       'Building Snappy Agents, a production AI agent platform with real customers.',
       'Architect multi-agent systems with long-term memory that hold up in daily business use, where a failed step costs someone money.',
-      'Help law firms, clinics, contractors, and financial services firms put AI into their actual operations: customer inquiries, scheduling, follow-up.',
+      'Our AI teams embed into a client\'s operations and run the work: customer inquiries, scheduling, follow-up. Law firms, clinics, contractors, financial services.',
       'GetLatest AI consulting practice focused on enterprise AI strategy and implementation.',
     ],
   },
@@ -129,22 +137,29 @@ const careerTimeline: TimelineItem[] = [
     title: 'Software Engineering Manager',
     company: 'Microsoft',
     period: 'Mar 2012 - Sept 2013',
-    bullets: ['Massively distributed software systems for global data center infrastructure.'],
+    bullets: [
+      'Massively distributed software systems for real-time processing of large data streams across global data center infrastructure. C#, .NET, MVC, SQL Server.',
+      'Drove DevOps across the org: continuous integration, automated testing, and deployment automation. Promoted to Engineering Manager in two months and a level again within a year.',
+    ],
   },
   {
     title: 'Solutions Architect',
     company: 'LDS Church',
     period: 'Jul 2008 - Mar 2012',
     bullets: [
-      'Architecture roadmaps across .Net, Java, AWS, and Azure.',
-      'Multi-million dollar project delivery.',
+      'Defined technical strategy and architecture roadmaps for teams working across .Net, Java, PHP, SQL Server, Oracle, AWS, and Azure.',
+      'Designed the architecture for multi-million dollar projects connecting organizations whose systems had never been built to talk to each other. Improved reliability and performance in the process.',
     ],
   },
   {
     title: 'Development Manager',
     company: 'TaxWorks',
     period: 'Jun 2004 - Jul 2008',
-    bullets: ['Led development team for tax software products.'],
+    bullets: [
+      'Migrated 5,000+ web pages from classic ASP to ASP.NET so the product could be sold as SaaS. Cut $350K in annual maintenance cost and opened $700K in new revenue.',
+      'Led an org-wide move to a common .NET architecture: reusable components, documented best practices, and a shared development methodology.',
+      'Shipped under SAS 70, PCI, and FFIEC compliance for federal and state income tax processing.',
+    ],
   },
 ]
 
@@ -246,12 +261,14 @@ export default function Home() {
       {/* ── TOC (desktop only) ───────────────────────────────── */}
       <nav className="hidden sm:block border-t border-[var(--border)]">
         <Container>
-          <div className="flex items-center justify-center gap-0 py-0 whitespace-nowrap">
+          <div className="flex items-center justify-center gap-0 py-0 whitespace-nowrap overflow-x-auto">
             {[
               { label: "What I'm building", href: '#building' },
               { label: "What I've accomplished", href: '#accomplished' },
               { label: "Where I've been", href: '#career' },
               { label: "What people say", href: '#testimonials' },
+              { label: "How it's built", href: '#products' },
+              { label: "What I've shipped", href: '#shipped' },
               { label: "What I've written", href: '#writing' },
               { label: "What I've spoken about", href: '#speaking' },
               { label: "Where I invest", href: '#investing' },
@@ -367,7 +384,7 @@ export default function Home() {
       </div>
 
       {/* ── What I've written / spoken about ─────────────────── */}
-      <EvidenceSection hideProducts hideShipped hideIndustries />
+      <EvidenceSection hideIndustries />
 
       {/* ── Where I invest ───────────────────────────────────── */}
       <section id="investing" className="py-16 border-t border-[var(--border)]">
@@ -423,6 +440,17 @@ export default function Home() {
                 <span key={i} className="text-sm text-[var(--muted)] border border-[var(--border)] bg-[var(--card)] rounded px-3 py-1.5 font-mono">
                   {cred}
                 </span>
+              ))}
+            </div>
+
+            <h2 className="text-base font-bold text-[var(--text)] mt-10 mb-2">What I build with</h2>
+            <p className="text-sm text-[var(--muted)] mb-5">Languages and platforms I have actually shipped on, oldest to most recent.</p>
+            <div className="flex flex-wrap gap-3">
+              {stack.map((row, i) => (
+                <div key={i} className="border border-[var(--border)] bg-[var(--card)] rounded px-4 py-3">
+                  <div className="text-xs font-mono text-[var(--primary)] uppercase tracking-wide mb-1">{row.group}</div>
+                  <div className="text-sm text-[var(--muted)]">{row.items}</div>
+                </div>
               ))}
             </div>
           </motion.div>

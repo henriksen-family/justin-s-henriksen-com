@@ -58,6 +58,16 @@ const selectedWork: EvidenceItem[] = [
     description: 'Massively distributed software systems for global Microsoft data center infrastructure. Engineering at the hardware/software boundary - distributed state management, fault tolerance, and scale patterns across tens of thousands of nodes. Stack: C#, distributed systems, Windows Server.',
     tag: 'Engineering',
   },
+  {
+    title: 'Multi-Org Integration Platform',
+    description: 'Architecture and technical leadership for multi-million dollar projects connecting disparate organizations that had never shared data. Service contracts, reliability, and performance across systems nobody had designed to talk to each other. Stack: C#, .NET, Java, MVC, web services, SQL Server, Oracle, with early AWS and Azure workloads.',
+    tag: 'Engineering',
+  },
+  {
+    title: 'ASP to ASP.NET SaaS Migration',
+    description: 'Migrated 5,000+ web pages from classic ASP to ASP.NET so a desktop tax product could be sold as SaaS. Cut $350K in annual maintenance cost and opened $700K in new revenue. Built to hold up under SAS 70, PCI, and FFIEC audit for federal and state tax processing.',
+    tag: 'Engineering',
+  },
 ]
 
 const industries = [
@@ -170,8 +180,8 @@ export function EvidenceSection({
         <section id="products" className="py-20 border-t border-[var(--border)]">
           <Container>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mb-10">
-              <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{"What I've built"}</h2>
-              <p className="text-[var(--muted)]">Four products in production. Not demos - live systems with real users.</p>
+              <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{'How they are built'}</h2>
+              <p className="text-[var(--muted)]">The architecture behind four of the products above. Live systems with real users.</p>
             </motion.div>
             <div className="grid sm:grid-cols-2 gap-4">
               {products.map((item, i) => <EvidenceCard key={i} item={item} index={i} />)}
@@ -185,7 +195,7 @@ export function EvidenceSection({
           <Container>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-8">
               <h2 className="text-2xl font-bold text-[var(--text)] mb-2">{"What I've shipped"}</h2>
-              <p className="text-[var(--muted)]">Shipped, used in production, predates the current portfolio.</p>
+              <p className="text-[var(--muted)]">Earlier engineering work, all of it used in production by someone other than me.</p>
             </motion.div>
             <div className="grid sm:grid-cols-2 gap-4">
               {selectedWork.map((item, i) => <EvidenceCard key={i} item={item} index={i} />)}
