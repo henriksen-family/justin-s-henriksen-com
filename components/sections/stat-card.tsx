@@ -18,7 +18,7 @@ export function StatCard({ value, label, detail, index = 0 }: StatCardProps) {
       transition={{ duration: 0.4, delay: index * 0.08 }}
       className="border border-[var(--border)] bg-[var(--card)] p-5 rounded hover:border-[var(--primary)] transition-colors duration-300 group"
     >
-      <div className="text-2xl sm:text-3xl font-bold text-[var(--primary)] group-hover:opacity-90 transition-opacity">
+      <div className="stat-value text-2xl sm:text-3xl font-bold text-[var(--primary)] group-hover:opacity-90 transition-opacity">
         {value}
       </div>
       <div className="mt-1 text-sm font-semibold text-[var(--text)]">{label}</div>

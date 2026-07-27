@@ -6,17 +6,24 @@
    THEME VARIABLES
    ============================================= */
 
+/* The product cards carry light-on-dark wordmarks, so their canvas is always
+   dark. --logo-* keeps that canvas in each theme's own palette instead of one
+   navy that only suits the professional theme. */
+
 [data-theme="professional"] {
-  --bg: #ffffff;
-  --primary: #0078d4;
-  --secondary: #106ebe;
+  --bg: #f5f8fc;
+  --primary: #0067c0;
+  --secondary: #003780;
   --accent: #0078d4;
-  --text: #1b2232;
-  --muted: #5a6472;
-  --card: #f0f4f8;
-  --border: #d1d9e0;
+  --text: #101828;
+  --muted: #55617a;
+  --card: #ffffff;
+  --border: #dde4ee;
   --gradient-start: #003780;
   --gradient-end: #0078d4;
+  --logo-card: #0f1b2d;
+  --logo-border: #27394f;
+  --logo-muted: #9fb3c8;
   color-scheme: light;
 }
 
@@ -29,6 +36,9 @@
   --muted: #aaaaaa;
   --card: #100028;
   --border: #ffe600;
+  --logo-card: #16003a;
+  --logo-border: #ffe600;
+  --logo-muted: #b9a8e0;
 }
 
 [data-theme="futuristic"] {
@@ -40,6 +50,9 @@
   --muted: #5080a0;
   --card: #050f20;
   --border: #004a7a;
+  --logo-card: #061627;
+  --logo-border: #004a7a;
+  --logo-muted: #7fb2cc;
 }
 
 [data-theme="typewriter"] {
@@ -53,6 +66,9 @@
   --border: #c4b49a;
   --gradient-start: #b91c1c;
   --gradient-end: #1e3a5f;
+  --logo-card: #2a201a;
+  --logo-border: #4c3b2c;
+  --logo-muted: #cbb9a3;
 }
 
 [data-theme="terminal"] {
@@ -64,6 +80,9 @@
   --muted: #1a8033;
   --card: #001400;
   --border: #33ff66;
+  --logo-card: #001f00;
+  --logo-border: #1a8033;
+  --logo-muted: #33ff66;
 }
 
 /* =============================================
@@ -72,6 +91,10 @@
 
 :root {
   color-scheme: dark;
+  /* Fallbacks so the product cards render if a theme forgets to set these. */
+  --logo-card: #0f1b2d;
+  --logo-border: #27394f;
+  --logo-muted: #9fb3c8;
 }
 
 * {
@@ -95,8 +118,14 @@ body {
    PROFESSIONAL THEME - LIGHT BLUE / MICROSOFT
    ============================================= */
 
+/* The page carries a faint tint and the cards are pure white, so cards lift off
+   the page. It used to be the other way round, which read flat. */
 [data-theme="professional"] body {
-  background-image: none;
+  background-image:
+    radial-gradient(1100px 560px at 12% -12%, rgba(0, 120, 212, 0.13), transparent 62%),
+    radial-gradient(900px 460px at 90% 2%, rgba(0, 55, 128, 0.09), transparent 64%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 [data-theme="professional"] h1 {
@@ -106,9 +135,57 @@ body {
   background-clip: text;
 }
 
-/* Cards get a clean white with a subtle shadow */
-[data-theme="professional"] [class*="bg-[var(--card)]"] {
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+/* Section headings get a short accent rule so the page has some rhythm. */
+[data-theme="professional"] section > div > div > h2,
+[data-theme="professional"] section > div > h2 {
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+[data-theme="professional"] section > div > div > h2::after,
+[data-theme="professional"] section > div > h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #003780, #0078d4);
+}
+
+/* The big stat numbers pick up the same gradient as the h1. */
+[data-theme="professional"] .stat-value {
+  background: linear-gradient(135deg, #003780 0%, #0078d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-theme="professional"] [class*="bg-[var(--card)]"],
+[data-theme="professional"] [class*="bg-[var(--logo-card)]"] {
+  box-shadow:
+    0 1px 2px rgba(16, 24, 40, 0.04),
+    0 10px 24px -14px rgba(16, 24, 40, 0.20);
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="professional"] [class*="bg-[var(--card)]"]:hover,
+[data-theme="professional"] [class*="bg-[var(--logo-card)]"]:hover {
+  box-shadow:
+    0 2px 4px rgba(16, 24, 40, 0.05),
+    0 20px 34px -16px rgba(16, 24, 40, 0.30);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-theme="professional"] [class*="bg-[var(--card)]"],
+  [data-theme="professional"] [class*="bg-[var(--card)]"]:hover,
+  [data-theme="professional"] [class*="bg-[var(--logo-card)]"],
+  [data-theme="professional"] [class*="bg-[var(--logo-card)]"]:hover {
+    transform: none;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
 }
 
 /* =============================================

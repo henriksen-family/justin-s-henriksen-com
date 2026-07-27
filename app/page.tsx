@@ -310,7 +310,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.07 }}
-                className="border border-[#1e293b] bg-[#0b1220] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
+                className="border border-[var(--logo-border)] bg-[var(--logo-card)] rounded p-5 hover:border-[var(--primary)] transition-colors duration-300 group"
               >
                 <div className="flex items-start justify-between gap-3 mb-4">
                   <span className="relative block h-7 w-full max-w-[170px]">
@@ -322,11 +322,11 @@ export default function Home() {
                       sizes="170px"
                     />
                   </span>
-                  <span className="text-[#64748b] group-hover:text-[var(--primary)] transition-colors text-sm shrink-0" aria-hidden="true">
+                  <span className="text-[var(--logo-muted)] group-hover:text-[var(--primary)] transition-colors text-sm shrink-0" aria-hidden="true">
                     ↗
                   </span>
                 </div>
-                <p className="text-[#94a3b8] text-sm leading-relaxed">{item.desc}</p>
+                <p className="text-[var(--logo-muted)] text-sm leading-relaxed">{item.desc}</p>
               </motion.a>
             ))}
           </div>
