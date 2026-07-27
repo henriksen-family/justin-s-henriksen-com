@@ -246,7 +246,7 @@ export default function Home() {
                 >
                   GetLatest AI
                 </a>
-                {', where we help businesses grow. That usually means getting the systems, processes, and tools right. AI is often part of the answer and rarely where we start. We start with what\'s costing you customers: calls that go to voicemail, quotes that sit for days, follow-up nobody owns.'}
+                {', where we help businesses grow. That usually means getting the systems, processes, and tools right. AI is often part of the answer and rarely where we start. We start with what\'s limiting your growth: not enough leads, deals that stall, customers who don\'t come back.'}
               </motion.p>
 
               <motion.p
