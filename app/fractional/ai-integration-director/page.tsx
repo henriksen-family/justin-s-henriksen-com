@@ -253,10 +253,10 @@ export default function AIIntegrationDirectorPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 text-sm">
               <a
-                href="mailto:justin@getlatest.ai"
+                href="mailto:justin.henriksen@gmail.com"
                 className="inline-flex items-center gap-2 text-[var(--primary)] hover:underline font-medium"
               >
-                justin@getlatest.ai
+                justin.henriksen@gmail.com
               </a>
               <span className="text-[var(--muted)] hidden sm:inline">·</span>
               <a

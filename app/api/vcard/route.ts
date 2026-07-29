@@ -11,7 +11,7 @@ export async function GET() {
     'ORG:GetLatest AI',
     'TITLE:Co-Founder & Chief Everything Officer',
     'TEL;TYPE=CELL:+18016789807',
-    'EMAIL;TYPE=WORK:justin@getlatest.ai',
+    'EMAIL;TYPE=WORK:justin.henriksen@gmail.com',
     'URL:https://justinshenriksen.com',
     'URL:https://getlatest.ai',
     'URL:https://linkedin.com/in/henriksenjustin',

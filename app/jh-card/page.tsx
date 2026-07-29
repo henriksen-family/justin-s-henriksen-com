@@ -71,11 +71,11 @@ export default function JHCardPage() {
               <span className="text-[var(--text)]">(801) 678-9807</span>
             </a>
             <a
-              href="mailto:justin@getlatest.ai"
+              href="mailto:justin.henriksen@gmail.com"
               className="flex items-center gap-3 px-5 py-3 rounded-xl border border-[var(--border)] bg-[var(--card,transparent)] hover:border-[var(--primary)] transition-colors"
             >
               <Mail className="w-5 h-5 text-[var(--primary)] flex-shrink-0" />
-              <span className="text-[var(--text)]">justin@getlatest.ai</span>
+              <span className="text-[var(--text)]">justin.henriksen@gmail.com</span>
             </a>
             <a
               href="https://getlatest.ai"

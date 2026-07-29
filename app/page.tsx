@@ -568,7 +568,7 @@ export default function Home() {
               <Button href="https://getlatest.ai/meet/justin" external variant="primary">
                 Book a conversation
               </Button>
-              <Button href="mailto:justin@getlatest.ai" variant="secondary">
+              <Button href="mailto:justin.henriksen@gmail.com" variant="secondary">
                 Send an email
               </Button>
             </div>
