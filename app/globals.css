@@ -7,16 +7,16 @@
    ============================================= */
 
 [data-theme="professional"] {
-  --bg: #f5f8fc;
-  --primary: #0067c0;
-  --secondary: #003780;
-  --accent: #0078d4;
-  --text: #101828;
-  --muted: #55617a;
-  --card: #ffffff;
-  --border: #dde4ee;
-  --gradient-start: #003780;
-  --gradient-end: #0078d4;
+  --bg: #ffffff;
+  --primary: #18181b;
+  --secondary: #27272a;
+  --accent: #e11d48;
+  --text: #09090b;
+  --muted: #71717a;
+  --card: #fafafa;
+  --border: #e4e4e7;
+  --gradient-start: #09090b;
+  --gradient-end: #27272a;
   color-scheme: light;
 }
 
@@ -95,18 +95,8 @@ body {
    PROFESSIONAL THEME - LIGHT BLUE / MICROSOFT
    ============================================= */
 
-/* The page carries a faint tint and the cards are pure white, so cards lift off
-   the page. It used to be the other way round, which read flat. */
-[data-theme="professional"] body {
-  background-image:
-    radial-gradient(1100px 560px at 12% -12%, rgba(0, 120, 212, 0.13), transparent 62%),
-    radial-gradient(900px 460px at 90% 2%, rgba(0, 55, 128, 0.09), transparent 64%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-}
-
 [data-theme="professional"] h1 {
-  background: linear-gradient(135deg, #001a3d 0%, #003780 50%, #0063b1 100%);
+  background: linear-gradient(135deg, #09090b 0%, #3f3f46 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -128,12 +118,12 @@ body {
   width: 2.5rem;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #003780, #0078d4);
+  background: linear-gradient(90deg, #18181b, #e11d48);
 }
 
 /* The big stat numbers pick up the same gradient as the h1. */
 [data-theme="professional"] .stat-value {
-  background: linear-gradient(135deg, #003780 0%, #0078d4 100%);
+  background: linear-gradient(135deg, #09090b 0%, #e11d48 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
