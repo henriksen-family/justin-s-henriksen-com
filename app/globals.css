@@ -95,38 +95,26 @@ body {
    PROFESSIONAL THEME - LIGHT BLUE / MICROSOFT
    ============================================= */
 
+/* H1: no gradient — solid, confident, clean */
 [data-theme="professional"] h1 {
-  background: linear-gradient(135deg, #09090b 0%, #3f3f46 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: none;
+  -webkit-text-fill-color: #09090b;
+  color: #09090b;
 }
 
-/* Section headings get a short accent rule so the page has some rhythm. */
+/* Section headings: left orange border — more impact than a tiny bottom rule */
 [data-theme="professional"] section > div > div > h2,
 [data-theme="professional"] section > div > h2 {
-  position: relative;
-  padding-bottom: 0.6rem;
+  padding-left: 1rem;
+  border-left: 3px solid #ea580c;
 }
 
-[data-theme="professional"] section > div > div > h2::after,
-[data-theme="professional"] section > div > h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 2.5rem;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #18181b, #ea580c);
-}
-
-/* The big stat numbers pick up the same gradient as the h1. */
+/* Stat values: solid orange, no gradient */
 [data-theme="professional"] .stat-value {
-  background: linear-gradient(135deg, #09090b 0%, #ea580c 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #ea580c;
+  background: none;
+  -webkit-text-fill-color: #ea580c;
+  background-clip: unset;
 }
 
 [data-theme="professional"] [class*="bg-[var(--card)]"] {
@@ -138,8 +126,9 @@ body {
 
 [data-theme="professional"] [class*="bg-[var(--card)]"]:hover {
   box-shadow:
+    inset 3px 0 0 #ea580c,
     0 2px 4px rgba(16, 24, 40, 0.05),
-    0 20px 34px -16px rgba(16, 24, 40, 0.30);
+    0 20px 34px -16px rgba(16, 24, 40, 0.25);
   transform: translateY(-2px);
 }
 
@@ -163,26 +152,28 @@ body {
   --primary: #ea580c;
 }
 
-[data-theme="professional"] .section-dark h2,
-[data-theme="professional"] .section-dark h3,
-[data-theme="professional"] .section-dark h4 {
-  background: none !important;
+[data-theme="professional"] .section-dark h1 {
   -webkit-text-fill-color: #fafafa !important;
   color: #fafafa !important;
 }
 
-[data-theme="professional"] .section-dark section > div > div > h2::after,
-[data-theme="professional"] .section-dark section > div > h2::after,
-[data-theme="professional"] .section-dark > div > div > h2::after,
-[data-theme="professional"] .section-dark > * > h2::after {
-  background: linear-gradient(90deg, rgba(255,255,255,0.15), #ea580c) !important;
+[data-theme="professional"] .section-dark h2,
+[data-theme="professional"] .section-dark h3,
+[data-theme="professional"] .section-dark h4 {
+  -webkit-text-fill-color: #fafafa !important;
+  color: #fafafa !important;
+  border-left-color: #ea580c;
 }
 
 [data-theme="professional"] .section-dark .stat-value {
-  background: linear-gradient(135deg, #ffffff 0%, #ea580c 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+  color: #ea580c !important;
+  -webkit-text-fill-color: #ea580c !important;
+}
+
+[data-theme="professional"] .section-dark [class*="bg-[var(--card)]"]:hover {
+  box-shadow:
+    inset 3px 0 0 #ea580c,
+    0 0 24px rgba(234, 88, 12, 0.12) !important;
 }
 
 

@@ -262,37 +262,42 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* ── TOC (desktop only) ───────────────────────────────── */}
-      <nav className="hidden sm:block border-t border-[var(--border)]">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center gap-0 py-0 whitespace-nowrap">
-            {[
-              { label: "What I'm building", href: '#building' },
-              { label: "What I've accomplished", href: '#accomplished' },
-              { label: "Where I've been", href: '#career' },
-              { label: "What people say", href: '#testimonials' },
-              { label: "How it's built", href: '#products' },
-              { label: "What I've shipped", href: '#shipped' },
-              { label: "What I've written", href: '#writing' },
-              { label: "What I've spoken about", href: '#speaking' },
-              { label: "Where I invest", href: '#investing' },
-              { label: "Education", href: '#education' },
-              { label: "Personal & giving", href: '#giving' },
-            ].map((item, i) => (
-              <a
-                key={i}
-                href={item.href}
-                className="text-xs font-mono text-[var(--muted)] hover:text-[var(--primary)] transition-colors px-4 py-3 border-r border-[var(--border)] last:border-r-0 shrink-0"
-              >
-                {item.label}
-              </a>
-            ))}
+      {/* ── On this page ─────────────────────────────────────── */}
+      <nav className="hidden sm:block border-t border-b border-[var(--border)]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="flex items-start gap-6">
+            <span className="text-[10px] font-mono text-[var(--muted)] uppercase tracking-[0.18em] shrink-0 pt-[3px] opacity-60 whitespace-nowrap">
+              On this page
+            </span>
+            <div className="grid grid-cols-6 gap-x-0 gap-y-0 w-full">
+              {[
+                { label: "What I'm building", href: '#building' },
+                { label: "What I've accomplished", href: '#accomplished' },
+                { label: "Where I've been", href: '#career' },
+                { label: "What people say", href: '#testimonials' },
+                { label: "How it's built", href: '#products' },
+                { label: "What I've shipped", href: '#shipped' },
+                { label: "What I've written", href: '#writing' },
+                { label: "What I've spoken about", href: '#speaking' },
+                { label: "Where I invest", href: '#investing' },
+                { label: "Education", href: '#education' },
+                { label: "Personal & giving", href: '#giving' },
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.href}
+                  className="text-xs font-mono text-[var(--muted)] hover:text-[var(--primary)] transition-colors px-3 py-2 border-r border-b border-[var(--border)] last:border-r-0"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </nav>
 
       {/* ── What I'm building ────────────────────────────────── */}
-      <section id="building" className="py-16 border-t border-[var(--border)]">
+      <section id="building" className="py-16 border-t border-[var(--border)] section-dark">
         <Container>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -338,7 +343,7 @@ export default function Home() {
       </section>
 
       {/* ── What I've accomplished ───────────────────────────── */}
-      <section id="accomplished" className="py-16 border-t border-[var(--border)] section-dark">
+      <section id="accomplished" className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
@@ -380,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* ── Where I've been ──────────────────────────────────── */}
-      <section id="career" className="py-16 border-t border-[var(--border)]">
+      <section id="career" className="py-16 border-t border-[var(--border)] section-dark">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
@@ -394,7 +399,7 @@ export default function Home() {
       </section>
 
       {/* ── What people say ──────────────────────────────────── */}
-      <div id="testimonials">
+      <div id="testimonials" className="section-dark">
         <TestimonialsSection />
       </div>
 
@@ -473,7 +478,7 @@ export default function Home() {
       </section>
 
       {/* ── Personal & how we give ───────────────────────────── */}
-      <section id="giving" className="py-16 border-t border-[var(--border)]">
+      <section id="giving" className="py-16 border-t border-[var(--border)] section-dark">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
