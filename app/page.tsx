@@ -235,7 +235,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
+                className="text-[var(--muted)] text-base max-w-2xl mb-4 leading-relaxed"
               >
                 {'I co-founded '}
                 <a
@@ -246,16 +246,25 @@ export default function Home() {
                 >
                   GetLatest AI
                 </a>
-                {', where we help businesses grow. That usually means getting the systems, processes, and tools right. AI is often part of the answer and rarely where we start. We start with what\'s limiting your growth: not enough leads, deals that stall, customers who don\'t come back.'}
+                {', where we help businesses grow. That usually means getting the systems, processes, and tools right. AI is often part of the answer but rarely where we start. We start with what\'s limiting growth: not enough leads, deals that stall, customers who don\'t come back.'}
               </motion.p>
 
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-[var(--muted)] text-base max-w-2xl mb-4 leading-relaxed"
+              >
+                {'Before GetLatest AI, I ran two companies: Blue Eye ($5M to $11M) and Crayon US ($43M to $51M), and also spent nine years at Microsoft as a Sr. Director setting AI/ML strategy across thousands of partner companies.'}
+              </motion.p>
+
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
                 className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
               >
-                {'Before GetLatest I ran two companies: Blue Eye ($5M to $11M) and Crayon US ($43M to $51M, from licensing reseller to AI and managed services). Before that, nine years at Microsoft, most recently as a Sr. Director setting AI/ML strategy across thousands of partner companies, none of whom reported to me. Getting an organization to work differently is harder than picking the right model, and it\'s what I\'ve spent the most time on.'}
+                {'Most operators know what the business needs. The harder part is building the technical case, owning the execution, and moving an organization that didn\'t ask to be moved. That\'s where I\'ve spent the last twenty years.'}
               </motion.p>
             </motion.div>
           </div>
