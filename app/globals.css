@@ -10,7 +10,7 @@
   --bg: #ffffff;
   --primary: #18181b;
   --secondary: #27272a;
-  --accent: #e11d48;
+  --accent: #ea580c;
   --text: #09090b;
   --muted: #71717a;
   --card: #fafafa;
@@ -118,12 +118,12 @@ body {
   width: 2.5rem;
   height: 3px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #18181b, #e11d48);
+  background: linear-gradient(90deg, #18181b, #ea580c);
 }
 
 /* The big stat numbers pick up the same gradient as the h1. */
 [data-theme="professional"] .stat-value {
-  background: linear-gradient(135deg, #09090b 0%, #e11d48 100%);
+  background: linear-gradient(135deg, #09090b 0%, #ea580c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -149,6 +149,40 @@ body {
     transform: none;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
   }
+}
+
+/* Dark sections - invert the palette so the section reads on a dark canvas */
+[data-theme="professional"] .section-dark {
+  background-color: #09090b;
+  border-top-color: transparent;
+  --bg: #09090b;
+  --card: #18181b;
+  --border: #3f3f46;
+  --text: #fafafa;
+  --muted: #a1a1aa;
+  --primary: #ea580c;
+}
+
+[data-theme="professional"] .section-dark h2,
+[data-theme="professional"] .section-dark h3,
+[data-theme="professional"] .section-dark h4 {
+  background: none !important;
+  -webkit-text-fill-color: #fafafa !important;
+  color: #fafafa !important;
+}
+
+[data-theme="professional"] .section-dark section > div > div > h2::after,
+[data-theme="professional"] .section-dark section > div > h2::after,
+[data-theme="professional"] .section-dark > div > div > h2::after,
+[data-theme="professional"] .section-dark > * > h2::after {
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), #ea580c) !important;
+}
+
+[data-theme="professional"] .section-dark .stat-value {
+  background: linear-gradient(135deg, #ffffff 0%, #ea580c 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
 

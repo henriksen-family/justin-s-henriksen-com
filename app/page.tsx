@@ -338,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* ── What I've accomplished ───────────────────────────── */}
-      <section id="accomplished" className="py-16 border-t border-[var(--border)]">
+      <section id="accomplished" className="py-16 border-t border-[var(--border)] section-dark">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-2`}>
@@ -558,7 +558,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ──────────────────────────────────────────────── */}
-      <section className="py-20 border-t border-[var(--border)]">
+      <section className="py-20 border-t border-[var(--border)] section-dark">
         <Container narrow>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center">
             <p className="text-[var(--muted)] text-base mb-8 max-w-xl mx-auto leading-relaxed">
