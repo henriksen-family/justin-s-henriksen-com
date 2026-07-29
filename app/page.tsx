@@ -264,7 +264,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="text-[var(--muted)] text-base max-w-2xl mb-10 leading-relaxed"
               >
-                {'Most operators know what the business needs. The harder part is building the technical case, owning the execution, and moving an organization that didn\'t ask to be moved. That\'s where I\'ve spent the last twenty years.'}
+                {'Growing organizations is hard. It demands creativity to see new possibilities, analytical discipline to identify what is holding the business back, pragmatism to focus on what will actually work, and the grit to follow through until the results show up. That combination is where I do my best work.'}
               </motion.p>
             </motion.div>
           </div>
