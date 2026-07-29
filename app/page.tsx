@@ -263,10 +263,10 @@ export default function Home() {
       </section>
 
       {/* ── On this page ─────────────────────────────────────── */}
-      <nav className="hidden sm:block border-t border-b border-[var(--border)]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <nav className="hidden sm:block border-t border-b border-[var(--border)] section-dark">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-start gap-6">
-            <span className="text-[10px] font-mono text-[var(--muted)] uppercase tracking-[0.18em] shrink-0 pt-[3px] opacity-60 whitespace-nowrap">
+            <span className="text-sm font-mono font-semibold text-[var(--primary)] uppercase tracking-[0.18em] shrink-0 pt-[3px] whitespace-nowrap">
               On this page
             </span>
             <div className="grid grid-cols-6 gap-x-0 gap-y-0 w-full">
@@ -297,7 +297,7 @@ export default function Home() {
       </nav>
 
       {/* ── What I'm building ────────────────────────────────── */}
-      <section id="building" className="py-16 border-t border-[var(--border)] section-dark">
+      <section id="building" className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -399,7 +399,7 @@ export default function Home() {
       </section>
 
       {/* ── What people say ──────────────────────────────────── */}
-      <div id="testimonials" className="section-dark">
+      <div id="testimonials">
         <TestimonialsSection />
       </div>
 
@@ -407,7 +407,7 @@ export default function Home() {
       <EvidenceSection hideIndustries />
 
       {/* ── Where I invest ───────────────────────────────────── */}
-      <section id="investing" className="py-16 border-t border-[var(--border)]">
+      <section id="investing" className="py-16 border-t border-[var(--border)] section-dark">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
@@ -478,7 +478,7 @@ export default function Home() {
       </section>
 
       {/* ── Personal & how we give ───────────────────────────── */}
-      <section id="giving" className="py-16 border-t border-[var(--border)] section-dark">
+      <section id="giving" className="py-16 border-t border-[var(--border)]">
         <Container>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <h2 className={`text-[var(--text)] ${sectionHeading} mb-4`}>
